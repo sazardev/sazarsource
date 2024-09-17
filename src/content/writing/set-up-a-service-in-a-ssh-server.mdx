@@ -1,0 +1,57 @@
+---
+title: "How to setup a service in a SSH Server"
+description: ""
+pubDate: "Oct 16 2024"
+---
+
+You get a connection with ssh, and then you run your project or a command. You are innocent and just close the terminal assuming that your command will run forever in the SSH Server. If this was your case (Or you're just curios) let me help you to do a real Service in Linux for your SSH Server.
+
+First of all we need to go to `/etc` in your SSH Server. So, if you are already logged in just put in the terminal:
+
+```bash
+cd /etc
+```
+
+`/etc` is where we have our system configuration files, it's like our nerve center of our system, so be careful of what you are touching here please. Also, that is why we are putting a service file right here. Let's dive into:
+
+```bash
+cd system/system
+```
+
+And here is where we create a new file called: `[name of your service].service`, in my case will be named `deploy-frontend.service`. So, in the terminal you will need to add:
+
+```bash
+vim deploy-frontend.service
+```
+
+And now we have a new file service! That is great but not all. Let me explain to you the syntax of the new file.
+
+```bash
+[Unit]
+# Here we describe our service
+Description=Serve run for frontend
+
+[Service]
+# Here we are going to detail the actions of our service
+ExecStart={path_of_the_command} -s /home/dev/app/dist -l 5000
+Restart=always
+User={your_username}
+
+[Install]
+# And here we define what users had this service
+```
+
+And in my case my service looks like this:
+
+```bash
+[Unit]
+Description=Serve run for frontend
+
+[Service]
+ExecStart=/usr/bin/serve -s /home/dev/app/dist -l 5000
+Restart=always
+User=dev
+
+[Install]
+WantedBy=multi-user.target
+```
