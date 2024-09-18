@@ -1,0 +1,394 @@
+---
+title: Provider para programadores en React
+description: Provider
+pubDate: 08 Oct 2024
+---
+
+El patrón de comportamiento **Provider** es un patrón de diseño que se utiliza para proporcionar datos a otros componentes. Donde la idea principal es que un componente padre proporcione datos a sus componentes hijos a traves de un arbol de componentes e inyectar dependencias a los componentes hijos de otros **Providers**.
+
+**Provider** es ademas aquel encargado de _crear_, _almacenar_ y _proporcionar_ los datos a los componentes hijos, donde la procedencia de esta información puede ser de una API, un archivo JSON, una base de datos, etc. Para un **Provider** le es indistinto la procedencia de la información, y es algo que no debe importarle, solo debe manejarla y asegurarse de que la información recibida sea la solicitada.
+
+## Componentes iniciales
+
+Para la creación de un **Provider** se requiere plantear su estructura antes de utilizarlo, donde se necesita definir, a que **_modulo_** pertenece, con que **_información_** se va a trabajar, y que **_funciones_** se van a utilizar para manipular la información. Por ende, necesitamos previamente un **_servicio_** que contenga comunicacion con la información, y un **_modelo_** que nos permita manipular la información.
+
+## Crear un Provider en React con JavaScript
+
+Para crear un **Provider** escalable, mantenible y reutilizable, se debe seguir una estructura que permita la manipulacion de la información de manera eficiente. Para **React** con JavaScript, es necesario crear alrededor de **cinco archivos**, donde estos compenden: **_Contexto Global_**, **_Acciones_**, **_Reducer_**, **_Provider_** y **_Estado Inicial_**.
+
+### Estado Inicial
+
+El **Estado Inicial** es el encargado de almacenar la información que se va a utilizar en los componentes hijos, y se encarga de proporcionar la información a los componentes hijos. Para crear un **Estado Inicial** se debe utilizar la siguiente estructura:
+
+`GlobalState.js`
+
+```jsx
+export const GlobalState = {
+  // información inicial
+  // Aqui se extrae tambien la información local
+  usuario: localStorage.getItem("usuario") || "",
+};
+```
+
+### Contexto Global
+
+El **Contexto Global** es el encargado de almacenar la información que se va a utilizar en los componentes hijos, y se encarga de proporcionar la información a los componentes hijos. Para crear un **Contexto Global** se debe utilizar la siguiente estructura:
+
+`GlobalContext.js`
+
+```jsx
+import React, { createContext, useReducer } from "react";
+
+const GlobalContext = createContext({
+  state: GlobalState,
+  dispatch: () => {},
+  // Funciones extras
+});
+```
+
+### Acciones
+
+Las **Acciones** son las funciones que se encargan de manipular la información del **Estado Inicial**, donde estas funciones se encargan de modificar la información del **Estado Inicial**. Para crear **Acciones** se debe utilizar la siguiente estructura:
+
+`GlobalActions.js`
+
+```jsx
+export const setUsuario = (dispatch, usuario) =>
+  dispatch({ type: "SET_USUARIO", payload: usuario });
+
+export const clearUsuario = (dispatch) => dispatch({ type: "CLEAR_USUARIO" });
+```
+
+### Reducer
+
+El **Reducer** es el encargado de modificar la información del **Estado Inicial**, donde este se encarga de recibir las **Acciones** y modificar la información del **Estado Inicial**. Para crear un **Reducer** se debe utilizar la siguiente estructura:
+
+`GlobalReducer.js`
+
+```jsx
+export const GlobalReducer = (state, action) => {
+  switch (action.type) {
+    case "SET_USUARIO":
+      return { ...state, usuario: action.payload };
+    case "CLEAR_USUARIO":
+      return { ...state, usuario: "" };
+
+    default:
+      return state;
+  }
+};
+```
+
+### Provider
+
+El **Provider** es el encargado de proporcionar la información a los componentes hijos, donde este se encarga de almacenar la información del **Estado Inicial** y proporcionarla a los componentes hijos. Para crear un **Provider** se debe utilizar la siguiente estructura:
+
+`GlobalProvider.jsx`
+
+```jsx
+export const GlobalProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(GlobalReducer, GlobalState);
+
+  return (
+    <GlobalContext.Provider value={{ state, dispatch }}>
+      {children}
+    </GlobalContext.Provider>
+  );
+};
+```
+
+### Colocación del Provider
+
+Para que el **Provider** pueda ser utilizado en los componentes hijos, se debe colocar en donde es requerido, aunque sea tentador colocarlo en el componente raiz, no es recomendable, ya que puede causar problemas de rendimiento. Para colocar el **Provider** se debe plantear correctamente el alcance que deseas que tenga este **Provider**, asi que antes de colocarlo, plantea si es necesario que **TODOS** los componentes van a requerir accesar a la información del **Provider** o solamente es un modulo aislado que solo requiere lo necesario para si mismo.
+
+`App.js`
+
+```jsx
+import { GlobalProvider } from "./GlobalProvider";
+
+function App() {
+  return (
+    <GlobalProvider>
+      <Componente />
+    </GlobalProvider>
+  );
+}
+```
+
+### Consumir el Provider
+
+Para consumir el **Provider** en los componentes hijos, se debe utilizar el **Hook** `useContext` que proporciona **React**. Para consumir el **Provider** se debe utilizar la siguiente estructura:
+
+`Componente.jsx`
+
+```jsx
+import { useContext } from "react";
+import { GlobalContext } from "./GlobalContext";
+
+const Componente = () => {
+  const { state, dispatch } = useContext(GlobalContext);
+
+  return (
+    <div>
+      <h1>{state.usuario}</h1>
+    </div>
+  );
+};
+```
+
+### Funciones personalizadas
+
+A veces es necesario crear funciones personalizadas que no esten relacionadas con el **Estado Inicial**, para esto se puede agregar funciones extras al **Contexto Global**. Para agregar funciones extras al **Contexto Global** se debe utilizar la siguiente estructura:
+
+`GlobalContext.js`
+
+```jsx
+import React, { createContext, useReducer } from "react";
+
+const GlobalContext = createContext({
+  state: GlobalState,
+  dispatch: () => {},
+  // Funciones extras
+  logoutAndRedirect: () => {},
+});
+```
+
+`GlobalProvider.jsx`
+
+```jsx
+export const GlobalProvider = ({ children }) => {
+  const navigate = useNavigate();
+  const [state, dispatch] = useReducer(GlobalReducer, GlobalState);
+
+  const logoutAndRedirect = () => {
+    dispatch({ type: "CLEAR_USUARIO" });
+    navigate("/");
+  };
+
+  return (
+    <GlobalContext.Provider value={{ state, dispatch, logoutAndRedirect }}>
+      {children}
+    </GlobalContext.Provider>
+  );
+};
+```
+
+Recomiendo altamente utilizar las funciones personalizadas cuando se requiere trabajar con el estado del **Provider** e involucra otros procesos o gestionamiento de muchos cambios en el estado. Esto con el fin de _reducir_ la cantidad de código que puede llegar a involucrarse en el lado de la **Vista**, y _mantener_ un orden en la estructura del **Provider**, promoviendo asi la reutilización de código y la escalabilidad del mismo.
+
+## Crear un Provider en React con TypeScript
+
+Para crear un **Provider** en **React** con **TypeScript**, se debe seguir la misma estructura que se utiliza en **JavaScript**, pero con la diferencia de que se debe definir el tipo de dato que se va a utilizar en el **Estado Inicial** y en las **Acciones**.
+
+### Modelo
+
+El **Modelo** son los tipos de datos que va a contener el **Estado Inicial**, donde estos deben ser independientes del **Estado Inicial** y no deben tener relacion directa. Para crear un **Modelo** se debe utilizar la siguiente estructura:
+
+`Usuario.ts`
+
+```tsx
+export interface Usuario {
+  usuario: string;
+}
+```
+
+### Estado Inicial
+
+El **Estado Inicial** es el encargado de almacenar la información que se va a utilizar en los componentes hijos, y se encarga de proporcionar la información a los componentes hijos. Es importante respetar los modelos planteados y no hacer dependiente el **Estado** con el **_Modelo_**, estos deben ser independientes y no deben tener relacion directa.
+
+Para crear un **Estado Inicial** se debe utilizar la siguiente estructura:
+
+`GlobalState.ts`
+
+```tsx
+import { GlobalModel } from "./GlobalModel";
+
+// La definicion del modelo de nuestro Estado
+export type GlobalState = {
+  usuario?: Usuario;
+};
+
+// Estado con el que se arranca al inicio
+// Se puede extraer información local
+export const initialState: GlobalState = {
+  usuario: { usuario: null },
+};
+```
+
+### Acciones
+
+Las **Acciones** son las funciones que se encargan de manipular la información del **Estado Inicial**, donde estas funciones se encargan de modificar la información del **Estado Inicial**. Para crear **Acciones** se debe utilizar la siguiente estructura:
+
+`GlobalActions.ts`
+
+```tsx
+import { Dispatch } from "react";
+
+export type GlobalActions =
+  | { type: "SET_USUARIO"; payload: Usuario }
+  | { type: "CLEAR_USUARIO" };
+```
+
+### Reducer
+
+El **Reducer** es el encargado de modificar la información del **Estado Inicial**, donde este se encarga de recibir las **Acciones** y modificar la información del **Estado Inicial**. Para crear un **Reducer** se debe utilizar la siguiente estructura:
+
+`GlobalReducer.ts`
+
+```tsx
+import { GlobalState } from "./GlobalState";
+
+export const GlobalReducer = (
+  state: GlobalState,
+  action: GlobalActions
+): GlobalState => {
+  switch (action.type) {
+    case "SET_USUARIO":
+      return { ...state, usuario: action.payload };
+    case "CLEAR_USUARIO":
+      return { ...state, usuario: { usuario: null } };
+
+    default:
+      return state;
+  }
+};
+```
+
+### Contexto Global
+
+El **Contexto Global** es el encargado de almacenar la información que se va a utilizar en los componentes hijos, y se encarga de proporcionar la información a los componentes hijos. Para crear un **Contexto Global** se debe utilizar la siguiente estructura:
+
+`GlobalContext.ts`
+
+```tsx
+import { createContext } from "react";
+import { GlobalState } from "./GlobalState";
+
+export const GlobalContext = createContext<{
+  state: GlobalState;
+  dispatch: Dispatch<GlobalActions>;
+}>({
+  state: initialState,
+  dispatch: () => {},
+  // Funciones extras
+});
+```
+
+### Provider
+
+El **Provider** es el encargado de proporcionar la información a los componentes hijos, donde este se encarga de almacenar la información del **Estado Inicial** y proporcionarla a los componentes hijos. Para crear un **Provider** se debe utilizar la siguiente estructura:
+
+`GlobalProvider.tsx`
+
+```tsx
+import { useReducer } from "react";
+import { GlobalContext } from "./GlobalContext";
+import { GlobalReducer } from "./GlobalReducer";
+import { initialState } from "./GlobalState";
+
+type GlobalProviderProps = {
+  children: ReactNode | ReactNode[];
+};
+
+export default function GlobalProvider({ children }: GlobalProviderProps) {
+  const [state, dispatch] = useReducer(GlobalReducer, initialState);
+
+  return (
+    <GlobalContext.Provider value={{ state, dispatch }}>
+      {children}
+    </GlobalContext.Provider>
+  );
+}
+```
+
+### Colocación del Provider
+
+Para que el **Provider** pueda ser utilizado en los componentes hijos, se debe colocar en donde es requerido, aunque sea tentador colocarlo en el componente raiz, no es recomendable, ya que puede causar problemas de rendimiento. Para colocar el **Provider** se debe plantear correctamente el alcance que deseas que tenga este **Provider**, asi que antes de colocarlo, plantea si es necesario que **TODOS** los componentes van a requerir accesar a la información del **Provider** o solamente es un modulo aislado que solo requiere lo necesario para si mismo.
+
+`App.tsx`
+
+```tsx
+import GlobalProvider from "./GlobalProvider";
+
+function App() {
+  return (
+    <GlobalProvider>
+      <Componente />
+    </GlobalProvider>
+  );
+}
+```
+
+### Consumir el Provider
+
+Para consumir el **Provider** en los componentes hijos, se debe utilizar el **Hook** `useContext` que proporciona **React**. Para consumir el **Provider** se debe utilizar la siguiente estructura:
+
+`Componente.tsx`
+
+```tsx
+import { useContext } from "react";
+import { GlobalContext } from "./GlobalContext";
+
+const Componente = () => {
+  const { state, dispatch } = useContext(GlobalContext);
+
+  return (
+    <div>
+      <h1>{state.usuario.usuario}</h1>
+    </div>
+  );
+};
+```
+
+### Funciones personalizadas
+
+A veces es necesario crear funciones personalizadas que no esten relacionadas con el **Estado Inicial**, para esto se puede agregar funciones extras al **Contexto Global**. Para agregar funciones extras al **Contexto Global** se debe utilizar la siguiente estructura:
+
+`GlobalContext.ts`
+
+```tsx
+import { createContext } from "react";
+import { GlobalState } from "./GlobalState";
+
+export const GlobalContext = createContext<{
+  state: GlobalState;
+  dispatch: Dispatch<GlobalActions>;
+  // Funciones extras
+  logoutAndRedirect: () => void;
+}>({
+  state: initialState,
+  dispatch: () => {},
+  // Funciones extras
+  logoutAndRedirect: () => {},
+});
+```
+
+`GlobalProvider.tsx`
+
+```tsx
+import { useReducer } from "react";
+import { GlobalContext } from "./GlobalContext";
+import { GlobalReducer } from "./GlobalReducer";
+import { initialState } from "./GlobalState";
+
+type GlobalProviderProps = {
+  children: ReactNode | ReactNode[];
+};
+
+export default function GlobalProvider({ children }: GlobalProviderProps) {
+  const navigate = useNavigate();
+  const [state, dispatch] = useReducer(GlobalReducer, initialState);
+
+  const logoutAndRedirect = () => {
+    dispatch({ type: "CLEAR_USUARIO" });
+    navigate("/");
+  };
+
+  return (
+    <GlobalContext.Provider value={{ state, dispatch, logoutAndRedirect }}>
+      {children}
+    </GlobalContext.Provider>
+  );
+}
+```
+
+Recomiendo altamente utilizar las funciones personalizadas cuando se requiere trabajar con el estado del **Provider** e involucra otros procesos o gestionamiento de muchos cambios en el estado. Esto con el fin de _reducir_ la cantidad de código que puede llegar a involucrarse en el lado de la **Vista**, y _mantener_ un orden en la estructura del **Provider**, promoviendo asi la reutilización de código y la escalabilidad del mismo.
