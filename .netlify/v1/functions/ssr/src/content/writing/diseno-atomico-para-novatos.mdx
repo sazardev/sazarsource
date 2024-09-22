@@ -1,0 +1,166 @@
+---
+title: Diseño atómico para novatos
+description: Aprende a utilizar el diseño atómico
+pubDate: 01 Oct 2024
+---
+
+El diseño atómico es una metodología de diseño que se basa en la creación de componentes de interfaz de usuario. Estos componentes se dividen en cinco categorías: átomos, moléculas, organismos, plantillas y páginas. Cada una de estas categorías representa un nivel de complejidad creciente.
+
+Considere que este patrón de arquitectura solo se aplica en la creación de componentes, no en la arquitectura de carpetas, aunque puede nombrar las carpetas de la misma forma que los componentes o con la categoria que le corresponda según el componente a desarrollar en el diseño atómico.
+
+## Átomos
+
+Los átomos son los componentes más básicos de la interfaz de usuario. Estos componentes son indivisibles y no pueden descomponerse en partes más pequeñas. Algunos ejemplos de átomos son los botones, los campos de texto y las etiquetas.
+
+Capte que los átomos no tienen lógica de negocio, solo presentan información. Por lo tanto, los átomos no deben contener lógica de negocio. No deben realizar llamadas a la API, ni manejar el estado de la aplicación. Son componentes puramente visuales y deben ser reutilizables en cualquier parte de la aplicación.
+
+Un componente de tipo átomo debe ser agnóstico a la lógica de negocio, y debe ser reutilizable en cualquier parte de la aplicación. No utilice nombres de clases que hagan referencia a la lógica de negocio, ni nombres de clases que hagan referencia a la ubicación del componente en la aplicación. Deben ser nombres completamente genéricos, fáciles de entender, recordar y extremadamente obvios en su uso.
+
+### Ejemplo de átomos
+
+```tsx
+import React from 'react';
+
+interface Props = {
+    label: string;
+    onClick: () => void;
+    children: React.ReactNode;
+};
+
+const Button = ({ label, onClick, children }: Props) => (
+    <button onClick={onClick}>
+        {label}
+        {children}
+    </button>
+);
+```
+
+En este ejemplo el componente `Button` es un átomo, ya que es un componente básico que no puede descomponerse en partes más pequeñas. El componente `Button` recibe tres propiedades: `label`, `onClick` y `children`. La propiedad `label` es el texto que se mostrará en el botón, la propiedad `onClick` es la función que se ejecutará cuando se haga clic en el botón y la propiedad `children` es el contenido que se mostrará dentro del botón. El componente `Button` no tiene lógica de negocio, solo presenta información. Nótese ademas que su nombre es completamente generico y no hace referencia a la lógica de negocio, ni a la ubicación del componente en la aplicación.
+
+## Moléculas
+
+Las moléculas son componentes que se componen de uno o más átomos. Estos componentes son más complejos que los átomos, pero siguen siendo componentes básicos que no pueden descomponerse en partes más pequeñas. Algunos ejemplos de moléculas son los formularios, las tarjetas y los menús.
+
+Capte que las moléculas no tienen lógica de negocio, solo presentan información. Por lo tanto, las moléculas no deben contener lógica de negocio. No deben realizar llamadas a la API, ni manejar el estado de la aplicación. Son componentes puramente visuales y deben ser reutilizables en cualquier parte de la aplicación.
+
+Un componente de tipo molécula debe ser agnóstico a la lógica de negocio, y debe ser reutilizable en cualquier parte de la aplicación. No utilice nombres de clases que hagan referencia a la lógica de negocio, ni nombres de clases que hagan referencia a la ubicación del componente en la aplicación. Deben ser nombres completamente genéricos, fáciles de entender, recordar y extremadamente obvios en su uso.
+
+### Ejemplo de moléculas
+
+```tsx
+import React from 'react';
+
+interface Props = {
+    title: string;
+    children: React.ReactNode;
+};
+
+const Card = ({ title, children }: Props) => (
+    <div>
+        <h2>{title}</h2>
+        {children}
+    </div>
+);
+```
+
+En este ejemplo el componente `Card` es una molécula, ya que es un componente que se compone de uno o más átomos. El componente `Card` recibe dos propiedades: `title` y `children`. La propiedad `title` es el título que se mostrará en la tarjeta y la propiedad `children` es el contenido que se mostrará dentro de la tarjeta. El componente `Card` no tiene lógica de negocio, solo presenta información. Nótese ademas que su nombre es completamente generico y no hace referencia a la lógica de negocio, ni a la ubicación del componente en la aplicación.
+
+## Organismos
+
+Los organismos son componentes que se componen de uno o más átomos y moléculas. Estos componentes son más complejos que los átomos y las moléculas, ya que pueden descomponerse en partes más pequeñas. Algunos ejemplos de organismos son los encabezados, los pies de página y los menús de navegación.
+
+Capte que los organismos puede llegar a tener lógica de negocio, ya que pueden manejar el estado de la aplicación y realizar llamadas a la API.
+
+Para este punto debe notar que un `Organismo` puede llegar a ser el `Appbar` de su aplicacion o el `Drawer` puede verse sumamente tentado a colocar la lógica de negocio en estos componentes, pero es recomendable delegar la lógica de negocio a los contenedores, sea cuidadoso, ya que es donde mas errores puede cometer. Pero entiendase que el diseño atómico busca en todo momento estar debilmente acoplado en cualquier momento y no depender de ningun otro. Si el dia de manaña se decide cambiar la lógica de negocio, no deberia afectar en nada a los componentes de la aplicación.
+
+### Ejemplo de organismos
+
+#### `Drawer.tsx`
+
+```tsx
+import React from 'react';
+
+interface Props = {
+    open: boolean;
+    onClose: () => void;
+    children: React.ReactNode;
+};
+
+const Drawer = ({ open, onClose, children }: Props) => (
+    <div style={{ display: open ? 'block' : 'none' }}>
+        <button onClick={onClose}>Cerrar</button>
+        {children}
+    </div>
+);
+```
+
+En este ejemplo el componente `Drawer` es un organismo, ya que es un componente que se compone de uno o más átomos y moléculas. El componente `Drawer` recibe tres propiedades: `open`, `onClose` y `children`. La propiedad `open` es un booleano que indica si el cajón está abierto o cerrado, la propiedad `onClose` es la función que se ejecutará cuando se cierre el cajón y la propiedad `children` es el contenido que se mostrará dentro del cajón. El componente `Drawer` puede tener lógica de negocio, ya que puede manejar el estado de la aplicación y realizar llamadas a la API. Pero
+intente a toda costa mantenerlo afuera de este componente.
+
+## Plantillas
+
+Las plantillas son componentes que se componen de uno o más átomos, moléculas y organismos. Algunos ejemplos de plantillas son las páginas de inicio, las páginas de perfil y las páginas de configuración.
+
+Se da la confusion normalmente entre `Molecula` y `Plantilla`, ya que en teoria suenan similares. Pero es importante que note la diferencia entre ambas. No intente sobreanalizar o sobrecomplicar las cosas, si un componente se compone de uno o más `Moleculas` y `Organismos`, entonces es una `Plantilla`. Si un componente se compone de uno o más `Atomos` y `Moleculas`, entonces es una `Molecula`.
+
+### Ejemplo de plantillas
+
+#### `ProfileLayout.tsx`
+
+```tsx
+import React from 'react';
+
+import Header from './Header';
+import Card from './Card';
+import Button from './Button';
+
+interface Props = {
+    title: string;
+    children: React.ReactNode;
+};
+
+const ProfileLayout = ({ title, children }: Props) => (
+    <div>
+        <Header title={title} />
+        <Card title="Perfil">
+            {children}
+        </Card>
+    </div>
+);
+```
+
+En este ejemplo el componente `ProfileLayout` es una plantilla, ya que es un componente que se compone de uno o más átomos, moléculas y organismos. El componente `ProfileLayout` recibe dos propiedades: `title` y `children`. La propiedad `title` es el título que se mostrará en la página de perfil y la propiedad `children` es el contenido que se mostrará dentro de la página de perfil. El componente `ProfileLayout` puede tener lógica de negocio, ya que puede manejar el estado de la aplicación y realizar llamadas a la API. Pero repitiendo de nuevo, aunque este tentado a colocar la lógica de negocio en este componente, se recomienda delegar la lógica de negocio a los contenedores, debido que mientras mas limpio y agnóstico mantenga la plantilla, mas veces se podra reutilizar en la aplicación.
+
+Por favor, sea cuidadoso en el nivel de plantilla, ya que es el nivel donde mas errores puede cometer. Si el dia de manaña se decide cambiar la lógica de negocio, no deberia afectar en nada a los componentes de la aplicación.
+
+## Páginas
+
+Las páginas son mucho mas fáciles de entender, debido a que es explicitamente lo que el usuario entiende como una página. La pagina es el nivel mas alto de la jerarquia de componentes, y aqui es donde se hace el cloromerado de todos los componentes que se han creado en los niveles anteriores.
+
+Aqui puede ignorar la regla de no colocar lógica de negocio en los componentes, ya que en este nivel es donde se debe colocar toda la lógica de negocio de la aplicación. Aqui es donde se debe manejar el estado de la aplicación y realizar llamadas a la API.
+
+### Ejemplo de páginas
+
+#### `ProfilePage.tsx`
+
+```tsx
+import React from "react";
+
+import ProfileLayout from "./ProfileLayout";
+
+const ProfilePage = () => (
+  <ProfileLayout title="Perfil">
+    <form>
+      <label>Nombre</label>
+      <input type="text" />
+      <label>Apellido</label>
+      <input type="text" />
+      <Button label="Guardar" onClick={() => console.log("Guardar")} />
+    </form>
+  </ProfileLayout>
+);
+```
+
+## Referencias
+
+- [Atomic Design Methodology](https://atomicdesign.bradfrost.com/chapter-2/?source=post_page-----2bb4d9ca5f97--------------------------------)
