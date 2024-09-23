@@ -1,12 +1,10 @@
 ---
-import { Dots } from "@components/misc";
-
-const { title, description, slug, ship_count } = Astro.props;
+const { title, slug } = Astro.props;
 ---
 
-<a href={`/ships/${slug}`}>
-	<!-- sronly h3 -->
-	<h3 class='sr-only'>{title}</h3>
-	<p class='sr-only'>{description} ships</p>
-	<Dots ship_count={ship_count} />
+<a
+  class="transition duration-300 ease-in-out transform hover:scale-105 bg-red-300 p-4"
+  href={`/products/${slug}`}
+>
+  <h1>{title}</h1>
 </a>
