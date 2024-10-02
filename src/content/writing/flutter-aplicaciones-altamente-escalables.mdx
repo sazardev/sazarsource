@@ -1,0 +1,409 @@
+---
+title: "Flutter: Aplicaciones altamente escalables"
+description: "En este artículo te enseñaré cómo estructurar tu proyecto de Flutter para que sea altamente escalable."
+pubDate: "02 Oct 2024"
+---
+
+## Introducción
+
+Flutter es una de las herramientas más populares para el desarrollo de aplicaciones multiplataforma, y no por menos, el solo hecho de escribir una vez y tener aplicaciones para Android, iOS, Web, Linux, Windows, MacOS, es algo que atrae a muchos desarrolladores y empresas. Desarrollar con Flutter es muy sencillo, tiene toda una lista de widgets que te permiten crear aplicaciones de manera rápida y sencilla, pero, ¿qué pasa cuando tu aplicación crece? Es aqui donde muchos encuentran un gran tope. Flutter no te dice como estructurar tu proyecto, como organizar tus carpetas, como manejar el estado de tu aplicación, como hacer que tu aplicación sea altamente escalable, etc. Es por eso que en este libro te enseñare a estructurar tu proyecto de Flutter de tal manera que sea altamente escalable, y no solo eso, te enseñare a crear aplicaciones con Flutter de manera sencilla y clara.
+
+## Este libro es para ti?
+
+Antes de enlistar el perfil de personas a las que va dirigido este libro, quiero mencionarte que la programación es para cualquier persona, existen millones de casos de personas que solo eran cajeros, meseros, etc. Y por alguna razon, hobbie, curiosidad o ganas de aprender, se adentraron en el mundo de la programación y ahora son desarrolladores de software.
+
+Asi que si te apasiona la siquiera idea de la programación, este libro es para ti. Te guiare paso a paso en el desarrollo de aplicaciones con Flutter, pero a su vez te enseñare a estructurar tu proyecto de tal manera que sea altamente escalable, el cual muy pronto abordaremos que significa esto.
+
+### Este libro es para ti si:
+
+- Eres una persona con poca o nula experiencia en Flutter.
+- Eres un desarrollador, diseñador o emprendedor que desea aprender a crear aplicaciones.
+- Eres un desarrollador el cual tiene problemas a la hora de escalar sus aplicaciones.
+- Un apasionado de la programación que desea aprender Flutter.
+
+### Que aprenderás?
+
+En este libro nos centraremos primero en que aprendas de manera sencilla y clara el lenguaje de programación que utiliza Flutter, Dart. Luego te enseñare a crear aplicaciones con Flutter, donde seran aplicaciones muy basicas al inicio, pero no te preocupes, conforme avancemos en el libro, las aplicaciones seran mas complejas pero la teoria no. Mi enfoque numero uno es que entiendas por completo todo lo que se esta haciendo y el porque se esta haciendo.
+
+Veremos ademas patrones de diseño, arquitecturas, buenas practicas y todo lo necesario para que tu aplicacion sea altamente escalable y te conviertas en un increible desarrollador de aplicaciones multiplataforma con Flutter!
+
+## Introducción a la programación
+
+Si es la primera vez que has leido un libro de programación, no te preocupes, en este libro te enseñare todo lo necesario para que puedas entender y seguir el contenido, dado que busco que este libro sea para cualquier persona, no importa si tienes experiencia en programación o no.
+
+Es por ello que en este capitulo se vera toda la teoria basica para entender la programación, si ya tienes experiencia en programación, puedes saltarte este capitulo sin ningun problema, pero si deseas repasar o aprender algo nuevo, te invito a que sigas leyendo.
+
+### ¿Qué es la programación?
+
+La programación es un concepto increiblemente amplio, donde no busco entrar en complejidad, pero quisiera que lo entendamos con un ejemplo muy sencillo y facil de llevar.
+
+Imagina que tienes una receta de cocina, en esta receta te dice que necesitas los siguientes ingredientes: 1 taza de azucar, 2 tazas de harina, 3 huevos, etc. Y te dice que debes seguir los siguientes pasos: mezclar la harina con el azucar, batir los huevos, etc.
+
+La programación es exactamente lo mismo, pero en lugar de seguir una receta de cocina, seguimos una receta de programación. En esta receta de programación, nos dice que necesitamos los siguientes ingredientes: variables, funciones, ciclos, condicionales, etc. Y nos dice que debemos seguir los siguientes pasos: declarar una variable, llamar una función, hacer un ciclo, etc.
+
+Entonces, cuando estamos "programando" lo que estamos haciendo es crear una receta de cocina, para que la computadora pueda leer esa receta y cocinar con los pasos que le hemos dado. Una frase que siempre me ha gustado es:
+
+> La computadora es un ser muy estupido, pero si le dices exactamente que hacer, lo hara sin preguntar.
+
+Teniendo esto en mente, al momento de considerarte un programador, debes tener en cuenta que estas creando recetas de cocina para la computadora, y que debes ser muy claro y preciso en los pasos que le das a la computadora. Si no eres claro y preciso, la computadora no sabra que hacer y te mostrara un error. Es por eso que le decimos a la computadora una inteligencia muy estupida, ya que no puede adivinar lo que queremos hacer, debemos ser increiblemente explicitos con nuestra instruccion. Si le decimos: "Hazme un sandwich", la computadora no sabra que hacer, pero si le decimos: "Toma dos rebanadas de pan, ponle jamon, queso y mostaza, y ponle la otra rebanada de pan encima", la computadora sabra exactamente que hacer.
+
+### ¿Qué es un lenguaje de programación?
+
+Como podrias intuir, un lenguaje de programación es un lenguaje que utilizamos para comunicarnos con la computadora. Al igual que tu hablas español, ingles, frances, etc. La computadora habla un lenguaje de programación. Existen muchos lenguajes de programación, algunos muy populares son: JavaScript, Python, Java, C++, C#, Ruby, etc. Donde en nuestro caso, le hablaremos a la computadora en Dart. Asi que felicidades, vas a aprender un nuevo idioma llamado Dart! (Aunque solo te va a entender la computadora).
+
+### ¿Qué es un algoritmo?.
+
+Asi como usamos un lenguaje para hablarle a la computadora, tambien debemos decirle que hacer. Cuando nos referimos a decirle que hacer, hablamos de decirle los pasos que debe seguir para realizar una tarea. A estos pasos los llamamos algoritmos. Un algoritmo es una serie de pasos que debemos seguir para realizar una tarea. Por ejemplo, si queremos abrir un libro en la pagina 10, el algoritmo seria: "Toma el libro, abrelo, y ve a la pagina 10". Este es un algoritmo muy sencillo, pero los algoritmos pueden ser muy complejos, como por ejemplo, un algoritmo para ordenar un libro de 1000 paginas de manera ascendente pero solo con los numeros pares. Este algoritmo seria mucho mas complejo, pero al final del dia, un algoritmo es una serie de pasos que debemos seguir para realizar una tarea.
+
+#### Ejemplo de algoritmo
+
+Ya vimos la teoria, ahora veamos un ejemplo de un algoritmo muy sencillo. Imagina que queremos hacer un algoritmo para hacer spaghetti. El algoritmo seria el siguiente:
+
+1. Toma una olla.
+2. Llena la olla con agua.
+3. Pon la olla en la estufa.
+4. Enciende la estufa.
+5. Espera a que el agua hierva.
+6. Agrega sal al agua.
+7. Agrega los spaghetti al agua.
+8. Espera 10 minutos.
+9. Apaga la estufa.
+10. Escurre los spaghetti.
+11. Sirve los spaghetti en un plato.
+12. Agrega salsa a los spaghetti.
+13. Disfruta tus spaghetti.
+
+Este algoritmo quiza le parece algo rustico la manera de como se expresa tan explicitamente, pero es la manera en la que la computadora entiende, entonces siempre ten en mente de que el algoritmo debe ser lo mas especifico posible. Y bueno, es hora de que te conviertas en un chef de la programación!
+
+#### Variables en algoritmos
+
+En el ejemplo anterior vimos un algoritmo de como cocinar spaghetti, pero... y si existe otro alimento que se pueda cocinar de la misma manera? Por ejemplo, en vez de usar la pasta spaghetti usamos la pasta penne. El algoritmo seria el mismo, pero con un pequeño cambio. Bingo, aqui es donde entran las variables. Las variables son una manera de almacenar información en un algoritmo. Por ejemplo, en el algoritmo de los spaghetti, podriamos tener una variable llamada `tipoDePasta` que almacene el tipo de pasta que estamos cocinando. Asi que el algoritmo seria algo asi:
+
+`tipoDePasta = "penne"`
+
+1. Toma una olla.
+2. Llena la olla con agua.
+3. Pon la olla en la estufa.
+4. Enciende la estufa.
+5. Espera a que el agua hierva.
+6. Agrega sal al agua.
+7. Agrega los `tipoDePasta` al agua.
+8. Espera 10 minutos.
+9. Apaga la estufa.
+10. Escurre los `tipoDePasta`.
+11. Sirve los `tipoDePasta` en un plato.
+12. Agrega salsa a los `tipoDePasta`.
+13. Disfruta tus `tipoDePasta`.
+
+Quiza aqui ya estes levantando la ceja de porque se esta repitiendo tanto la palabra `tipoDePasta`, pero imagina que te dicen que debes cocinar 10 tipos de pasta diferentes, si no usas una variable, tendrias que escribir el algoritmo 10 veces, pero si usas una variable, solo tendrias que cambiar el valor de la variable y listo, ya tienes el algoritmo para cocinar 10 tipos de pasta diferentes.
+
+Para la computadora es lo mismo, cuando usamos variables, es como si le dieramos una caja donde puede guardar informacion, y cuando necesite esa informacion, solo tiene que abrir la caja y listo, ahi esta la informacion.
+
+#### Condicionales en algoritmos
+
+En el ejemplo anterior vimos un algoritmo de como cocinar spaghetti, pero... y si queremos hacer spaghetti con salsa de tomate o spaghetti con salsa de queso? Aqui es donde entran los condicionales. Los condicionales son una manera de tomar decisiones en un algoritmo. Por ejemplo, en el algoritmo de los spaghetti, podriamos tener un condicional que diga: "Si la salsa es de tomate, agrega salsa de tomate, si la salsa es de queso, agrega salsa de queso". Asi que el algoritmo seria algo asi:
+
+`tipoDeSalsa = "tomate"`
+`tipoDePasta = "penne"`
+
+1. Toma una olla.
+2. Llena la olla con agua.
+3. Pon la olla en la estufa.
+4. Enciende la estufa.
+5. Espera a que el agua hierva.
+6. Agrega sal al agua.
+7. Agrega los `tipoDePasta` al agua.
+8. Espera 10 minutos.
+9. Apaga la estufa.
+10. Escurre los `tipoDePasta`.
+11. Sirve los `tipoDePasta` en un plato.
+12. Si `tipoDeSalsa` es igual a "tomate", agrega salsa de tomate sino agrega salsa de queso.
+13. Disfruta tus `tipoDePasta`.
+
+En este caso, el condicional es el paso 12, donde dependiendo del valor de la variable `tipoDeSalsa`, se agrega una salsa u otra. Este es el gran poder de los condicionales, nos permiten tomar decisiones en un algoritmo y en el caso de la persona que se va a comer los spaghetti, le permite elegir que salsa quiere en su spaghetti, dado que puede que quiera comer pasta pero no esta la salsa que le gusta y opta por otra.
+
+#### Ciclos en algoritmos
+
+En el ejemplo anterior vimos un algoritmo de como cocinar spaghetti, pero... y si queremos cocinar spaghetti para 10 personas? Aqui es donde entran los ciclos. Los ciclos son una manera de repetir una tarea en un algoritmo, cada vez que se cicla se ira sumando uno constantemente. Por ejemplo, en el algoritmo de los spaghetti, podriamos tener un ciclo que diga: "Repite los pasos 1 al 13 para cada persona". Asi que el algoritmo seria algo asi:
+
+`tipoDeSalsa = "tomate"`
+`tipoDePasta = "penne"`
+`cantidadDePersonas = 10`
+
+1. Para cada persona de 1 a `cantidadDePersonas` haz:
+   1. Toma una olla.
+   2. Llena la olla con agua.
+   3. Pon la olla en la estufa.
+   4. Enciende la estufa.
+   5. Espera a que el agua hierva.
+   6. Agrega sal al agua.
+   7. Agrega los `tipoDePasta` al agua.
+   8. Espera 10 minutos.
+   9. Apaga la estufa.
+   10. Escurre los `tipoDePasta`.
+   11. Sirve los `tipoDePasta` en un plato.
+   12. Si `tipoDeSalsa` es igual a "tomate", agrega salsa de tomate sino agrega salsa de queso.
+   13. Disfruta tus `tipoDePasta`.
+
+En este caso, el ciclo es el paso 1, donde se repiten los pasos 1 al 13 para cada persona. Este es el gran poder de los ciclos, nos permiten repetir una tarea en un algoritmo y en el caso de la persona que se va a comer los spaghetti, le permite cocinar spaghetti para 10 personas sin tener que hacer el algoritmo 10 veces, aunque claro, lo ideal seria tener una olla mas grande para cocinar para 10 personas, pero eso ya es otro tema.
+
+#### Funciones en algoritmos
+
+Continuando con el ejemplo de la cocina, ahora ampliemos mucho mas el concepto, imaginemos que vienen 100 personas que quieren nuestro famoso y deliciosa pasta spaghetti o penne, y que ademas quieren 3 tipos de salsa diferentes, donde 33 personas quieren spaghetti con tomate, otros 33 quieren penne con queso y los restantes spaghetti con queso.
+
+Quiza ya has hecho el algoritmo mental para solventar esta problematica, muy probablemente pienses en poner condiciones a partir de la cantidad de personas y el tipo de salsa, pero... y si te digo que puedes hacer una funcion que haga todo eso por ti? Asi es, las funciones son exactamente eso en la programación, son una manera de agrupar un conjunto de pasos en un solo paso.
+
+Por ejemplo, en el algoritmo de los spaghetti, podriamos tener una funcion que se llame `cocinarSpaghetti` que haga todo el proceso de cocinar spaghetti, pero esta funcion le vamos a "mandar" informacion para que la funcion sepa que tipo de pasta cocinar y que tipo de salsa agregar. Asi que el algoritmo seria algo asi:
+
+`cantidadDePersonas = 100`
+
+1. Para cada persona de 1 a `cantidadDePersonas` haz:
+
+   1. Si la `cantidadDePersonas` es menor o igual a 33, llama a la funcion `cocinarSpaghetti` con los parametros `tipoDePasta = "spaghetti"` y `tipoDeSalsa = "tomate"`.
+   2. Si la `cantidadDePersonas` es mayor a 33 y menor o igual a 66, llama a la funcion `cocinarSpaghetti` con los parametros `tipoDePasta = "penne"` y `tipoDeSalsa = "queso"`.
+   3. Si la `cantidadDePersonas` es mayor a 66, llama a la funcion `cocinarSpaghetti` con los parametros `tipoDePasta = "spaghetti"` y `tipoDeSalsa = "queso"`.
+
+   `funcion cocinarSpaghetti(tipoDePasta, tipoDeSalsa)`
+
+   1. Toma una olla.
+   2. Llena la olla con agua.
+   3. Pon la olla en la estufa.
+   4. Enciende la estufa.
+   5. Espera a que el agua hierva.
+   6. Agrega sal al agua.
+   7. Agrega los `tipoDePasta` al agua.
+   8. Espera 10 minutos.
+   9. Apaga la estufa.
+   10. Escurre los `tipoDePasta`.
+   11. Sirve los `tipoDePasta` en un plato.
+   12. Si `tipoDeSalsa` es igual a "tomate", agrega salsa de tomate sino agrega salsa de queso.
+   13. Disfruta tus `tipoDePasta`.
+
+Muy bien, veamos el paso a paso de todo lo que acabamos de hacer, no te sientas abrumado, y tampoco temas el releerlo varias veces, yo lo recomendaria, entender las funciones a veces es algo abstracto, pero dejame explicarte detalladatemente lo que acabamos de hacer.
+
+Si te das, cuenta en la seccion donde declaramos nuestras variables, ya no estamos considerando a `tipoDePasta` y `tipoDeSalsa` como variables, si no que ahora se lo "pasamos" a la funcion `cocinarSpaghetti`, esto es lo que se conoce como parametros, los parametros son una manera de pasar informacion a una funcion, para que la funcion sepa que hacer con esa informacion.
+
+Tambien, dada la problematica planteada de que 33 querian spaghetti con tomate, 33 penne con queso y los restantes spaghetti con queso, usamos condicionales para determinar que tipo de pasta y salsa cocinar, pero en lugar de repetir el algoritmo 3 veces, lo que hicimos fue llamar a la funcion `cocinarSpaghetti` con los parametros necesarios para que la funcion sepa que tipo de pasta y salsa cocinar.
+
+Y por ultimo, la funcion `cocinarSpaghetti` es una manera de agrupar un conjunto de pasos en un solo paso, esto es muy util cuando necesitamos hacer una tarea muchas veces, en lugar de repetir los pasos muchas veces, solo llamamos a la funcion y listo, la funcion se encarga de hacer todo lo que tiene que hacer.
+
+Entonces, recapitulemos, una funcion es una manera de agrupar un conjunto de pasos en un solo paso, los parametros son una manera de pasar informacion a una funcion con el fin de que siempre tengamos valores diferentes en cada llamada a la funcion.
+
+### ¿Qué es un programa?
+
+Un programa es el conjunto de algoritmos que le decimos a la computadora que haga. Por ejemplo, el programa vendria siendo el libro completo, donde cada algoritmo seria una pagina del libro.
+
+Entonces, cuando hablamos de programar, estamos creando un conjunto de algoritmos que le decimos a la computadora que haga. Estos algoritmos pueden ser muy sencillos o muy complejos, pero al final del dia, son solo una serie de pasos que debemos seguir para realizar una tarea.
+
+### Resumen
+
+#### Programación
+
+- La programación es crear recetas de cocina para la computadora.
+- La computadora es un ser muy estupido, pero si le dices exactamente que hacer, lo hara sin preguntar.
+
+#### Lenguaje de programación
+
+- Un lenguaje de programación es un lenguaje que utilizamos para comunicarnos con la computadora.
+- Dart es el lenguaje de programación que utiliza Flutter.
+
+#### Algoritmo
+
+- Un algoritmo es una serie de pasos que debemos seguir para realizar una tarea.
+- Los algoritmos son como recetas de cocina para la computadora.
+
+#### Variables
+
+- Las variables son como cajas donde podemos guardar información.
+
+#### Condicionales
+
+- Los condicionales son una manera de tomar decisiones en un algoritmo.
+
+#### Ciclos
+
+- Los ciclos son una manera de repetir una tarea en un algoritmo.
+
+#### Funciones
+
+- Las funciones son una manera de agrupar un conjunto de pasos en un solo paso.
+
+#### Programa
+
+- Un programa es el conjunto de algoritmos que le decimos a la computadora que haga.
+
+#### Ejercicios
+
+Lo se, lo se, muchos odiamos esta seccion en los libros, pero si eres alguien que esta empezando en la programación, te recomendaria que hagas los ejercicios, ya que te ayudaran a entender mejor los conceptos que acabamos de ver. Si hay algun consejo que puedo dar, es que la practica supera a la teoria, asi que no tengas miedo de equivocarte, de hecho, es lo mejor que te puede pasar, ya que de los errores es de donde mas aprendemos. Sobre todo en el mundo de la programación, no tengas miedo a equivocarte, es parte del proceso de aprendizaje, equivocate las veces que sean necesarias, pero aprende de tus errores, asi es como te convertiras en un gran programador.
+
+##### Ejercicio 1
+
+Crea un algoritmo para hacer un sandwich de jamon y queso.
+
+##### Ejercicio 2
+
+Crea un algoritmo para hacer un sandwich de pollo y lechuga.
+
+##### Ejercicio 3
+
+Crea un algoritmo para hacer un sandwich de atun y mayonesa.
+
+##### Ejercicio 4
+
+Crea un algoritmo para hacer un sandwich que pueda ser de jamon y queso, pollo y lechuga o atun y mayonesa. (Usa condicionales).
+
+##### Ejercicio 5
+
+Crea un algoritmo para hacer un sandwich para 10 personas, donde 3 personas quieren sandwich de jamon y queso, 3 personas quieren sandwich de pollo y lechuga y 4 personas quieren sandwich de atun y mayonesa. (Usa ciclos y condicionales).
+
+## Introducción a la programación orientada a objetos
+
+En el capitulo anterior vimos los conceptos basicos de la programación, pero ahora vamos a dar un paso mas alla y vamos a ver la programación orientada a objetos. La programación orientada a objetos es un paradigma de programación que se basa en el concepto de "objetos", donde un objeto es una entidad que tiene un estado y un comportamiento. Por ejemplo, un coche es un objeto que tiene un estado (color, marca, modelo, etc.) y un comportamiento (arrancar, acelerar, frenar, etc.).
+
+La programación orientada a objetos busca simplificar el entendimiento de programar y hacer que el código sea más fácil de entender para nosotros los humanos, la computadora sigue entendiendo lo mismo, pero nosotros los humanos podemos entender mejor el código si seguimos los principios de la programación orientada a objetos. Dado que busca ser mas intuitivo.
+
+### ¿Qué es un objeto?
+
+Volvamos a los ejemplos de la cocina (ya se que te esta dando hambre), imaginemos ahora que tenemos un sandwich, el sandwich en la vida real siendo muy simplistas es un objeto, pero su tipo de objeto seria llamado como un "Alimento" y este alimento tiene unas propiedades que las podemos llamar como "ingredientes" y unas acciones que las podemos llamar como "preparar".
+
+Siendo generalistas, todo "Alimento" tiene ingredientes y se prepara de una manera, no importa cual tipo de alimento sea, ya sea un sandwich, una pizza, una ensalada, etc. Todos los alimentos tienen ingredientes y se preparan de una manera. Entonces, en la programación orientada a objetos, esto es exactamente lo mismo, es un nivel de abstraccion superior para simplificar su entendimiento, con el fin de que para nosotros los humanos sea mas intuitivo entender el código.
+
+Entonces, entrando mas en el tema del objeto, definamoslo de una manera mas formal:
+
+- Un objeto es una entidad que tiene un estado y un comportamiento.
+- El estado de un objeto son las propiedades que tiene.
+- Las propiedades de un objeto son los datos que tiene.
+- El comportamiento de un objeto son las acciones que puede realizar.
+- Las acciones de un objeto son las funciones que tiene.
+
+Entonces, en el caso del sandwich, el estado del sandwich serian los ingredientes que tiene, y el comportamiento del sandwich seria la manera en la que se prepara. Y en la programación orientada a objetos, esto se traduce a que un objeto tiene propiedades y metodos.
+
+### ¿Qué es una clase?
+
+Una clase es una plantilla para crear objetos. Por ejemplo, si tenemos un sandwich, el sandwich seria un objeto, pero la clase del sandwich seria la plantilla para crear el sandwich. La clase del sandwich nos diria que propiedades tiene el sandwich (ingredientes) y que metodos tiene el sandwich (preparar).
+
+Quiza te este sonando muy abstracto, pero no te preocupes, empezar a pensar con abstracciones es algo que se va adquiriendo con el tiempo, pero para simplificarlo, piensa en una clase como un molde para crear objetos, el molde nos dice como se va a crear el objeto, pero no es el objeto en si, el objeto es lo que se crea a partir del molde.
+
+En el ejemplo anterior, el "Molde" es el sandwich, y estamos de acuerdo que un sandwich puede ser muy variado, puede ser de jamon y queso, de pollo y lechuga, de atun y mayonesa, etc. Entonces, la clase del sandwich seria el molde para crear sandwiches, pero el sandwich en si seria el objeto que se crea a partir del molde. Miralo como que cuando alguien pide un sandwich, estas pensando en que haras uno, y sus pasos son los mismos para cualquiera, pero hay que especificar que tipo de sandwich se va a hacer.
+
+#### Una corta historia para entender la clase y el objeto
+
+Jacqueline va a una tienda especializada en sandwiches. Omar es el cocinero y cajero, Jacqueline le pide un sandwich de jamon y queso, Omar sabe que tiene que hacer un sandwich ya conoce los pasos para hacer un sandwich debido a que todos se hacen igual y lo unico que cambia son los ingredientes (Esto es la clase debido a que es la plantilla general en la que se basa para hacer sandwiches), entonces Omar hace el sandwich de jamon y queso y se lo da a Jacqueline (Este es el objeto, ya que es el sandwich que se creo a partir de la clase).
+
+Despues llega a la tienda Juan, Juan le pide un sandwich de pollo y lechuga, Omar sabe que tiene que hacer un sandwich ya conoce los pasos para hacer un sandwich debido a que todos se hacen igual y lo unico que cambia son los ingredientes (Esta utilizando la misma clase, nunca cambio), entonces Omar hace el sandwich de pollo y lechuga y se lo da a Juan (Este es otro nuevo objeto).
+
+### ¿Qué es una propiedad?
+
+Una propiedad es una característica de un objeto. Por ejemplo, si tenemos un sandwich, las propiedades del sandwich serian los ingredientes que tiene. Las propiedades de un objeto son los datos que tiene. Por ejemplo, si tenemos un sandwich de jamon y queso, las propiedades del sandwich serian "jamon" y "queso".
+
+Veamos un ejemplo de una clase:
+
+```dart
+class {
+   jamon;
+   queso;
+}
+```
+
+Aun no entraremos en detalles de como se escribe una clase en codigo, pero quiza ya te estas dando una idea de como se escribe una clase. En este caso, la clase `Sandwich` tiene dos propiedades: `jamon` y `queso`. Estas propiedades son las caracteristicas del sandwich, es decir, los ingredientes que tiene.
+
+### ¿Qué es un método?
+
+Un método es una acción que puede realizar un objeto. Por ejemplo, si tenemos un sandwich, los métodos del sandwich serian las acciones que puede realizar, como "preparar". Los métodos de un objeto son las funciones que tiene. Por ejemplo, si tenemos un sandwich de jamon y queso, los métodos del sandwich serian "preparar".
+
+Veamos un ejemplo de un metodo en una clase:
+
+```dart
+class {
+   jamon;
+   queso;
+
+   preparar() {
+    print('Preparando sandwich de $jamon y $queso');
+  }
+}
+```
+
+### Herencia
+
+La herencia es un concepto crucial en la programación orientada a objetos, no por el hecho de que es algo que se hace habitualmente, pero si por el hecho de que es algo que se debe entender ya que es el nivel mas alto de abstraccion en la programación orientada a objetos. Hablaremos muy detalladatemente de la herencia asi que ajustemos nuestros cinturones.
+
+La herencia visualizalo tal cual como su significado en la vida real, si tu heredas algo de alguien, es porque estas tomando algo de esa persona, ya que aunque le pertenece a alguien mas, ese algo tambien te pertenece a ti, e incluso tienes tus propias cosas que te pertenecen a ti, y mejor aun! puedes modificar lo que te heredaron para que se ajuste a tus necesidades e inclusive puedes heredarle a alguien mas lo que te heredaron a ti!
+
+No es acaso increible la herencia? Aunque aun esta a discusion ciertos temas morales y eticos sobre la herencia... Pensemos de una manera mas fria y pragmatica, la herencia en la programación orientada a objetos es exactamente lo mismo, pero en lugar de heredar cosas, heredamos propiedades y metodos.
+
+Por ejemplo, si tenemos una clase `Animal` y una clase `Perro`, la clase `Perro` hereda de la clase `Animal`, esto significa que la clase `Perro` tiene todas las propiedades y metodos de la clase `Animal`, pero tambien puede tener sus propias propiedades y metodos. Porque pensando de forma abstracta podemos concluir que un `Perro` es un `Animal`, pero un `Animal` no necesariamente es un `Perro`.
+
+Veamos un ejemplo de herencia:
+
+```dart
+class Animal {
+  void comer() {
+    print('El animal esta comiendo');
+  }
+}
+
+class Perro extends Animal {
+  void ladrar() {
+    print('El perro esta ladrando');
+  }
+}
+```
+
+En este caso, la clase `Perro` hereda de la clase `Animal`, esto significa que la clase `Perro` tiene el metodo `comer` de la clase `Animal`, pero tambien tiene su propio metodo `ladrar`. Esto es la herencia en la programación orientada a objetos, una manera de reutilizar codigo y hacer que nuestro codigo sea mas facil de entender.
+
+### Resumen
+
+#### Programación orientada a objetos
+
+- La programación orientada a objetos es un paradigma de programación que se basa en el concepto de "objetos".
+- Un objeto es una entidad que tiene un estado y un comportamiento.
+- El estado de un objeto son las propiedades que tiene.
+- Las propiedades de un objeto son los datos que tiene.
+- El comportamiento de un objeto son las acciones que puede realizar.
+- Las acciones de un objeto son las funciones que tiene.
+
+#### Clase
+
+- Una clase es una plantilla para crear objetos.
+- Una clase nos dice que propiedades y metodos tiene un objeto.
+
+#### Ejercicios
+
+Antes de empezar con los ejercicios, no quiero que uses papel y lapiz, quiero que uses tu imaginación, como programador a veces es dificil pensar de forma generalista y abstracta, pero es algo que se adquiere con el tiempo, asi que no te preocupes si no puedes hacer los ejercicios, pero si te recomendaria que los intentes, ya que te ayudaran a entender mejor los conceptos que acabamos de ver.
+
+Como hacer los ejercicios? Bueno, primero te pondre un ejemplo de como espero que "respondas" al ejercicio y de ahi continua con los ejercicios siguientes.
+
+##### Ejercicio 1
+
+Crea una clase `Persona` e incluye las propiedades de una `Persona`.
+
+###### Respuesta
+
+Analicemos a una `Persona`, que tengo en comun yo con los demas en el mundo? Bueno, todos tenemos un nombre, una edad, una altura, un peso, etc. Entonces, la clase `Persona` tendria las propiedades `nombre`, `edad`, `altura`, `peso`, etc.
+
+> Esta es la solucion al ejercicio, enfocate solo en lo mental, no quiero que hagas nada en codigo, solo piensa en las propiedades que tendria una cierta cosa que se plantea, y echa a volar la imaginacion, incluso una `Persona` podria tener una propiedad llamada `Pais` y ese `Pais` a su vez un `Estado` y el `Estado` una `Ciudad`, y asi sucesivamente, el limite es tu imaginacion!
+
+##### Ejercicio 2
+
+Crea una clase `Coche` e incluye las propiedades de un `Coche`.
+
+##### Ejercicio 3
+
+Crea una clase `Casa` e incluye las propiedades de una `Casa`.
+
+##### Ejercicio 4
+
+Crea una clase `Animal` e incluye las propiedades de un `Animal`.
+
+##### Ejercicio 5
+
+Crea una clase `Perro` que herede de la clase `Animal` e incluye las propiedades de un `Perro`.
+
+## Entendiendo Dart
+
+Dart es el lenguaje de programación que utiliza Flutter, es un lenguaje de programación orientado a objetos, fuertemente tipado y con una sintaxis muy parecida a Java y JavaScript. Si tienes experiencia en alguno de estos lenguajes, te sera muy sencillo aprender Dart. Pero si no tienes experiencia en ninguno de estos lenguajes, no te preocupes, Dart es un lenguaje muy sencillo y fácil de aprender.
+
+Dart nació en Google en el año 2011, y fue creado con el objetivo de ser un lenguaje de programación para la web, pero con el tiempo, no solo se convirtió en un lenguaje de programación para la web, sino que también se convirtió en el lenguaje de programación de Flutter.
+
+Me gusta señalar a Dart como un compilado de buenas ideas de otros lenguajes, ya que Dart toma lo mejor de cada lenguaje y lo implementa en su sintaxis. Por ejemplo, Dart toma la sintaxis de Java, la tipificación de TypeScript y la facilidad de JavaScript. Pero no nos adelantemos, poco a poco veremos como es codificar en Dart. Pero antes de empezar a codificar, debemos entender los conceptos básicos de Dart, y como es su funcionamiento.
