@@ -402,8 +402,111 @@ Crea una clase `Perro` que herede de la clase `Animal` e incluye las propiedades
 
 ## Entendiendo Dart
 
-Dart es el lenguaje de programación que utiliza Flutter, es un lenguaje de programación orientado a objetos, fuertemente tipado y con una sintaxis muy parecida a Java y JavaScript. Si tienes experiencia en alguno de estos lenguajes, te sera muy sencillo aprender Dart. Pero si no tienes experiencia en ninguno de estos lenguajes, no te preocupes, Dart es un lenguaje muy sencillo y fácil de aprender.
+Dart es el lenguaje de programación que utiliza Flutter, y es un lenguaje muy sencillo y claro, pero antes de empezar a programar con Dart, es importante que entiendas los conceptos basicos del lenguaje, como las variables, las funciones, los ciclos, los condicionales, etc. Ya aprendimos la teoria y logica de la programación, ahora vamos a ver como se aplica en Dart.
 
-Dart nació en Google en el año 2011, y fue creado con el objetivo de ser un lenguaje de programación para la web, pero con el tiempo, no solo se convirtió en un lenguaje de programación para la web, sino que también se convirtió en el lenguaje de programación de Flutter.
+Digamos que ya aprendimos a entender como funciona el hablare a una maquina, pero ahora hay que aprender el idioma que hablaremos a la maquina, y ese idioma es Dart. Asi que vamos a ver los conceptos basicos de Dart.
 
-Me gusta señalar a Dart como un compilado de buenas ideas de otros lenguajes, ya que Dart toma lo mejor de cada lenguaje y lo implementa en su sintaxis. Por ejemplo, Dart toma la sintaxis de Java, la tipificación de TypeScript y la facilidad de JavaScript. Pero no nos adelantemos, poco a poco veremos como es codificar en Dart. Pero antes de empezar a codificar, debemos entender los conceptos básicos de Dart, y como es su funcionamiento.
+### Historia
+
+Dart es un lenguaje de programación desarrollado por Google, y fue lanzado en 2011, su historia es un poco... Tragicomica, ya que fue creado con el fin de reemplazar a JavaScript, pero no tuvo el exito esperado debido a que JavaScript ya estaba muy establecido en el mercado y habian muchos frameworks y librerias que ya usaban JavaScript, asi que Dart no tuvo el exito esperado.
+
+Para Google, Dart iba ser el que iba a quitar del trono a JavaScript, pero la realidad fue otra, JavaScript sigue siendo el rey del desarrollo web, pero Dart en lugar de morir, siguio en algunos proyectos chicos de Google, pero en 2017, se hizo el gran anuncio del ambicioso proyecto de Google: Flutter.
+
+Flutter es un framework de Google para crear aplicaciones multiplataforma, y el lenguaje de programación que utiliza Flutter es Dart, asi que Dart en lugar de morir, renacio de sus cenizas y se convirtio en el lenguaje de programación de Flutter. Pero queda ahora la duda del porque Google decidio usar Dart para Flutter? Bueno, era un lenguaje que ya estaba desarrollado por Google, y era un lenguaje muy sencillo y claro, asi que era perfecto para Flutter.
+
+Pero siendo mas tecnicos del porque de esa eleccion se debe a los puntos mas fuertes de Dart y que es la envidia de muchos lenguajes de programación:
+
+- JIT (Just In Time): Dart tiene un compilador JIT, lo que significa que el codigo se compila en tiempo de ejecución, esto hace que el desarrollo sea mas rapido, ya que no tienes que compilar el codigo cada vez que haces un cambio.
+
+- AOT (Ahead Of Time): Dart tambien tiene un compilador AOT, lo que significa que el codigo se compila antes de ejecutarse, esto hace que la aplicacion sea mas rapida, ya que el codigo ya esta compilado y no tiene que ser compilado en tiempo de ejecución.
+
+- Hot Reload: Dart tiene una caracteristica llamada Hot Reload, lo que significa que puedes ver los cambios en tiempo real, esto hace que el desarrollo sea mas rapido, ya que no tienes que recargar la aplicacion cada vez que haces un cambio.
+
+- Sintaxis clara: Dart tiene una sintaxis muy clara y sencilla, lo que hace que el codigo sea mas facil de entender y de escribir.
+
+- Tipado fuerte: Dart es un lenguaje de tipado fuerte, lo que significa que tienes que especificar el tipo de dato de una variable, esto hace que el codigo sea mas seguro y menos propenso a errores.
+
+- Programación orientada a objetos: Dart es un lenguaje de programación orientada a objetos, lo que significa que puedes crear clases y objetos, esto hace que el codigo sea mas modular y reutilizable.
+
+No te preocupes si no entiendes todos los puntos, vamos abordar cada uno de ellos a continuacion.
+
+### Compiladores de Dart
+
+Dart tiene dos compiladores, el compilador JIT y el compilador AOT, pero que significa esto? Bueno, vamos a verlo con un ejemplo muy sencillo.
+
+Imagina que tienes un libro, y quieres leerlo, pero el libro esta en otro idioma, entonces tienes dos opciones, la primera opcion es que traduzcas el libro a tu idioma antes de leerlo, y la segunda opcion es que traduzcas el libro a medida que lo lees.
+
+En la primera opcion estamos hablando del compilador AOT, ya que el libro se traduce antes de leerlo, y en la segunda opcion estamos hablando del compilador JIT, ya que el libro se traduce a medida que lo lees.
+
+En el caso de Dart, el compilador AOT se utiliza para compilar el codigo antes de ejecutarlo, y el compilador JIT se utiliza para compilar el codigo en tiempo de ejecución. Pero que significa exactamente esto? Bueno, Dart utiliza el compilador dual para trabajar en modo "Desarrollo" y en modo "Producción".
+
+El modo "Desarrollo" es cuando estas desarrollando la aplicacion, y en este modo se utiliza el compilador JIT, esto significa que el codigo se compila en tiempo de ejecución, esto hace que el desarrollo sea mas rapido, ya que no tienes que compilar el codigo cada vez que haces un cambio. Mientras que el modo "Producción" es cuando la aplicacion esta lista para ser lanzada, y en este modo se utiliza el compilador AOT, esto significa que el codigo se compila antes de ejecutarse, esto hace que la aplicacion sea mas rapida, ya que el codigo ya esta compilado y no tiene que ser compilado en tiempo de ejecución.
+
+Ahora hablemos del Hot Reload, el Hot Reload es una caracteristica de Dart que te permite ver los cambios en tiempo real, esto hace que el desarrollo sea mas rapido, ya que no tienes que recargar la aplicacion cada vez que haces un cambio. El Hot Reload es una caracteristica muy poderosa de Dart, ya que te permite ver los cambios en tiempo real, esto hace que el desarrollo sea mas rapido, ya que no tienes que recargar la aplicacion cada vez que haces un cambio.
+
+### Sintaxis de Dart
+
+Dart es extremadamente parecido a otros lenguajes de programación como JavaScript, Java, C#, etc. Pero tiene sus propias particularidades, asi que vamos a ver la sintaxis de Dart. Y si es la primera vez que ves un lenguaje de programación, no te preocupes, todo se explicara con detalle.
+
+### Variables
+
+Las variables en Dart se pueden definir de muchas maneras, hay formas muy flexibles, y otras mucho mas rigidas, el cuando aplicar una u otra depende de la situacion, pero vamos a ver las formas mas comunes de definir variables en Dart.
+
+#### Definir una variable flexible
+
+Las variables flexibles son aquellas que pueden cambiar de tipo, es decir, una variable puede ser un numero en un momento y una cadena en otro momento. Para definir una variable flexible en Dart, se utiliza la palabra clave `var`.
+
+```dart
+var nombre = 'Juan';
+nombre = 'Pedro';
+nombre = 10;
+```
+
+En este caso, la variable `nombre` es flexible, ya que puede ser una cadena o un numero, esto es muy util cuando no sabemos el tipo de dato que va a tener una variable, o cuando una variable puede tener diferentes tipos de datos.
+
+#### Definir una variable rigida
+
+Las variables rigidas son aquellas que no pueden cambiar de tipo, es decir, una variable es un numero y siempre sera un numero, no puede ser una cadena. Para definir una variable rigida en Dart, simplemente hay que especificar el tipo de dato que va a tener la variable.
+
+```dart
+String nombre = 'Juan';
+nombre = 'Pedro'; // Error: La variable nombre es de tipo String, no se puede asignar un valor de tipo String.
+
+int edad = 10;
+edad = '10'; // Error: La variable edad es de tipo int, no se puede asignar un valor de tipo String.
+
+double altura = 1.80;
+altura = 1; // Error: La variable altura es de tipo double, no se puede asignar un valor de tipo int.
+```
+
+En este caso, las variables `nombre`, `edad` y `altura` son rigidas, ya que no pueden cambiar de tipo, esto es muy util cuando sabemos el tipo de dato que va a tener una variable, o cuando una variable siempre va a tener el mismo tipo de dato.
+
+#### Optimizando una variable con final
+
+Como ya hablamos antes de los dos compiladores que usa Dart, el compilador AOT y el compilador JIT, Dart tiene una caracteristica llamada "Inferencia de tipos", que es una manera de optimizar el codigo, ya que el compilador infiere el tipo de dato de una variable, pero a veces estar infiriendo el tipo de dato puede ser algo confuso para Dart, e incluso costar mas recursos, asi que Dart tiene una manera de optimizar el codigo que consta de nosotros, el cual es especificar si una variable cambiara en algun punto o nunca.
+
+Para especificar que una variable nunca cambiara de valor, se utiliza la palabra clave `final`.
+
+```dart
+final String nombre = 'Juan';
+```
+
+La directiva `final` indica que la variable no cambiara de valor, es decir, una vez que se le asigna un valor, ese valor no se puede cambiar.
+
+#### Optimizando una variable con const
+
+Para especificar que una variable nunca cambiara de valor y que es constante, se utiliza la palabra clave `const`.
+
+```dart
+const String nombre = 'Juan';
+```
+
+La directiva `const` indica que la variable es constante, es decir, una vez que se le asigna un valor, ese valor no se puede cambiar y es constante.
+
+#### Diferencia entre final y const
+
+La diferencia entre `final` y `const` es que `final` se utiliza para variables que no cambian de valor, pero que no son constantes, es decir, que pueden cambiar de valor en tiempo de ejecución, mientras que `const` se utiliza para variables que no cambian de valor y que son constantes, es decir, que no pueden cambiar de valor en tiempo de ejecución.
+
+Recordando lo de tiempo de ejecución, nos referimos a que estamos usando el compilador JIT, es decir, que el codigo se compila en tiempo de ejecución, por lo que si una variable cambia de valor en tiempo de ejecución, Dart no sabra que tipo de dato es, por lo que es importante especificar si una variable cambiara de valor o no. Pero si estamos en modo "Producción" y estamos usando el compilador AOT, no es necesario especificar si una variable cambiara de valor o no, ya que el codigo ya esta compilado y no tiene que ser compilado en tiempo de ejecución.
+
+Asi que a grandes rasgos, si buscamos optimizar el compilador JIT y el compilador AOT, es importante especificar si una variable cambiara de valor o no, ya que Dart no sabra que tipo de dato es si una variable cambia de valor en tiempo de ejecución.
