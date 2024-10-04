@@ -450,7 +450,13 @@ Dart es extremadamente parecido a otros lenguajes de programación como JavaScri
 
 ### Variables
 
-Las variables en Dart se pueden definir de muchas maneras, hay formas muy flexibles, y otras mucho mas rigidas, el cuando aplicar una u otra depende de la situacion, pero vamos a ver las formas mas comunes de definir variables en Dart.
+Aqui es donde vamos a retomar lo visto en la introduccion pero adaptado para Dart, ya que las variables en Dart se pueden definir de muchas maneras, hay formas muy flexibles, y otras mucho mas rigidas, el cuando aplicar una u otra depende de la situacion o el problema que se nos presenta, como recordaras, cuando declarabamos variables antes lo haciamos tal que:
+
+```dart
+nombre = 'Juan';
+```
+
+Solo poniamos el nombre de la variable y el valor que iba a tener, pero en Dart, es importante especificar el tipo de dato que va a tener una variable, y que es el tipo de dato? Vamos a averiguarlo!
 
 #### Tipos de datos en las variables
 
@@ -459,6 +465,61 @@ Los tipos de datos en los lenguajes de programación no son mas que una manera d
 En Dart, la forma de declarar variables se consta por variables flexibles y variables rigidas. Las variables flexibles son aquellas que pueden cambiar de tipo, es decir, una variable puede ser un numero en un momento y una cadena en otro momento. Mientras que las variables rigidas son aquellas que no pueden cambiar de tipo, es decir, una variable es un numero y siempre sera un numero, no puede ser una cadena. Pero vamos a un ejemplo mas practico, ya que tal vez no entiendas del todo porque no usar la variable flexible siempre, ya que suena muy util.
 
 Bueno, imaginemos que estas en tu casa, y ocupas buscar documentos importantes, pero eres una persona irresponsable donde guarda TODOS los documentos en una sola caja, asi que tienes recibos, facturas, documentos irrelevantes y algunos importantes, esta caja es una `caja flexible`, ya que puedes guardar cualquier cosa en ella, pero si fueras una persona responsable, tendrias una `caja rigida` para guardar documentos importantes, y otra `caja rigida` para guardar documentos irrelevantes, asi que si ocupas buscar un documento importante, sabes que esta en la `caja rigida` de documentos importantes, y si ocupas buscar un documento irrelevante, sabes que esta en la `caja rigida` de documentos irrelevantes.
+
+Si ocupas buscar un documento, en que caja crees que sera mas facil encontrarlo? En la `caja rigida` de documentos importantes, ya que sabes que todos los documentos importantes estan ahi, y no tienes que buscar en la `caja flexible` donde hay de todo.
+
+Esto es exactamente lo que pasa con el compilador de Dart, aunque puede ser flexible y comodo para nosotros, para Dart es mas dificil saber que tipo de dato es si una variable cambia de tipo, por lo que es importante especificar si una variable cambiara de valor o no. Miralo como una pequeña ayuda que podemos darle a nuestro amigo Dart y no este sufriendo a la hora de compilar nuestro codigo.
+
+> Seamos buenas personas y ayudemos a Dart a compilar nuestro codigo de manera mas eficiente!
+
+##### Datos numericos
+
+Cuando hablamos de variables de tipo numerico, nos referimos a variables que almacenan numeros, ya sean enteros o decimales. En Dart, los tipos de datos numericos que se pueden utilizar son `int` y `double`.
+
+```dart
+int edad = 10;
+double altura = 1.80;
+```
+
+En este caso, la variable `edad` es de tipo `int`, ya que almacena un numero entero, y la variable `altura` es de tipo `double`, ya que almacena un numero decimal.
+
+##### Datos de texto
+
+Las variables de tipo de texto almacenan... Bueno, texto, ya sean palabras, frases, oraciones, etc. En Dart, el tipo de dato que se utiliza para almacenar texto es `String`.
+
+```dart
+String nombre = 'Juan';
+```
+
+##### Datos booleanos
+
+Aqui es donde es un poco mas complejo entender que es exactamente el valor booleano, ya que puede transmutar a muchas cosas, pero en resumen, un valor booleano es un valor que puede ser `true` o `false`. Listo, es asi de sencillo, pero te preguntaras, que es el `true` y el `false`? Bueno, el `true` es un valor que significa "verdadero" y el `false` es un valor que significa "falso", esto bajo el contexto de condiciones, veamos un ejemplo.
+
+Como recuerdas en la introduccion colocabamos:
+
+```dart
+pasta = 'spaghetti';
+
+1. Si la `pasta` es igual a 'spaghetti', entonces haz:
+   1. Cocina spaghetti.
+2. Si la `pasta` es igual a 'penne', entonces haz:
+    1. Cocina penne.
+```
+
+Las condiciones son valores booleanos, ya que pueden ser `true` o `false`, en este caso, si la `pasta` es igual a 'spaghetti', la condicion es `true`, y si la `pasta` es igual a 'penne', la condicion es `false`. Aunque por si mismo esto no es una variable, quiero que comprendas su transmutacion a una variable.
+
+```dart
+bool esSpaghetti = true;
+bool esPenne = false;
+
+if (esSpaghetti) {
+  print('Cocina spaghetti');
+} else if (esPenne) {
+  print('Cocina penne');
+}
+```
+
+No te asustes si no entiendes, en breve veremos las condiciones, pero quiero que entiendas que un valor booleano es un valor que puede ser `true` o `false`, y que se utiliza para tomar decisiones en un algoritmo.
 
 #### Definir una variable flexible
 
@@ -518,3 +579,83 @@ La diferencia entre `final` y `const` es que `final` se utiliza para variables q
 Recordando lo de tiempo de ejecución, nos referimos a que estamos usando el compilador JIT, es decir, que el codigo se compila en tiempo de ejecución, por lo que si una variable cambia de valor en tiempo de ejecución, Dart no sabra que tipo de dato es, por lo que es importante especificar si una variable cambiara de valor o no. Pero si estamos en modo "Producción" y estamos usando el compilador AOT, no es necesario especificar si una variable cambiara de valor o no, ya que el codigo ya esta compilado y no tiene que ser compilado en tiempo de ejecución.
 
 Asi que a grandes rasgos, si buscamos optimizar el compilador JIT y el compilador AOT, es importante especificar si una variable cambiara de valor o no, ya que Dart no sabra que tipo de dato es si una variable cambia de valor en tiempo de ejecución.
+
+### Condicionales
+
+Ahora si, entendiendo las variables, podemos entender las condiciones, las condiciones son una manera de tomar decisiones en un algoritmo, y se utilizan para ejecutar un bloque de codigo si se cumple una condicion, y otro bloque de codigo si no se cumple la condicion, la sintaxis es muy sencilla, pero la complejidad que puede abarcar una condicion es muy grande, ya que podemos hacer muchas cosas con las condiciones, pero vamos a ver lo basico.
+
+#### Operadores de comparación
+
+Los operadores de comparación se utilizan para comparar dos valores (O mas), y se utilizan en las condiciones para evaluar si una condicion es verdadera o falsa. Aunque suene muy abstracto, es simplemente como en la vida real, si tienes dos cosas que quieres comprar en el supermercado, comparas
+
+#### Condicional if
+
+La condicional `if` se utiliza para ejecutar un bloque de codigo si se cumple una condicion.
+
+```dart
+String pasta = 'spaghetti';
+
+if (pasta == 'spaghetti') {
+  print('Cocina spaghetti');
+}
+```
+
+En este caso, si la variable `pasta` es igual a 'spaghetti', entonces se ejecuta el bloque de codigo `print('Cocina spaghetti')`.
+
+#### Condicional else
+
+La condicional `else` se utiliza para ejecutar un bloque de codigo si no se cumple una condicion.
+
+```dart
+String pasta = 'penne';
+
+if (pasta == 'spaghetti') {
+  print('Cocina spaghetti');
+} else {
+  print('Cocina penne');
+}
+```
+
+Muy sencillo verdad? Si la variable `pasta` es igual a 'spaghetti', entonces se ejecuta el bloque de codigo `print('Cocina spaghetti')`, si no se cumple la condicion, entonces se ejecuta el bloque de codigo `print('Cocina penne')`.
+
+#### Condicional else if
+
+No solo podemos tener una condicion `if` y una condicion `else`, tambien podemos tener multiples condiciones `else if`, esto es muy util cuando tenemos multiples condiciones que queremos evaluar.
+
+```dart
+String pasta = 'spaghetti';
+
+if (pasta == 'spaghetti') {
+  print('Cocina spaghetti');
+} else if (pasta == 'penne') {
+  print('Cocina penne');
+} else {
+  print('Cocina otra cosa');
+}
+```
+
+En este caso, si la variable `pasta` es igual a 'spaghetti', entonces se ejecuta el bloque de codigo `print('Cocina spaghetti')`, si la variable `pasta` es igual a 'penne', entonces se ejecuta el bloque de codigo `print('Cocina penne')`, si no se cumple ninguna de las condiciones, entonces se ejecuta el bloque de codigo `print('Cocina otra cosa')`.
+
+Y si te das cuenta, ya estamos hablando demasiado de "si esto" es "esto", entonces esto y blabla... Aunque podemos hacer grandes aplicaciones solo con condiciones, hay una forma mas sencilla de manejar extensas condiciones, y es con el `switch`, pero no te preocupes, ya lo veremos.
+
+#### Condicional switch
+
+La condicional `switch` se utiliza para evaluar una expresion y ejecutar un bloque de codigo dependiendo del valor de la expresion.
+
+```dart
+String pasta = 'spaghetti';
+
+switch (pasta) {
+  case 'spaghetti':
+    print('Cocina spaghetti');
+    break;
+  case 'penne':
+    print('Cocina penne');
+    break;
+  default:
+    print('Cocina otra cosa');
+    break;
+}
+```
+
+Esto es exactamente lo mismo que el `if`, `else if` y `else`, pero de una manera mas sencilla y clara, ya que podemos tener multiples `case` y un `default` que se ejecutara si no se cumple ninguna de las condiciones. Muchisimo mas legible, y claro de entender.
