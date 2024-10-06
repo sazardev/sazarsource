@@ -580,6 +580,55 @@ Recordando lo de tiempo de ejecución, nos referimos a que estamos usando el com
 
 Asi que a grandes rasgos, si buscamos optimizar el compilador JIT y el compilador AOT, es importante especificar si una variable cambiara de valor o no, ya que Dart no sabra que tipo de dato es si una variable cambia de valor en tiempo de ejecución.
 
+### Operadores aritmeticos
+
+Ya dimos un vistazo a las variables, como se declaran, como se optimizan, y como se utilizan, pero ahora vamos a ver como podemos manipular las variables, y para eso necesitamos los operadores aritmeticos, los operadores aritmeticos son operadores que se utilizan para realizar operaciones matematicas, como la suma, la resta, la multiplicacion, la division, etc.
+
+Vease el operador aritmetico como lo que ya conoce en matematicas basicas, pero en lugar de hacerlo en papel y lapiz, lo haremos en la computadora con Dart tal como cuando lo haces en una calcaludora.
+
+#### Operador de suma
+
+El operador de suma `+` nos permite... Exacto! Sumar el valor de variables de nuestras variables numericas.
+
+```dart
+int a = 10;
+int b = 20;
+int c = a + b; // 30
+```
+
+En este caso, estamos utilizando variables enteros (int), y estamos sumando el valor de las variables `a` y `b`, y el resultado lo estamos guardando en la variable `c`. El resultado de la suma de `a` y `b` es `30`.
+
+Pero... Hemos visto que no solo es int, si no tambien un double, veamos como se comporta con un double el operador de suma.
+
+```dart
+double a = 10.5;
+double b = 20.5;
+double c = a + b; // 31.0
+```
+
+Interesante verdad? El operador de suma se comporta de la misma manera con un double que con un int, ya que simplemente suma el valor de las variables. Pero... La pregunta natural que puede surgir de usted es... Y si sumo un int con un double? Veamos que pasa.
+
+```dart
+int a = 10;
+double b = 20.5;
+double c = a + b; // 30.5
+int d = a + b; // Error: La variable d es de tipo int, no se puede asignar un valor de tipo double.
+```
+
+En este caso, estamos sumando un int con un double, y el resultado es un double, ya que Dart infiere el tipo de dato de la variable `c` como double, ya que el resultado de la suma de `a` y `b` es `30.5`. Pero... Si intentamos asignar el valor de la variable `c` a la variable `d`, Dart nos dara un error, ya que la variable `d` es de tipo int, y no se puede asignar un valor de tipo double. Esto es muy importante, ya que Dart es un lenguaje de tipado fuerte, y no se puede asignar un valor de un tipo de dato a otro tipo de dato.
+
+Quiza suene muy confuso el porque causa error la variable `d`, pero es debido a que en una caja donde solo entran hojas de papel de tipo A4 (Las de tamaño carta normal de toda la vida), no puedes meter una hoja de papel de tamaño A3 (Las de tamaño doble carta), ya que no cabe, y si cabe, no es lo que se espera, y eso es exactamente lo que pasa con las variables, si una variable es de tipo int, no puedes asignarle un valor de tipo double, ya que no es lo que se espera.
+
+Pero... Y si con unas tijeras cortamos la hoja de papel de tamaño A3 para que quepa en la caja de tamaño A4? Bueno, podemos hacer eso con un "parsing", que es una manera de convertir un tipo de dato a otro tipo de dato, veamos como se hace.
+
+```dart
+int a = 10;
+double b = 20.5;
+int c = a + b.toInt(); // 30
+```
+
+Genial! Acabamos de "cortar"
+
 ### Condicionales
 
 Ahora si, entendiendo las variables, podemos entender las condiciones, las condiciones son una manera de tomar decisiones en un algoritmo, y se utilizan para ejecutar un bloque de codigo si se cumple una condicion, y otro bloque de codigo si no se cumple la condicion, la sintaxis es muy sencilla, pero la complejidad que puede abarcar una condicion es muy grande, ya que podemos hacer muchas cosas con las condiciones, pero vamos a ver lo basico.
@@ -659,3 +708,23 @@ switch (pasta) {
 ```
 
 Esto es exactamente lo mismo que el `if`, `else if` y `else`, pero de una manera mas sencilla y clara, ya que podemos tener multiples `case` y un `default` que se ejecutara si no se cumple ninguna de las condiciones. Muchisimo mas legible, y claro de entender.
+
+### Ciclos
+
+Los ciclos se utilizan para repetir un bloque de codigo varias veces, Los ciclos son una manera de repetir una tarea en un algoritmo, con el fin de que nosotros los humanos no tengamos que repetir la misma tarea una y otra vez, ya que la computadora lo hara por nosotros. En la introducción vimos que podiamos ciclar una tarea, incluso funciones! Pero lo visto era un ciclo con condicion, en Dart existen muchas formas de ciclar una tarea, pero vamos a ver las mas comunes.
+
+#### Ciclo for
+
+El ciclo `for` se utiliza para repetir un bloque de codigo un numero determinado de veces.
+
+```dart
+for (int i = 0; i < 10; i++) {
+  print(i);
+}
+```
+
+Desmenuzando el ciclo `for`, tenemos:
+
+- `int i = 0`: Inicializa la variable `i` con el valor `0`. (Como ya vimos en la seccion de variables)
+- `i < 10`: Evalua si la variable `i` es menor que `10`. (Como ya vimos en la seccion de condicionales)
+- `i++`: Incrementa la variable `i` en `1`. (Como ya vimos en la seccion de operadores de asignacion)
