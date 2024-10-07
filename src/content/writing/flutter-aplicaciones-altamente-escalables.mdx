@@ -627,7 +627,149 @@ double b = 20.5;
 int c = a + b.toInt(); // 30
 ```
 
-Genial! Acabamos de "cortar"
+Genial! Acabamos de "cortar" la hoja de papel de tamaño A3 para que quepa en la caja de tamaño A4, a esto le podemos llamar a que la variable `b` se convirtio a un tipo de dato int, y el resultado de la suma de `a` y `b` es `30`.
+
+#### Operador de resta
+
+El operador de resta `-` nos permite restar el valor de variables de nuestras variables numericas.
+
+```dart
+int a = 20;
+int b = 10;
+int c = a - b; // 10
+```
+
+Como lo esperamos, el resultado de la resta de `a` y `b` es `10`, ya que estamos restando el valor de las variables `a` y `b`, y el resultado lo estamos guardando en la variable `c`.
+
+#### Operador de multiplicacion
+
+El operador de multiplicacion `*` nos permite multiplicar el valor de variables de nuestras variables numericas.
+
+```dart
+int a = 10;
+int b = 20;
+int c = a * b; // 200
+```
+
+### Operador de division
+
+El operador de division `/` nos permite dividir el valor de variables de nuestras variables numericas.
+
+```dart
+int a = 20;
+int b = 10;
+int c = a / b; // 2
+```
+
+### Operador de modulo
+
+El operador de modulo `%` nos permite obtener el residuo de la division de dos numeros. (El residuo es el numero que sobra despues de dividir dos numeros).
+
+```dart
+int a = 20;
+int b = 10;
+int c = a % b; // 0
+```
+
+En este caso, el residuo de la division de `a` y `b` es `0`, ya que `20` dividido entre `10` es `2`, y no sobra ningun numero despues de dividir `20` entre `10`.
+
+### Operadores de asignacion
+
+Los operadores de asignacion se utilizan para asignar un valor a una variable, y hay varios tipos de operadores de asignacion, como el operador de asignacion simple `=`, el operador de asignacion de suma `+=`, el operador de asignacion de resta `-=`, el operador de asignacion de multiplicacion `*=`, el operador de asignacion de division `/=`, y el operador de asignacion de modulo `%=`.
+
+```dart
+int a = 10;
+int b = 20;
+a += b; // a = a + b = 30
+a -= b; // a = a - b = 10
+a *= b; // a = a * b = 200
+a /= b; // a = a / b = 10
+a %= b; // a = a % b = 10
+```
+
+Como se puede apreciar, en vez de tener que estar escribiendo `a = a + b`, podemos simplemente escribir `a += b`, y lo mismo con los demas operadores de asignacion, esto hace que el codigo sea mas limpio y claro, y ahorra tiempo y espacio.
+
+### Operadores de comparacion
+
+Los operadores de comparacion se utilizan para comparar dos o mas variables y devolver un valor booleano, es decir, `true` o `false`. Los operadores de comparacion son muy utiles para tomar decisiones en un algoritmo, y hay varios tipos de operadores de comparacion, como el operador de igualdad `==`, el operador de desigualdad `!=`, el operador de mayor que `>`, el operador de menor que `<`, el operador de mayor o igual que `>=`, y el operador de menor o igual que `<=`.
+
+#### Operador de igualdad
+
+El operador de igualdad `==` se utiliza para comparar si dos variables son iguales. Imagine que tiene dos cajas, y quiere saber si el contenido de las cajas es el mismo, entonces utiliza el operador de igualdad para comparar el contenido de las cajas. Por ejemplo si la caja A3 tiene 10 hojas de papel y la caja A4 tiene 10 hojas de papel, entonces el contenido de las cajas es el mismo.
+
+```dart
+int cajaA3 = 10;
+int cajaA4 = 10;
+
+if (cajaA3 == cajaA4) {
+  print('La cantidad de hojas de papel es la misma');
+}
+```
+
+### Operador de desigualdad
+
+El operador de desigualdad `!=` se utiliza para comparar si dos variables son diferentes. Imagine que tienes dos monedas, y quieres saber si las monedas son diferentes, entonces utilizas el operador de desigualdad para comparar las monedas. Por ejemplo si una moneda es de 10 centavos y la otra moneda es de 20 centavos, entonces las monedas son diferentes.
+
+```dart
+int moneda1 = 10;
+int moneda2 = 20;
+
+if (moneda1 != moneda2) {
+  print('Las monedas son diferentes');
+}
+```
+
+### Operador de mayor que
+
+El operador de mayor que `>` se utiliza para comparar si una variable es mayor que otra variable. Imagine que tiene dos numeros, y quiere saber si un numero es mayor que otro numero, entonces utiliza el operador de mayor que para comparar los numeros. Por ejemplo si un numero es `10` y otro numero es `20`, entonces el numero `20` es mayor que el numero `10`.
+
+```dart
+int numero1 = 10;
+int numero2 = 20;
+
+if (numero2 > numero1) {
+  print('El numero 2 es mayor que el numero 1');
+}
+```
+
+### Operador de menor que
+
+El operador de menor que `<` se utiliza para comparar si una variable es menor que otra variable. Imagine que tiene dos numeros, y quiere saber si un numero es menor que otro numero, entonces utiliza el operador de menor que para comparar los numeros. Por ejemplo si un numero es `10` y otro numero es `20`, entonces el numero `10` es menor que el numero `20`.
+
+```dart
+int numero1 = 10;
+int numero2 = 20;
+
+if (numero1 < numero2) {
+  print('El numero 1 es menor que el numero 2');
+}
+```
+
+### Operador de mayor o igual que
+
+El operador de mayor o igual que `>=` se utiliza para comparar si una variable es mayor o igual que otra variable. Quiza uno piense que es lo mismo que el operador de mayor que, pero no, ya que el operador de mayor o igual que tambien considera el caso de que si es igual. Supongamos que tenemos un problema donde alguien te pide que necesita que le des mas o igual a 10 dolares, entonces utilizas el operador de mayor o igual que para comparar si le puedes dar mas o igual a 10 dolares basado en lo que hay en tu cartera.
+
+```dart
+int dinero = 10;
+
+if (dinero >= 10) {
+  print('Puedes dar mas o igual a 10 dolares (Si es que quieres)');
+}
+```
+
+Mientras que si solo estas dispuesto a dar 10 dolares, si usamos el mayor que tendrias que dar como minimo 11 dolares! Ya que no esta considerado el numero 10.
+
+### Operador de menor o igual que
+
+El operador de menor o igual que `<=` se utiliza para comparar si una variable es menor o igual que otra variable.
+
+```dart
+int edad = 18;
+
+if (edad <= 18) {
+  print('Eres menor o igual que 18 años');
+}
+```
 
 ### Condicionales
 
