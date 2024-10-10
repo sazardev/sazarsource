@@ -706,7 +706,7 @@ if (cajaA3 == cajaA4) {
 }
 ```
 
-### Operador de desigualdad
+#### Operador de desigualdad
 
 El operador de desigualdad `!=` se utiliza para comparar si dos variables son diferentes. Imagine que tienes dos monedas, y quieres saber si las monedas son diferentes, entonces utilizas el operador de desigualdad para comparar las monedas. Por ejemplo si una moneda es de 10 centavos y la otra moneda es de 20 centavos, entonces las monedas son diferentes.
 
@@ -719,7 +719,7 @@ if (moneda1 != moneda2) {
 }
 ```
 
-### Operador de mayor que
+#### Operador de mayor que
 
 El operador de mayor que `>` se utiliza para comparar si una variable es mayor que otra variable. Imagine que tiene dos numeros, y quiere saber si un numero es mayor que otro numero, entonces utiliza el operador de mayor que para comparar los numeros. Por ejemplo si un numero es `10` y otro numero es `20`, entonces el numero `20` es mayor que el numero `10`.
 
@@ -732,7 +732,7 @@ if (numero2 > numero1) {
 }
 ```
 
-### Operador de menor que
+#### Operador de menor que
 
 El operador de menor que `<` se utiliza para comparar si una variable es menor que otra variable. Imagine que tiene dos numeros, y quiere saber si un numero es menor que otro numero, entonces utiliza el operador de menor que para comparar los numeros. Por ejemplo si un numero es `10` y otro numero es `20`, entonces el numero `10` es menor que el numero `20`.
 
@@ -745,7 +745,7 @@ if (numero1 < numero2) {
 }
 ```
 
-### Operador de mayor o igual que
+#### Operador de mayor o igual que
 
 El operador de mayor o igual que `>=` se utiliza para comparar si una variable es mayor o igual que otra variable. Quiza uno piense que es lo mismo que el operador de mayor que, pero no, ya que el operador de mayor o igual que tambien considera el caso de que si es igual. Supongamos que tenemos un problema donde alguien te pide que necesita que le des mas o igual a 10 dolares, entonces utilizas el operador de mayor o igual que para comparar si le puedes dar mas o igual a 10 dolares basado en lo que hay en tu cartera.
 
@@ -759,7 +759,7 @@ if (dinero >= 10) {
 
 Mientras que si solo estas dispuesto a dar 10 dolares, si usamos el mayor que tendrias que dar como minimo 11 dolares! Ya que no esta considerado el numero 10.
 
-### Operador de menor o igual que
+#### Operador de menor o igual que
 
 El operador de menor o igual que `<=` se utiliza para comparar si una variable es menor o igual que otra variable.
 
@@ -870,3 +870,114 @@ Desmenuzando el ciclo `for`, tenemos:
 - `int i = 0`: Inicializa la variable `i` con el valor `0`. (Como ya vimos en la seccion de variables)
 - `i < 10`: Evalua si la variable `i` es menor que `10`. (Como ya vimos en la seccion de condicionales)
 - `i++`: Incrementa la variable `i` en `1`. (Como ya vimos en la seccion de operadores de asignacion)
+
+Entendiendo de otra forma lo que hace el ciclo for (de lado de la computadora), es que inicializa una nueva variable `i` con el valor `0`, evalua si la variable `i` es menor que `10` por cada iteracion, y si la variable `i` es menor que `10`, entonces ejecuta el bloque de codigo `print(i)`, y luego incrementa la variable `i` en `1`, y repite el proceso hasta que la variable `i` sea mayor o igual que `10`.
+
+Bastante sencillo verdad? Y aun asi, el ciclo for es un ciclo que vera a lo largo de su carrera de programador, aunque no es el unico ciclo que existe, hay otros ciclos que son muy utiles en ciertas situaciones, como el ciclo `while` y el ciclo `do while`. Veamoslo a continuacion.
+
+#### Ciclo while
+
+El ciclo `while` se utiliza para repetir un bloque de codigo mientras se cumpla una condicion, es decir, que el ciclo `while` se ejecuta mientras la condicion sea verdadera. Es un ciclo extremadamente util cuando no sabemos cuantas veces se va a repetir una tarea, pero sabemos que se va a repetir mientras una condicion sea verdadera.
+
+```dart
+int i = 0;
+
+while (i < 10) {
+  print(i);
+  i++;
+}
+```
+
+Desmenuzando el ciclo `while`, tenemos:
+
+- `int i = 0`: Inicializa la variable `i` con el valor `0`. (Como ya vimos en la seccion de variables)
+- `i < 10`: Evalua si la variable `i` es menor que `10`. (Como ya vimos en la seccion de condicionales)
+- `print(i)`: Imprime el valor de la variable `i`.
+- `i++`: Incrementa la variable `i` en `1`. (Como ya vimos en la seccion de operadores de asignacion)
+
+Para tener cierta consideracion, hay que entender que el while es como una condicional, donde primero evalua si la condicion es verdadera, y si es verdadera, ejecuta el bloque de codigo, pero si no es verdadera, no ejecuta el bloque de codigo. Entonces hay que asegurar que la condicion que coloques sea concisa.
+
+#### Ciclo do while
+
+El ciclo `do while` se utiliza para repetir un bloque de codigo al menos una vez, y luego repetir el bloque de codigo mientras se cumpla una condicion, es decir, que el ciclo `do while` se ejecuta al menos una vez, y luego se ejecuta mientras la condicion sea verdadera.
+
+```dart
+int i = 0;
+
+do {
+  print(i);
+  i++;
+} while (i < 10);
+```
+
+Desmenuzando el ciclo `do while`, tenemos:
+
+- `int i = 0`: Inicializa la variable `i` con el valor `0`. (Como ya vimos en la seccion de variables)
+- `print(i)`: Imprime el valor de la variable `i`.
+- `i++`: Incrementa la variable `i` en `1`. (Como ya vimos en la seccion de operadores de asignacion)
+- `i < 10`: Evalua si la variable `i` es menor que `10`. (Como ya vimos en la seccion de condicionales)
+
+La diferencia entre el ciclo `while` y el ciclo `do while` es que el ciclo `do while` se ejecuta al menos una vez, `y luego se ejecuta mientras la condicion sea verdadera, mientras que el ciclo `while` se ejecuta solo si la condicion es verdadera. Es muy util cuando necesitas que un bloque de codigo se ejecute al menos una vez, y luego se ejecute mientras una condicion sea verdadera.
+
+### Listas
+
+Como explicamos anteriormente sobre las variables que son como cajas que contienen informacion, pues ahora imagina que tienes una caja que contiene muchas cajas, y cada caja contiene informacion, quiza suene raro tener una caja de cajas, pero entendamos con el ejemplo.
+
+Supongamos que tienes una caja donde solo guardas chocolates suizos, en otra caja guardas chocolates belgas, en otra caja guardas chocolates franceses. Podemos entonces deducir que tenemos 3 cajas de chocolates de origen distinto y que ademas nos interesa que no se mezclen pero a su vez esten ordenados. Para eso es la super caja que contiene las cajas de chocolates, para tener todo ordenado y no mezclar chocolates. Y esta supercaja seria la caja de cajas de chocolate, o en terminos de programacion, una lista de chocolates.
+
+Las listas son una manera de almacenar multiples valores en una sola variable, y se utilizan para almacenar colecciones de datos, como una lista de numeros, una lista de cadenas, una lista de booleanos, etc. Aunque Dart permite tener una lista de lo que sea, es importante tener en cuenta la limpieza y claridad para Dart, entonces lo mas usual es definir listas con un tipo de dato especifico.
+
+#### Crear una lista
+
+Crear una lista en Dart es increiblemente sencillo, ya que solo necesitas utilizar corchetes `[]` y separar los valores con comas `,`. Veamos un ejemplo.
+
+```dart
+List<int> numeros = [1, 2, 3, 4, 5];
+```
+
+Muy bien, desglocemos parte por parte:
+
+- `List<int>`: Especifica que la variable `numeros` es una lista de numeros enteros (int).
+- `numeros`: Es el nombre de la variable (Muy apropiado).
+- `[1, 2, 3, 4, 5]`: Es la lista de numeros enteros (int) que contiene los valores `1`, `2`, `3`, `4`, `5`.
+
+Vease entonces que cuando en dart ponemos corchetes `[]`, estamos creando ya una lista! Y si queremos especificar el tipo de dato que va a tener la lista, simplemente ponemos el tipo de dato seguido de `List`, y listo! Ya tenemos una lista de un tipo de dato especifico. Pero... Y si queremos una lista flexible? Bueno, simplemente no especificamos el tipo de dato.
+
+```dart
+var aleatorios = [1, 'dos', 3.0, true];
+```
+
+En este caso, la variable `aleatorios` es una lista flexible, ya que puede contener numeros enteros (int), cadenas (String), numeros decimales (double) y valores booleanos (bool). Aunque Dart permite tener una lista flexible, es importante tener en cuenta que Dart no sabra que tipo de dato es si una lista es flexible, por lo que es importante especificar el tipo de dato que va a tener una lista. Recuerda que podemos ayudar a nuestro compilador a compilar de manera mas eficiente! Asi que seamos amable con Dart y cuando hagamos listas, que sean especificas.
+
+#### Las posiciones de una lista
+
+Las listas en Dart son indexadas, es decir, que cada elemento de una lista tiene un indice, y el primer elemento de una lista tiene el indice `0`, el segundo elemento de una lista tiene el indice `1`, y asi sucesivamente. Pero a que se debe esto?
+
+Naturalmente entendemos al `0` como un nada, un vacio, un cero, pero en programacion, el `0` es el primer elemento de una lista, esto es debido por la computadora que empieza a contar desde el `0`, y no desde el `1`, por lo que si queremos acceder al primer elemento de una lista, tenemos que utilizar el indice `0`, si queremos acceder al segundo elemento de una lista, tenemos que utilizar el indice `1`, y asi sucesivamente.
+
+```dart
+List<int> numeros = [1, 2, 3, 4, 5];
+
+print(numeros[0]); // 1
+```
+
+#### Acceder a un elemento de una lista
+
+Bueno, ya vimos como crearla, pero y si quiero imprimir un valor de la lista? Bueno, es muy sencillo, ya que solo necesitas utilizar el operador de indexacion `[]` y el indice del valor que quieres imprimir.
+
+```dart
+List<int> numeros = [1, 2, 3, 4, 5];
+
+print(numeros[0]); // 1
+print(numeros[1]); // 2
+print(numeros[2]); // 3
+print(numeros[3]); // 4
+print(numeros[4]); // 5
+print(numeros[5]); // Error: El indice esta fuera de rango.
+print(numeros[1.0]); // Error: El indice debe ser un numero entero.
+print(numeros); // [1, 2, 3, 4, 5]
+```
+
+Como puedes intuir con el ejemplo anterior, si colocamos valores no enteros como indice, Dart nos dara un error, tambien si colocamos un numero el cual no esta en el tamaño de la lista, Dart nos dara un error. Pero... Si colocamos la lista como un todo, Dart nos imprimira la lista completa.
+
+#### Agregar un elemento a una lista
