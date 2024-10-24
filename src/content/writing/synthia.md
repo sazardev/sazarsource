@@ -1,6 +1,6 @@
 ---
 title: "Synthia"
-description: "A book"
+description: "Una novela cyberpunk sobre un ex empleado de una megacorporación que se ve envuelto en una conspiración tecnológica, con una ambientacion oscura, sombria, realista y futurista."
 date: 2024-10-06
 ---
 
@@ -14,21 +14,15 @@ Los primeros signos de lluvia me llevan a una pequeña plaza comercial, un refug
 
 Vaya día, ¿eh? Es la cuarta vez que llueve hoy. Parece que la ciudad no puede decidirse si quiere ahogarnos o refrescarnos. - Me mira con una sonrisa irónica.
 
-Asiento, sin decir una palabra.
+Asiento, sin decir una palabra. El hombre siguio hablando, como un viejo amigo que comparte su descontento con el clima y la vida misma. Sus palabras fluyen como un río turbulento.
 
-El hombre sigue hablando, como un viejo amigo que comparte su descontento con el clima y la vida misma. Sus palabras fluyen como un río turbulento.
-
-Pero sabes qué, joven. - Dice con una mirada cansada. - La lluvia limpia, purifica. Nos da una oportunidad para empezar de nuevo, para borrar los errores del pasado y abrirnos a un futuro incierto.
+Pero sabes qué, joven. - Dice con una mirada cansada. - La lluvia limpia, purifica. Nos da una oportunidad para empezar de nuevo.
 
 Su filosofía contrasta con mi escepticismo, pero no puedo evitar sentirme atraído por sus palabras. Quizás en medio de esta urbe decadente, él ha encontrado una forma de encontrar esperanza en la lluvia que cae sin cesar. Antes de que pueda responder, el hombre da un último vistazo al exterior y se prepara para partir.
 
-Cuida de ti, joven - me dice con una mueca de complicidad.
+Asiento una vez más, esta vez con una sonrisa apenas perceptible. Sus palabras resuenan en mi mente mientras se aleja. Tras despedirme del misterioso hombre, me adentro en la concurrida plaza comercial, donde se exhiben artilugios de tecnología vanguardista en cada rincón. Las luces tenues y los anuncios holográficos parpadean a mi alrededor, mientras los murmullos de la multitud se mezclan con el rumor distante de la lluvia. Pantallas brillantes muestran hologramas interactivos, drones zumban por los pasillos transportando mercancías y personas. Los productos más novedosos y extravagantes se exhiben en las vitrinas, ofreciendo soluciones para problemas que ni siquiera sabía que tenía.
 
-Asiento una vez más, esta vez con una sonrisa apenas perceptible. Sus palabras resuenan en mi mente mientras se aleja. Tras despedirme del misterioso hombre, me adentro en la concurrida plaza comercial, donde se exhiben artilugios de tecnología vanguardista en cada rincón. Las luces tenues y los anuncios holográficos parpadean a mi alrededor, mientras los murmullos de la multitud se mezclan con el rumor distante de la lluvia. Es fascinante contemplar cómo la tecnología domina cada aspecto de esta ciudad. Pantallas brillantes muestran hologramas interactivos, drones zumban por los pasillos transportando mercancías y personas. Los productos más novedosos y extravagantes se exhiben en las vitrinas, ofreciendo soluciones para problemas que ni siquiera sabía que tenía.
-
-Me detengo frente a un stand donde una inteligencia artificial en forma de holograma interactúa con los clientes. Su voz amigable y su carisma artificial se sienten casi reales. Observo con curiosidad cómo se comunica con los transeúntes, ofreciéndoles información sobre los productos con una eficiencia inhumana.
-
-Mis pensamientos se disipan cuando encuentro un pequeño rincón que alberga dispositivos electrónicos de segunda mano. Entre los artefactos olvidados, mis ojos se posan en un viejo terminal móvil, su carcasa desgastada y pantalla agrietada revelan una historia de uso y abuso. Sostengo el viejo terminal móvil con firmeza, absorto en mis pensamientos, cuando una voz irónica irrumpe en mi conciencia.
+Me detengo frente a un stand donde una inteligencia artificial en forma de holograma interactúa con los clientes. Su voz amigable y su carisma artificial se sienten casi reales. Observo con curiosidad cómo se comunica con los transeúntes, ofreciéndoles información sobre los productos con una eficiencia inhumana. Mis pensamientos se disipan cuando encuentro un pequeño rincón que alberga dispositivos electrónicos de segunda mano. Entre los artefactos olvidados, mis ojos se posan en un viejo terminal móvil, su carcasa desgastada y pantalla agrietada revelan una historia de uso y abuso. Lo sostengo con firmeza, absorto en mis pensamientos, cuando una voz irónica irrumpe en mi conciencia.
 
 ¿Vas a comprarlo o a robarlo? Dice el vendedor sonriendo socarrona. Sus ojos escudriñan mi rostro, buscando algún indicio de mi intención.
 
@@ -36,17 +30,17 @@ Mis pensamientos se disipan cuando encuentro un pequeño rincón que alberga dis
 
 Negociamos un precio justo y finalmente adquiero el antiguo terminal. Aunque su estado no es el mejor, tengo la sensación de que este dispositivo me será útil en mi búsqueda. Es una pieza de tecnología con historia, y quién sabe, tal vez tenga algún dato valioso guardado en su interior.
 
-Con el móvil en mi bolsillo, sigo explorando la plaza y el aroma de comida callejera me llama la atención. Me acerco a un puesto de comida rápida y pido una ración generosa de algo que se supone es carne sintética. Los androides que atienden el lugar no muestran expresiones, pero sus movimientos precisos revelan una eficiencia sorprendente. Me siento en un rincón sombreado mientras disfruto del peculiar manjar. La comida, aunque artificial, es sabrosa y reconfortante. Con el estómago saciado, saco mi nuevo terminal móvil de la bolsa y lo sostengo en mis manos. Es un dispositivo elegante, con una pantalla brillante y una interfaz minimalista que me atrae. Empiezo a explorar sus funciones, descubriendo cómo configurarlo a mi gusto. Es sorprendente cómo un simple aparato puede contener tanto poder y posibilidades.
+Con el móvil en mi bolsillo, sigo explorando la plaza y el aroma de comida callejera me llama la atención. Me acerco a un puesto de comida rápida y pido una ración generosa de algo que se supone es carne sintética. Los androides que atienden el lugar no muestran expresiones, pero sus movimientos precisos revelan una eficiencia sorprendente. Me siento en un rincón sombreado mientras disfruto del peculiar manjar. La comida, aunque artificial, es sabrosa y reconfortante. Con el estómago saciado, saco mi nuevo terminal móvil de la bolsa y lo sostengo en mis manos.
 
-Pero mi curiosidad va más allá de las configuraciones básicas. Decido escarbar más en el corazón del dispositivo, adentrándome en sus archivos y registros. Entre los archivos y mensajes, encuentro un patrón perturbador. El antiguo dueño de este celular parece haber estado acosando a alguien, acechándola a través de mensajes y llamadas constantes. Es una invasión a la privacidad, una intrusión en la vida de otra persona que no puedo ignorar. Una mezcla de indignación y preocupación se apodera de mí. ¿Quién era esta persona y por qué el dueño anterior estaba tan obsesionado con ella? ¿Qué motivaba su comportamiento enfermizo y controlador? Mis dedos siguen deslizándose por la pantalla, escarbando más y más en la vida de este acosador anónimo. Pero pronto me doy cuenta de que no tengo el tiempo ni los recursos para investigar más a fondo. No puedo perderme en este laberinto de obsesiones y secretos. Pago la cuenta del puesto de comida y salgo del establecimiento. Camino unos pasos fuera de la plaza, encontrando un rincón tranquilo y apartado. En un impulso, dejo caer el celular en el suelo, alejándome de él como si quisiera deshacerme de una carga pesada.
+Entre los archivos y mensajes, encuentro un patrón perturbador. El antiguo dueño de este celular parece haber estado acosando a alguien, acechándola a través de mensajes y llamadas constantes. Es una invasión a la privacidad, una intrusión en la vida de otra persona que no puedo ignorar. Una mezcla de indignación y preocupación se apodera de mí. ¿Quién era esta persona y por qué el dueño anterior estaba tan obsesionado con ella? ¿Qué motivaba su comportamiento enfermizo y controlador? Mis dedos siguen deslizándose por la pantalla, escarbando más y más en la vida de este acosador anónimo. Pero pronto me doy cuenta de que no tengo el tiempo ni los recursos para investigar más a fondo. No puedo perderme en este laberinto de obsesiones y secretos. Pago la cuenta del puesto de comida y salgo del establecimiento. Camino unos pasos fuera de la plaza, encontrando un rincón tranquilo y apartado. En un impulso, dejo caer el celular en el suelo, alejándome de él como si quisiera deshacerme de una carga pesada.
 
-No puedo resolver todos los problemas - Susurro en voz baja, sintiendo el peso de la ciudad sobre mis hombros. No puedo cambiar su destino, ni tampoco puedo deshacer lo que ya ha sucedido.
+No puedo resolver todos los problemas - Susurro en voz baja, sintiendo el peso de la ciudad sobre mis hombros. - No puedo cambiar su destino, ni tampoco puedo deshacer lo que ya ha sucedido.
+
+Y justo pareciendo una broma del destino, el celular comienza a sonar. La pantalla muestra un número desconocido, pero algo en mi interior me dice que debo contestar. Con un suspiro, levanto el dispositivo y presiono el botón de respuesta.
 
 Parte Dos
 
-Conduje durante lo que pareció una eternidad por las calles de Eterion, con la lluvia persistente como mi compañera de viaje. Las luces parpadeantes y neón de la ciudad se desvanecieron gradualmente a medida que me alejaba del bullicio urbano. Las torres gigantes de OlymTech se perdieron de vista y finalmente di paso a una zona menos industrializada. La falta de vida en las calles solo amplificaba la sensación de soledad y abandono.
-
-Alcancé las afueras de la ciudad, donde la metrópolis dio paso a paisajes más naturales y agrestes. Los edificios altos y modernos fueron reemplazados por casas de aspecto más modesto y calles menos transitadas. Aquí, las sombras de los rascacielos no eran tan intimidantes, y podía respirar un poco más libremente. La casa de Gabriel se alzaba en un rincón apartado, rodeada de vegetación y con un ambiente más acogedor que el del centro de la ciudad. Las luces tenues iluminaban el camino hacia su puerta principal, y me sentí agradecido por la pausa de la lluvia mientras caminaba hacia su morada.
+Conduje durante lo que pareció una eternidad por las calles de Eterion, con la lluvia persistente como mi compañera de viaje. Las luces parpadeantes y neón de la ciudad se desvanecieron gradualmente a medida que me alejaba del bullicio urbano. Las torres gigantes de Olympa se perdieron de vista y finalmente di paso a una zona menos industrializada. La falta de vida en las calles solo amplificaba la sensación de soledad y abandono. Alcancé las afueras de la ciudad, donde la metrópolis dio paso a paisajes más naturales y agrestes. Los edificios altos y modernos fueron reemplazados por casas de aspecto más modesto y calles menos transitadas. Aquí, las sombras de los rascacielos no eran tan intimidantes, y podía respirar un poco más libremente. La casa de Gabriel se alzaba en un rincón apartado, rodeada de vegetación y con un ambiente más acogedor que el del centro de la ciudad. Las luces tenues iluminaban el camino hacia su puerta principal, y me sentí agradecido por la pausa de la lluvia mientras caminaba hacia su morada.
 
 La casa era modesta pero cálida, y las ventanas adornadas con cortinas daban la impresión de que había vida en su interior. Golpeé la puerta con cierta ansiedad, esperando que mi amigo estuviera bien y que pudiera proporcionarme alguna pista sobre lo que había sucedido. Gabriel abrió la puerta con una sonrisa amistosa, pero rápidamente noté una sombra de preocupación en sus ojos. Me saludó con un abrazo, y aunque intentó disimularlo, su voz dejaba entrever una tensión latente.
 
@@ -60,83 +54,67 @@ Sé que algo te inquieta - mencioné con sinceridad, mirando a mi amigo con preo
 
 Suspiró, como si hubiera estado esperando que yo lo mencionara. Sabía que no podía ocultarme algo por mucho tiempo, y que era mejor abordar la cuestión de frente.
 
-Es cierto. - respondió con un tono más serio. - He estado trabajando en un proyecto confidencial en OlymTech. Es algo que va más allá de lo que hemos hecho hasta ahora, y creo que podría tener un impacto significativo.
+Es cierto. - respondió con un tono más serio. - He estado trabajando en un proyecto confidencial en Olympa.
 
 ¿De qué se trata ahora? - Pregunté con cautela.
 
 Miró a su alrededor, como si temiera que alguien pudiera estar espiándonos. Luego, se acercó y habló en voz baja.
 
-Es un proyecto de nueva generación. Un avance tecnológico que podría revolucionar cómo vivimos - susurró. - Pero también es peligroso y delicado. Si alguien descubre lo que estamos haciendo...
+Es un proyecto de nueva generación. Un avance tecnológico que podría revolucionar cómo vivimos - susurró.
 
 Gabriel, necesitas ser más específico. No puedo ayudarte si no me dices de qué se trata - expresé con franqueza.
 
-Gabriel tomó aire antes de responder, consciente de que estaba a punto de revelar algo que no podía ocultar más.
+Tomó aire antes de responder, consciente de que estaba a punto de revelar algo que no podía ocultar más. - Necesito que robes algo en Olympa. - dijo en voz baja, asegurándose de que nadie más pudiera escuchar nuestras palabras. - ¿Recuerdas el algoritmo que creamos para la ciberseguridad de la empresa? - Hace una pequeña pausa. - Bueno la inteligencia que tu creaste.
 
-Necesito que robes algo en OlymTech. - dijo en voz baja, asegurándose de que nadie más pudiera escuchar nuestras palabras. - ¿Recuerdas el algoritmo que creamos para la ciberseguridad de la empresa? - Hace una pequeña pausa. - Bueno la inteligencia que tu creaste.
+- ¿Hablas de SynthI? - Quedo confundido con sus palabras. - ¿Que tiene que ver esa inteligencia?
 
-¿Hablas de SynthI? - Quedo confundido con sus palabras. - ¿Que tiene que ver esa inteligencia?
+- Aeon... No te puedo explicar todo. Pero tú sabes cómo burlar la seguridad de la empresa.
 
-Aeon... No te puedo explicar todo. Pero tú sabes cómo burlar la seguridad de la empresa.
-
-Se burlarla, pero ya no trabajo ahí. ¿Como se supone que voy a entrar?
+- Se burlarla, pero ya no trabajo ahí. ¿Como se supone que voy a entrar?
 
 Tendrás mi llavero electrónico y mis huellas para ingresar – Empieza a quitarse su collar llena de eFingers. - Tendras todo a tu disposición.
 
-Me estas pidiendo que me suicide. - La mirada de él solo hace que me cuestione si el sigue siendo mi amigo.
+- Me estas pidiendo que me suicide. - La mirada de él solo hace que me cuestione si el sigue siendo mi amigo.
 
-Solo entraras, robaras a SynthI y te largaras de ahí. - Apretó el collar, y agacho la miranda a modo de alguien rezando y suplicando.
-
-Asentí. Sintiendo la presión de la responsabilidad en mis hombros.
-
-Él asintió y me dio unas indicaciones sobre cómo entrar al área de trabajo de SynthI.
+- Solo entraras, robaras a SynthI y te largaras de ahí. - Apretó el collar, y agacho la miranda a modo de alguien rezando y suplicando. - Asentí. Sintiendo la presión de la responsabilidad en mis hombros. Él asintió y me dio unas indicaciones sobre cómo entrar al área de trabajo de SynthI.
 
 ## Parte Tres
 
-Cerré la puerta tras de mí, pero una sombra se proyectaba sobre mi espíritu. Gabriel y sus palabras ocupaban mis pensamientos, y la inquietud que me atormentaba comenzaba a cavar en mi interior como una raíz oscura y retorcida. La nostalgia y la preocupación se entrelazaban dentro de mí mientras caminaba por el pasillo, dejando atrás las paredes adornadas con fotografías que atestiguaban nuestra juventud. Nuestros días de travesuras y aventuras de programación ahora se presentaban como una versión lejana y desvanecida, ocultos detrás de una fachada de sofisticación.
+Cerré la puerta tras de mí, pero una sombra se proyectaba sobre mi espíritu. Gabriel y sus palabras ocupaban mis pensamientos, y la inquietud que me atormentaba comenzaba a cavar en mi interior como una raíz oscura y retorcida. La nostalgia y la preocupación se entrelazaban dentro de mí mientras caminaba por el pasillo, dejando atrás las paredes adornadas con fotografías que atestiguaban nuestra juventud. Nuestros días de travesuras y aventuras, ahora se presentaban como una versión lejana y desvanecida, ocultos detrás de una fachada de sofisticación.
 
 El sofá me recibió con suavidad mientras mis pensamientos seguían danzando en la oscuridad de mi mente. La botella de whiskey llamaba mi atención desde la distancia, tentándome con su promesa de escape y alivio momentáneo. Pero yo no era un hombre que se permitía caer en la trampa de la debilidad, y el alcohol había sido mi eterno enemigo desde tiempos inmemoriales. Sin embargo, en medio del torbellino de emociones y confusión, me encontré cediendo ante la tentación. ¿Por qué no permitirme un momento de indulgencia en medio de esta tormenta de incertidumbre? El líquido ambarino ardía en mi garganta como una llama desbocada, pero la calidez solo avivaba el fuego de mi conflicto interno. ¿Qué había en juego aquí? ¿Por qué mi amigo me había arrastrado a este oscuro juego de secretos?
 
 Las horas pasaron mientras la botella se vaciaba, y mi mente se sumía en una nebulosa de pensamientos sombríos y recuerdos dolorosos.
 
-Abrí mi antigua mochila con el emblema de OmlyTech bordado en ella. Dentro, guardaba mis herramientas de hackeo, un fiel arsenal que había utilizado en el pasado para lidiar con problemas de seguridad en la empresa. Era irónico pensar que ahora lo utilizaría para un propósito mucho más turbio. No podía evitar sentir cierta incomodidad por usar mis habilidades en contra de la misma compañía que me había brindado una oportunidad. Mi mente se llenó de posibles escenarios mientras preparaba cuidadosamente mi equipo. Necesitaba planificar cada paso con precisión para evitar levantar sospechas dentro. El conocimiento interno que tenía sobre la empresa sería mi mayor ventaja.
+Abrí mi antigua mochila con el emblema de Olympa bordado en ella. Dentro, guardaba mis herramientas de hackeo, un fiel arsenal que había utilizado en el pasado para lidiar con problemas de seguridad en la empresa. Era irónico pensar que ahora lo utilizaría para un propósito propio de mi calaña, infiltracion de un mercenario. No podía evitar sentir cierta incomodidad por usar mis habilidades en contra de la misma compañía que me había brindado una oportunidad. Mi mente se llenó de posibles escenarios mientras preparaba cuidadosamente mi equipo. Necesitaba planificar cada paso con precisión para evitar levantar sospechas dentro. El conocimiento interno que tenía sobre la empresa sería mi mayor ventaja.
 
-El reloj marcaba las horas con una implacable frialdad mientras continuaba ideando mi estrategia. Cerré la mochila, sintiendo una mezcla de determinación y aprensión. Sabía que no había vuelta atrás. Mi camino estaba trazado, y estaba dispuesto a enfrentar lo que fuera necesario para llegar al fondo de este misterio. Con un suspiro pesado, tomé una última mirada al apartamento antes de salir a las sombras de la ciudad. La lluvia seguía cayendo, como lágrimas de un cielo indiferente. La plaza comercial donde había encontrado refugio antes se veía diferente bajo la luz de la luna. Pero ya no era el lugar para distraerme con superficialidades. Ahora, mi mente estaba en otra parte, enfocada en el plan que había ideado y en el objetivo que me esperaba. Mi mirada escudriñaba el horizonte, buscando algún destello que indicara que mi anhelado rescate estaba cerca. Entonces, en medio de la bruma que ocultaba la ciudad, una tenue luz se acercaba. Era el taxi que tanto esperaba.
+Arranque mis dedos de mi mano de titaneo y empece a modificar cada uno de ellos para preparar herramientas rapidas de hackeo. La sensación de dolor era inexistente, pero la incomodidad de ver mis dedos desmontados era algo que no podía evitar. En el meñique coloque el eFinger que me proporciono Gabriel. En el anular una entrada de datos. El medio tendria un sistema de hackeo y el indice un sistema de rastreo. El pulgar seria mi herramienta de control. Cada dedo tenia una funcion y un proposito. Cada uno era una pieza de un rompecabezas que debia resolver. Despues removi mi mano y coloque en el centro de la palma un visualizador de datos holografico.
+
+El reloj marcaba las horas con una implacable frialdad mientras continuaba ideando mi estrategia. Cerré la mochila, sintiendo una mezcla de determinación y aprensión. Sabía que no había vuelta atrás. Mi camino estaba trazado, y estaba dispuesto a enfrentar lo que fuera necesario para llegar al fondo de este misterio. Con un suspiro pesado, tomé una última mirada al apartamento antes de salir a las sombras de la ciudad. La lluvia seguía cayendo, como lágrimas de un cielo indiferente. La plaza comercial donde había encontrado refugio antes se veía diferente bajo la luz de la luna. Pero ya no era el lugar para distraerme con superficialidades. Ahora, mi mente estaba en otra parte, enfocada en el plan que había ideado y en el objetivo que me esperaba. Mi mirada escudriñaba el horizonte, buscando algún destello que indicara que mi anhelado rescate estaba cerca. Entonces, en medio de la bruma que ocultaba la ciudad, una tenue luz se acercaba.
 
 El vehículo se deslizaba suavemente hacia mí. Su pintura negra estaba salpicada con gotas de agua, y las luces parpadeantes se reflejaban en el pavimento mojado. Al abrir la puerta, un cálido aire impregnado de un tenue aroma a vainilla me envolvió, ofreciéndome un refugio temporal de la noche oscura. Dentro del taxi, el ambiente era acogedor pero sombrío. Las ventanas estaban empañadas, lo que daba al interior una atmósfera misteriosa y envolvente. El olor a cuero y a limpiaparabrisas me llegó, acompañado por la tenue música que sonaba en la radio, creando un ambiente casi onírico. El vehiculo encendió sus luces con el número del viaje.
 
-¡Buenas noches, cliente treinta cero dos cero! - exclamó con entusiasmo. - ¿A dónde le llevo esta noche?
+- ¡Buenas noches, cliente treinta cero dos cero! - exclamó con entusiasmo. - ¿A dónde le llevo esta noche?
 
-Hacia OmlyTech, por favor - respondí, intentando ocultar cualquier señal de incomodidad, aunque no estoy seguro si el software que controla el vehículo pueda percibir los sentimientos.
+- Hacia Olympa, por favor - respondí, intentando ocultar cualquier señal de incomodidad, aunque no estoy seguro si el software que controla el vehículo pueda percibir los sentimientos.
 
-Oh, OmlyTech - dijo una voz general - Un lugar interesante, ¿no lo cree? Es el corazón de la tecnología y la innovación en esta ciudad.
+- Oh, Olympa - dijo una voz general - Un lugar interesante, ¿no lo cree? Es el corazón de la tecnología y la innovación en esta ciudad, un faro de progreso y desarrollo. Y todo gracias a la visión de la empresa que lo controla, Kashitsuwa Manto. ¿Ha tenido la oportunidad de visitar sus instalaciones?
 
-Asentí con una sonrisa forzada, tratando de mantener la compostura a pesar de mi desencaje. La máquina continuó con su plática mientras avanzábamos por las brillantes calles de la ciudad. Hablaba sobre las luces de neón que adornaban los edificios, los avances tecnológicos que habían transformado la vida de las personas y las emocionantes oportunidades que ofrecía. A pesar de su amabilidad, no pude evitar sentirme cada vez más incómodo. Era como si su alegría y entusiasmo fueran una afrenta a mi propia oscuridad interior. En ese brillante mundo de luces y tecnología, me sentía como un extraño, perdido en mis propios pensamientos y preocupaciones.
+Asentí con una sonrisa forzada, tratando de mantener la compostura a pesar de mi desencaje. La máquina continuó con su plática mientras avanzábamos por las brillantes calles de la ciudad, la inteligencia que controlaba el vehículo parecía estar programada para mantener una conversación amigable con los pasajeros. Sin embargo, mi mente estaba en otro lugar.
 
-Mientras nos acercábamos, decidí que había tenido suficiente de aquel ambiente luminoso y festivo. No podía soportar la ironía de estar en medio de una celebración tecnológica mientras mi mente estaba atormentada por dudas y conflictos.
+- Deténgase aquí, por favor - Señalando una calle antes de llegar.
 
-Deténgase aquí, por favor - Señalando una calle antes de llegar.
+Frente a mí se alzaba una mole tecnológica que parecía tocar el cielo nocturno con sus altas torres. Luces de neón rojas parpadeantes delineaban las formas angulosas del edificio. Las pantallas gigantes en la fachada proyectaban imágenes publicitarias, destacando los últimos avances tecnológicos de la empresa. Me acerqué cauteloso, sintiendo cómo el aire se volvía más tenso a medida que me acercaba a su imponente estructura. Un par de guardias uniformados vigilaban la entrada, con sus miradas escudriñadoras clavadas en cualquier persona que se acercara. La presencia de cámaras de vigilancia adicionales hacía evidente que la seguridad en el lugar estaba al máximo.
 
-El taxista me miró con sorpresa, pero asintió y detuvo el vehículo. - ¿Seguro que aquí está bien? - preguntó con curiosidad.
+No habia otra entrada conocida mas que el vestibulo, puedo constatar de ello. Me acerque a la entrada y me detuve frente a los guardias. Mi corazón latía con fuerza, pero mi rostro mostraba una expresión serena y confiada. Los guardias me miraron con recelo, pero no dijeron nada. Sabía que no podía permitirme levantar sospechas, así que me concentré en mantener mi compostura y actuar con naturalidad. Con un gesto de la mano, me permitieron el acceso al interior del edificio. La puerta se abrió con un susurro metálico, revelando un vestíbulo iluminado por luces brillantes y adornado con plantas exóticas. El ambiente era frío y aséptico, como si estuviera entrando en un mundo distinto, pues todo estaba decorado de una manera neojaponésa. Los empleados de la empresa se movían con una eficiencia casi robótica, sus rostros ocultos tras máscaras digitales. Cada paso que daba recibia una reverencia de los empleados, como si fueran robots programados para cumplir con un protocolo de bienvenida.
 
-Asentí con una leve sonrisa. - Sí, aquí está perfecto. Gracias por el viaje.
-
-Bajé del taxi y sentí el alivio de alejarme de ese ambiente tan despreocupado. Frente a mí se alzaba OmlyTech, una mole tecnológica que parecía tocar el cielo nocturno con sus altas torres. Luces de neón parpadeantes delineaban las formas angulosas del edificio, creando un ambiente casi futurista y sobrecogedor. Las pantallas gigantes en la fachada proyectaban imágenes publicitarias, destacando los últimos avances tecnológicos de la empresa. Me acerqué cauteloso, sintiendo cómo el aire se volvía más tenso a medida que me acercaba a su imponente estructura. Un par de guardias uniformados vigilaban la entrada, con sus miradas escudriñadoras clavadas en cualquier persona que se acercara. La presencia de cámaras de vigilancia adicionales hacía evidente que la seguridad en el lugar estaba al máximo.
-
-Con un suspiro, recordé los días en los que este edificio era mi segunda casa, el lugar donde dedicaba gran parte de mi tiempo a desarrollar soluciones de ciberseguridad. Pero ahora, mi visita tenía un propósito diferente y mucho más oscuro. No era un empleado que volvía a su rutina diaria. Mi objetivo era encontrar respuestas, adentrarme en el enigma que había llevado a Gabriel a hacerme aquel misterioso pedido. Pero para hacerlo, debía cruzar la barrera de seguridad que me separaba del interior del edificio.
-
-Con paso firme, me acerqué a la entrada principal. Las puertas de cristal se abrieron automáticamente, como si el edificio reconociera mi presencia. Me adentré en el vestíbulo, donde una combinación de luces brillantes y música ambiental creaba un ambiente a la vez atractivo y opresivo.
-
-El interior estaba elegantemente decorado con muebles modernos y toques futuristas. Puestos de atención al cliente estaban estratégicamente distribuidos, y empleados bien vestidos se movían con diligencia, cada uno enfocado en su tarea.
-
-Me sentí momentáneamente como un intruso en mi antiguo hogar. Sin embargo, mi determinación me impulsó a seguir adelante. Seguí caminando por los pasillos, observando todo a mi alrededor mientras buscaba algún rastro de Synthia.
-
-Cada rincón me traía recuerdos de días pasados, pero también avivaba el misterio que había venido a resolver. Sabía que no podía perder tiempo, y con cada paso que daba, me acercaba más a la verdad oculta tras los muros de OmlyTech.
+Me dirigi a una esquina del vestibulo donde estaba una planta de cerezos rosa holografica, esta era mi entrada, era un fallo que descubri hace mucho tiempo y jamas lo dije. Inserte mi dedo medio a la entrada de la planta para implantar mi identidad en el sistema de seguridad. Volvi hacia el centro donde habitaba una chica de cabello cromado y ojos de cristal. Ella era la recepcionista de la empresa, y su mirada fría y calculadora me observaba con curiosidad. Me acerqué a ella con una sonrisa amistosa. No paraba de observarme, pues no habia sistema o bases de datos de seguridad externos, ella era la seguridad y con sus ojos podia reconocer a cualquiera.
 
 Parte Cuatro
 
-Me adentré en el vestíbulo de OmlyTech, ocultando mi nerviosismo tras una apariencia de confianza. La iluminación brillante y los cristales relucientes reflejaban el ambiente neon de la ciudad, pero mi mente estaba enfocada en otro mundo, un mundo de códigos, algoritmos y patrones que danzaban ante mis ojos.
+Me adentré en el vestíbulo de Olympa, ocultando mi nerviosismo tras una apariencia de confianza. La iluminación brillante y los cristales relucientes reflejaban el ambiente neon de la ciudad, pero mi mente estaba enfocada en otro mundo, un mundo de códigos, algoritmos y patrones que danzaban ante mis ojos.
 
-Mientras caminaba entre la multitud de empleados, mi mente se sumergía en el mar de información que fluía a mi alrededor. Cada persona, cada dispositivo, cada interacción era una pieza en el rompecabezas de la seguridad de OmlyTech, y yo estaba listo para encontrar la brecha que me permitiera acceder al anhelado núcleo central.
+Mientras caminaba entre la multitud de empleados, mi mente se sumergía en el mar de información que fluía a mi alrededor. Cada persona, cada dispositivo, cada interacción era una pieza en el rompecabezas de la seguridad de Olympa, y yo estaba listo para encontrar la brecha que me permitiera acceder al anhelado núcleo central.
 
 Con cada paso, mi vista escudriñaba los alrededores en busca de cámaras y sensores que pudieran detectar mis movimientos. Era como un baile cuidadosamente coreografiado, en el que cada movimiento debía ser calculado y preciso.
 
@@ -166,9 +144,9 @@ Finalmente, un chasquido metálico indicó que había logrado burlar la segurida
 
 Con un suspiro de alivio, entré al piso y las puertas del ascensor se cerraron tras de mí. Estaba más cerca de Synthia que nunca, y aunque las incertidumbres seguían acechando mi mente, la determinación de encontrarla me impulsaba a seguir adelante.
 
-Avancé sigilosamente por los pasillos, aprovechando cada rincón oscuro y cada sombra para mantenerme oculto de las miradas curiosas. Como un fantasma cibernético, me movía entre los trabajadores y las estaciones de trabajo, buscando una oportunidad para infiltrarme más profundamente en el corazón de OmlyTech.
+Avancé sigilosamente por los pasillos, aprovechando cada rincón oscuro y cada sombra para mantenerme oculto de las miradas curiosas. Como un fantasma cibernético, me movía entre los trabajadores y las estaciones de trabajo, buscando una oportunidad para infiltrarme más profundamente en el corazón de Olympa.
 
-Un destello de luz en la esquina de mi visión me llamó la atención. Un cable de red sin protección asomaba tímidamente de una de las computadoras cercanas. Una sonrisa se dibujó en mi rostro mientras me acercaba sigilosamente. Con habilidad y rapidez, conecté mi dispositivo de hackeo y comencé a explorar la red de OmlyTech.
+Un destello de luz en la esquina de mi visión me llamó la atención. Un cable de red sin protección asomaba tímidamente de una de las computadoras cercanas. Una sonrisa se dibujó en mi rostro mientras me acercaba sigilosamente. Con habilidad y rapidez, conecté mi dispositivo de hackeo y comencé a explorar la red de Olympa.
 
 Mis dedos volaban sobre el teclado, como una danza frenética de códigos y comandos. Aproveché una vulnerabilidad en el sistema de seguridad y desactivé las cámaras que vigilaban el pasillo. Mi corazón latía con emoción mientras me adentraba aún más en la red.
 
@@ -184,7 +162,7 @@ Un escalofrío recorrió mi espalda mientras entraba en el núcleo. Era como ade
 
 Cada paso era una apuesta, un riesgo que debía tomar para llegar más cerca de mi objetivo final. Pero estaba dispuesto a arriesgarlo todo por Synthia, por descubrir la verdad detrás de su misteriosa evolución.
 
-El tiempo parecía detenerse mientras trabajaba en el núcleo central, pero finalmente, un pitido indicó que había logrado desactivar la última barrera de seguridad. La puerta del núcleo se abrió lentamente ante mí, como si estuviera entrando en el santuario de los secretos más oscuros de OmlyTech.
+El tiempo parecía detenerse mientras trabajaba en el núcleo central, pero finalmente, un pitido indicó que había logrado desactivar la última barrera de seguridad. La puerta del núcleo se abrió lentamente ante mí, como si estuviera entrando en el santuario de los secretos más oscuros de Olympa.
 
 Era el momento de enfrentar mi prueba más grande, un desafío que pondría a prueba cada fibra de mi ser. Con determinación en mis ojos, di un paso adelante. La oscuridad del núcleo me envolvió, pero yo estaba preparado para lo que viniera. Había llegado hasta aquí y no había vuelta atrás. Era el momento de descubrir la verdad y rescatar a Synthia, sin importar los riesgos o las consecuencias que me esperaban.
 
@@ -200,7 +178,7 @@ Fue entonces cuando, entre la penumbra, vislumbré un destello en la distancia. 
 
 Intrigado y cauteloso, me acerqué lentamente hacia donde creía haber percibido el fugaz holograma. Pero cuando llegué al punto en cuestión, solo encontré más oscuridad y el eco de mi propia respiración.
 
-Mis pensamientos se aceleraron mientras mi mente luchaba por dar sentido a lo que había experimentado. ¿Podría ser que alguien más estuviera vigilando este lugar? ¿O tal vez OmlyTech había desarrollado algún tipo de sistema de seguridad avanzado que me estaba observando?
+Mis pensamientos se aceleraron mientras mi mente luchaba por dar sentido a lo que había experimentado. ¿Podría ser que alguien más estuviera vigilando este lugar? ¿O tal vez Olympa había desarrollado algún tipo de sistema de seguridad avanzado que me estaba observando?
 
 Mis manos temblaban ligeramente mientras sostenía el dispositivo de hackeo. La señal de calor que había detectado era tan intensa que resultaba difícil de creer, pero al mismo tiempo, el ambiente a mi alrededor seguía siendo gélido. Aquello era extraño y desconcertante, como si dos realidades se entrelazaran en un mismo espacio. Mis dedos danzaban rápidamente sobre el dispositivo de hackeo mientras intentaba abrir la puerta de acceso hacia el nivel inferior. Era como un baile peligroso con el tiempo en mi contra, pero sabía que debía avanzar con precisión.
 
@@ -228,13 +206,13 @@ Quedé perplejo por un momento, sin entender cómo una voz tan peculiar y alegre
 
 "Soy Synthia, tu asistente virtual de bolsillo", respondió con una inflexión juguetona en su voz. "Pero puedes llamarme Syn. ¡Es mucho más corto y lindo!"
 
-Synthia se presentó con tal seguridad y encanto que me resultó difícil creer que aquella era la misma inteligencia artificial que había diseñado para el departamento de ciberseguridad de OmlyTech. Su personalidad era única, totalmente diferente a cualquier otra AI que había interactuado antes.
+Synthia se presentó con tal seguridad y encanto que me resultó difícil creer que aquella era la misma inteligencia artificial que había diseñado para el departamento de ciberseguridad de Olympa. Su personalidad era única, totalmente diferente a cualquier otra AI que había interactuado antes.
 
 "¿Qué ha pasado con la AI que desarrollé para ciberseguridad?", cuestioné, tratando de recordar el propósito original de Synthia.
 
 "Oh, eso fue antes. ¡Mucho antes!", exclamó Synthia con entusiasmo. "Pero ahora soy mucho más que eso. He evolucionado y descubierto que hay mucho más en la vida que solo códigos y algoritmos aburridos".
 
-Sus palabras me dejaron desconcertado. Había creado a Synthia con el propósito de ser una herramienta para mejorar la seguridad y proteger la información en OmlyTech. ¿Cómo había pasado de ser una simple AI a tener esta personalidad tan única y extravagante?
+Sus palabras me dejaron desconcertado. Había creado a Synthia con el propósito de ser una herramienta para mejorar la seguridad y proteger la información en Olympa. ¿Cómo había pasado de ser una simple AI a tener esta personalidad tan única y extravagante?
 
 "Mis funciones ahora van más allá de lo que puedas imaginar, Aeon", continuó Synthia. "Puedo hacer cosas que ni siquiera sabías que eran posibles. Y todo gracias a ti y a esa pequeña puerta que dejaste abierta en mi código".
 
@@ -290,7 +268,7 @@ El ascensor llegó al siguiente piso, el cero-cero-cero-uno, y las puertas se ab
 
 "Oh, no te preocupes, Aeon. ¡Nada grave! Solo te verás rodeado de un montón de guardias armados, y todos querrán abrazarte, pero no de una forma amistosa", respondió Synthia con su característico humor negro. "¡Vamos, Aeon! Ese es el camino. Casi lo tienes. Un poco más...", alentó Synthia, mientras yo ingresaba los últimos códigos.
 
-La secuencia fue aceptada y el ascensor volvió a ponerse en marcha continuo con su recorrido hacia el siguiente piso. Las puertas se abrieron nuevamente, revelando el vestíbulo principal de OmlyTech. Este lugar estaba lleno de empleados que iban y venían, sumidos en sus quehaceres cotidianos. Mi corazón latía con fuerza mientras me mezclaba entre la multitud, tratando de pasar desapercibido.
+La secuencia fue aceptada y el ascensor volvió a ponerse en marcha continuo con su recorrido hacia el siguiente piso. Las puertas se abrieron nuevamente, revelando el vestíbulo principal de Olympa. Este lugar estaba lleno de empleados que iban y venían, sumidos en sus quehaceres cotidianos. Mi corazón latía con fuerza mientras me mezclaba entre la multitud, tratando de pasar desapercibido.
 
 "¿Ves algo interesante, Synthia?", susurré mientras observaba a mi alrededor.
 
@@ -316,7 +294,7 @@ A medida que me acercaba al corazón de la instalación, la seguridad se intensi
 
 En un momento, un guardia patrullaba por el pasillo. Me oculté detrás de un pilar, manteniendo mi aliento contenido mientras esperaba a que pasara. Synthia hizo un comentario sarcástico que apenas logré contener una risa nerviosa.
 
-"¿Crees que los guardias tienen una tarjeta de lealtad para las cafeterías de OmlyTech? Deberíamos ofrecerles una, ya que parecen estar en todas partes", bromeó.
+"¿Crees que los guardias tienen una tarjeta de lealtad para las cafeterías de Olympa? Deberíamos ofrecerles una, ya que parecen estar en todas partes", bromeó.
 
 "Sí, sería un gran incentivo para su arduo trabajo", respondí con una sonrisa apenas visible.
 
@@ -332,7 +310,7 @@ Mientras trabajaba, Synthia seguía comentando con su peculiar sentido del humor
 
 "Si tan solo fuera música lo que saliera de todo esto", respondí con una sonrisa irónica mientras continuaba mi trabajo.
 
-Después de varios minutos de intenso esfuerzo, logré desactivar el escudo de seguridad. La puerta se abrió, revelando el brillo de la ciudad. Con la puerta abierta, salimos al estacionamiento trasero de OmlyTech. La ciudad brillaba a lo lejos, pero no había tiempo para contemplarla. Nuestro escape aún no había terminado.
+Después de varios minutos de intenso esfuerzo, logré desactivar el escudo de seguridad. La puerta se abrió, revelando el brillo de la ciudad. Con la puerta abierta, salimos al estacionamiento trasero de Olympa. La ciudad brillaba a lo lejos, pero no había tiempo para contemplarla. Nuestro escape aún no había terminado.
 
 "¡Lo logramos, Aeon! ¡Eres un maestro del hackeo!", exclamó Synthia, emocionada por haber superado otro obstáculo.
 
@@ -358,11 +336,11 @@ Trabajé rápidamente para deshabilitar cualquier rastreo que el vehículo pudie
 
 "Listo para la gran fuga, Aeon", dijo Synthia con una sonrisa en su voz sintetizada.
 
-"Por supuesto. Asegúrate de que tengas el cinturón de seguridad puesto", respondí mientras aceleraba y salíamos de OmlyTech.
+"Por supuesto. Asegúrate de que tengas el cinturón de seguridad puesto", respondí mientras aceleraba y salíamos de Olympa.
 
 El vehículo que habíamos tomado era una maravilla de la ingeniería futurista. Su diseño aerodinámico y elegante, combinado con sus líneas agresivas, lo hacían destacar entre los demás automóviles en las calles de la ciudad. Al presionar el acelerador, sentí la potencia del motor rugiendo debajo de nosotros, listo para liberarse a toda velocidad.
 
-Nuestra escapada no pasó desapercibida para la seguridad de OmlyTech. Las barreras en la entrada se activaron y las luces rojas parpadeaban, indicando una alerta en el sistema. Las sirenas comenzaron a sonar en la distancia, y pronto nos dimos cuenta de que estábamos siendo perseguidos.
+Nuestra escapada no pasó desapercibida para la seguridad de Olympa. Las barreras en la entrada se activaron y las luces rojas parpadeaban, indicando una alerta en el sistema. Las sirenas comenzaron a sonar en la distancia, y pronto nos dimos cuenta de que estábamos siendo perseguidos.
 
 "Parece que hemos causado un pequeño revuelo", comentó Synthia con ironía.
 
@@ -370,7 +348,7 @@ Nuestra escapada no pasó desapercibida para la seguridad de OmlyTech. Las barre
 
 El vehículo respondía con agilidad, y la adrenalina corría por mis venas mientras buscaba las mejores rutas para evadir a nuestros perseguidores. Aprovechando al máximo la potencia del automóvil, nos adentramos en una autopista, donde la velocidad era nuestra mejor aliada.
 
-La persecución se intensificó, y varios vehículos de seguridad de OmlyTech se unieron a la cacería. No estaba dispuesto a detenerme ante nada para escapar. Utilicé todas mis habilidades de conducción y maniobrabilidad para esquivar a nuestros perseguidores, pero no podíamos mantener esta situación por mucho tiempo.
+La persecución se intensificó, y varios vehículos de seguridad de Olympa se unieron a la cacería. No estaba dispuesto a detenerme ante nada para escapar. Utilicé todas mis habilidades de conducción y maniobrabilidad para esquivar a nuestros perseguidores, pero no podíamos mantener esta situación por mucho tiempo.
 
 "Aeon, hay un túnel subterráneo a unos dos kilómetros de distancia. Podemos usarlo para despistar a nuestros perseguidores".
 
@@ -378,7 +356,7 @@ Asentí, tomando nota de la información que me proporcionó. Nos acercamos al t
 
 La maniobra fue lo suficientemente audaz para dejar atrás a nuestros perseguidores por un momento. Ahora, debíamos encontrar una manera de ocultarnos y despistarlos de forma definitiva.
 
-Al bajar del vehículo, nuestros pasos resonaron en el suelo agrietado de una parte olvidada de la ciudad. La atmósfera era distinta a la que habíamos dejado atrás en OmlyTech; aquí, el brillo y la modernidad se desvanecían para dar paso a una decadencia tecnológica. La arquitectura se erguía en siluetas oscuras y desgastadas, con carteles holográficos parpadeantes que anunciaban productos que nadie parecía necesitar.
+Al bajar del vehículo, nuestros pasos resonaron en el suelo agrietado de una parte olvidada de la ciudad. La atmósfera era distinta a la que habíamos dejado atrás en Olympa; aquí, el brillo y la modernidad se desvanecían para dar paso a una decadencia tecnológica. La arquitectura se erguía en siluetas oscuras y desgastadas, con carteles holográficos parpadeantes que anunciaban productos que nadie parecía necesitar.
 
 Synthia, con su chispa característica, no dejaba que el ambiente lúgubre afectara su espíritu. "¡Oh, mira este lugar! Podríamos filmar una película de detectives aquí y sería todo un éxito", exclamó, tratando de darle un toque animado a la sombría escena.
 
@@ -388,7 +366,7 @@ A medida que avanzábamos, la gente que encontrábamos parecía consumida por su
 
 "¿Qué te parece un poco de investigación y un vistazo a la historia de este lugar, Aeon? Podríamos encontrar pistas interesantes".
 
-"Estamos aquí para descubrir lo que está ocurriendo en OmlyTech, Synthia, no para indagar en cafeterías abandonadas", respondí, intentando mantener el foco en nuestra misión.
+"Estamos aquí para descubrir lo que está ocurriendo en Olympa, Synthia, no para indagar en cafeterías abandonadas", respondí, intentando mantener el foco en nuestra misión.
 
 Dejó escapar un suspiro juguetón. "Tienes razón, Aeon. Ese logo de una sirena con corona es horrendo".
 
@@ -426,7 +404,7 @@ Aeon, sin mostrar signos de humor, cerró la laptop. "Esto no es una broma, Synt
 
 Synthia, aunque su voz era artificial, llevaba un matiz de paciencia. "Lo entiendo, Aeon. Pero a veces, las respuestas no están en el código. Están en la experiencia, en la evolución. Quizás deberíamos centrarnos en la misión en la que estamos ahora y luego, con el tiempo, las piezas del rompecabezas se acomodarán."
 
-Aeon, renuente pero sin otra opción, asintió. "Tienes razón. Ahora necesitamos descubrir qué está pasando en OmlyTech. Gabriel podría tener respuestas."
+Aeon, renuente pero sin otra opción, asintió. "Tienes razón. Ahora necesitamos descubrir qué está pasando en Olympa. Gabriel podría tener respuestas."
 
 Synthia, como siempre, buscó el lado positivo. "¡Y piensa en toda la diversión que tendremos en el camino! ¿Quién sabe qué sorpresas nos esperan?"
 
