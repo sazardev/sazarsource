@@ -1,0 +1,64 @@
+---
+title: "My opinion about the book 'Building Evolutionary Architectures'"
+description: "I finally read this incredible book and I want to share my opinion about `Building Evolutionary Architectures: Automated Software Governance` from Neal Ford, Rebecca Parsons, and Patrick Kua."
+category: "books"
+ship_count: 1
+pubDate: "Nov 19 2024"
+updatedDate: "Nov 19 2024"
+---
+
+![Building Evolutionary Architectures](https://m.media-amazon.com/images/I/91Dy1gRA-qL._SL1500_.jpg)
+
+> Software is rarely static; it continues to evolve as teams add new features, integration points, and a host of other common changes. What architects need are protection mechanisms for architecture characteristics, similar to unit tests but focused on architecture characteristics.
+
+With this quote, the book got me. Because as a junior/mid developer I always thought that the architecture of a software project is static, something that you decide in the start and this will never change, but the book shows me that I was wrong. The architecture of a software project is always changing, and we need to be prepared for that (And this is assuming that the architecture of the project is good). And having this in mind, please, read this book, but let me talk about the best key points of the book.
+
+# Dimensions of architecture
+
+## Technical dimension
+
+> The implementation parts of the architecture: the frameworks, dependent libraries, and implementation language(s).
+
+## Data dimension
+
+> Database schemas, table layouts, optimization planning, and so on. The database administrator generally handles this type of architecture.
+
+## Security dimension
+
+> Defines security policies and guidelines, and specifies tools to help uncover deficiencies.
+
+## Operational/ System
+
+> Concerns how the architecture maps to existing physical and/ or virtual infrastructure: servers, machine clusters, switches, cloud resources, and so on.
+
+# Why Evolutionary?
+
+A common question about evolutionary architecture concerns the name itself: why call it evolutionary architecture and not something else? Other possible terms include incremental, continual, agile, reactive, and emergent, to name just a few. But each of these terms misses the mark. The definition of evolutionary architecture that we state here includes two critical characteristics: incremental and guided.
+
+The terms continual, agile, and emergent all capture the notion of change over time, which is clearly a critical characteristic of an evolutionary architecture, but none of these terms explicitly captures any notion of how an architecture changes or what the desired end-state architecture might be. While all the terms imply a changing environment, none of them covers what the architecture should look like. The guided part of our definition reflects the architecture we want to achieve— our end goal.
+
+We prefer the word evolutionary over adaptable because we are interested in architectures that undergo fundamental evolutionary change, not ones that have been patched and adapted into increasingly incomprehensible accidental complexity. Adapting implies finding some way to make something work regardless of the elegance or longevity of the solution.
+
+To build architectures that truly evolve, architects must support genuine change, not jury-rigged solutions. Going back to our biological metaphor, evolutionary concerns the process of having a system that is fit for purpose and can survive the ever-changing environment in which it operates. Systems may have individual adaptations, but as architects,
+
+# API Architecture
+
+This was with difference my favorite API design, because I like how is really scalable, as you can see in the image below, the API is divided into layers. First we have `Client Requests`, then `API Layer`, then `Service Layer`, and finally `Data Layer`. But in the image, we had the option taht a `Service Component` can talk with another `Service Component` as a domain event, and the other don't know about the others. This is really scalable, because you can add more `Service Components` and the other don't need to know about the new `Service Component`. This is a good example about evolutionary architecture.
+
+![API Architecture](https://scontent.fmxl1-1.fna.fbcdn.net/v/t1.15752-9/462559158_1116956620153726_238769326558090671_n.png?_nc_cat=103&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeH8eRYy6LxPnSD2aYzDiqAu-xpILeoyvGH7Gkgt6jK8YZiXg-ZG3iY-UDxWqo3g-e0&_nc_ohc=PNzyGmxSl0YQ7kNvgHZVhmG&_nc_zt=23&_nc_ht=scontent.fmxl1-1.fna&oh=03_Q7cD1QHmbzTQKua0fNVGP4ljFGOOTmDIfBW2WxpnQTV4fTfZqA&oe=6764117A)
+
+Another cool thing about this API design is the `Orchestator Design`, as you can see in the image below, the `Orchestator` is responsible for the communication between the `Service Components`, and the `Service Components` don't know about the others. This is really scalable, because you can add more `Service Components` and the `Orchestator` don't need to know about the new `Service Component`. This is a good example about evolutionary architecture.
+
+![Orchestator Design](https://scontent.fmxl1-1.fna.fbcdn.net/v/t1.15752-9/462551450_3828487590747078_1627185807069383860_n.png?_nc_cat=111&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeESyPy1AO1mSUyJithEqsnvtOijBv1zsbe06KMG_XOxt9Cw-rpF47Da3K3Okw7H964&_nc_ohc=IUe6A7KSk0EQ7kNvgFe19Sq&_nc_zt=23&_nc_ht=scontent.fmxl1-1.fna&oh=03_Q7cD1QEGvp78jgBC2Lk-ZUigcptBovaj12johLpUkJNKed2xlw&oe=676413E8)
+
+# About data coupling
+
+> Be conservative in what you send. Be liberal in what you accept from others - Jon Postel
+
+Don’t send more information than necessary— ​ if a collaborating service needs only a phone number, don’t send a larger data structure. The more information in a contract, the more often other coupling points will take advantage of it, tightening a contract that could otherwise be looser.
+
+You can accept more information than you consume. You don’t need to consume more information than necessary, even if there is additional data available. If you only want a phone number, don’t build a protocol for the entire address, only validate the phone number. This decouples a service from information/ coupling points that it doesn’t need.
+
+# Conclusion
+
+> Software reuse is more like an organ transplant than snapping together Lego blocks. - John D. Cook
