@@ -107,3 +107,125 @@ Also, don't forget to add the color scheme to the profiles section in the settin
         ]
     },
 ```
+
+### 4. Add Custom Oh My Posh Theme
+
+Oh My Posh is a prompt theme engine for any shell, it's very customizable and you can create your own themes or use the ones that are already created by the community. You can find more information about Oh My Posh [here](https://ohmyposh.dev/).
+
+To install Oh My Posh you need to run the following command in PowerShell.
+
+```powershell
+Install-Module oh-my-posh -Scope CurrentUser
+```
+
+Once you have installed Oh My Posh, you can start customizing your prompt by editing the themes in the themes folder. You can also create your own themes by following the instructions on the Oh My Posh website.
+
+A personal recommendation is [M365Princess](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/M365Princess.omp.json) theme, it's a very cool theme with a lot of information in the prompt and looks like Manjaro terminal.
+
+Once you download the json file, you can import it to Oh My Posh by running the following command in PowerShell.
+
+```powershell
+Import-Module oh-my-posh -DisableNameChecking ; Import-Theme .\M365Princess.omp.json
+```
+
+And then reload the terminal to see the changes.
+
+```
+. $PROFILE
+```
+
+Also, don't forget to add to the PROFILE file the following line to load the theme every time you open the terminal.
+
+```powershell
+notepad $PROFILE
+```
+
+And then add the following line to the file.
+
+```powershell
+Import-Module oh-my-posh
+oh-my-posh init pwsh --config 'C:\Users\Usuario\Documents\M365Princess.omp.json' | Invoke-Expression
+```
+
+### 5. Add auto-completion to PowerShell
+
+PowerShell has a built-in auto-completion feature that allows you to quickly complete commands, parameters, and paths by pressing the `Tab` key. You can enable auto-completion in PowerShell by adding the following line to the PROFILE file.
+
+```powershell
+notepad $PROFILE
+```
+
+And then add the following line to the file.
+
+```powershell
+Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
+```
+
+### 6. Add custom aliases to PowerShell
+
+You can add custom aliases to PowerShell by editing the PROFILE file, which is located in the same folder as the settings.json file. You can add aliases for common commands, functions, and scripts to make it easier to use them in the terminal.
+
+```powershell
+notepad $PROFILE
+```
+
+And then add the following lines to the file.
+
+```powershell
+Set-Alias -Name ll -Value Get-ChildItem
+Set-Alias -Name la -Value Get-ChildItem -Force
+Set-Alias -Name cls -Value Clear-Host
+Set-Alias -Name c -Value Clear-Host
+Set-Alias -Name np -Value Notepad
+Set-Alias -Name code -Value code-insiders
+Set-Alias -Name explorer -Value Start-Process
+```
+
+### 7. Add custom functions to PowerShell
+
+You can add custom functions to PowerShell by editing the PROFILE file, which is located in the same folder as the settings.json file. You can add functions for common tasks, scripts, and utilities to make it easier to use them in the terminal.
+
+```powershell
+notepad $PROFILE
+```
+
+And then add the following lines to the file.
+
+```powershell
+function Get-Weather {
+    $url = "https://wttr.in"
+    Invoke-WebRequest -Uri $url
+}
+```
+
+### 8. Install neovim for PowerShell!
+
+Yes, you can use neovim in PowerShell, and it's very cool! You can install neovim by running the following command in PowerShell.
+
+```powershell
+winget install Neovim.Neovim
+. $PROFILE
+nvim
+```
+
+If this doesn't work, don't worry, try to using this command to set nvim in the path.
+
+```powershell
+[System.Environment]::SetEnvironmentVariable("Path", $env:Path + ";C:\Program Files\Neovim\bin", [System.EnvironmentVariableTarget]::Machine)
+```
+
+### 9. Winfetch for... Shinies!
+
+Winfetch is a Windows version of the popular neofetch tool for Linux, it displays system information in the terminal in a cool and colorful way. You can install Winfetch by running the following command in PowerShell.
+
+```powershell
+winget install Winfetch -e --silent
+. $PROFILE
+winfetch
+```
+
+### 10. Enjoy your new terminal!
+
+Now you have a fully customized Windows Terminal with a custom font, color scheme, prompt theme, auto-completion, aliases, functions, neovim, and Winfetch. You can start using it to run your favorite commands, scripts, and utilities in a cool and colorful way.
+
+I hope that you enjoy your new terminal and that it makes your development workflow more productive and enjoyable. If you have any questions or need help with customizing Windows Terminal, feel free to ask me in my personal social media.
