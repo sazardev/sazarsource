@@ -1,0 +1,109 @@
+---
+title: Developer Customization for Windows Terminal
+description: Customizing Windows Terminal
+pubDate: 24 Nov 2024
+---
+
+Every developer loves linux terminal, I can understand the hate for Windows Terminal, but it's not that bad if you are open to customization. And I'm not talking to use WSL or any other linux terminal, I'm talking about Windows Terminal and using ONLY PowerShell, not external terminals or shells.
+
+## Why Windows Terminal?
+
+Windows Terminal is a modern terminal application for users of command-line tools, aslo is fully open-source and it's available on the Microsoft Store, and very customizable!.
+
+## Customizing Windows Terminal
+
+### 1. Install Windows Terminal
+
+First, you need to install Windows Terminal from the Microsoft Store, you can find it [here](https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab).
+
+### 2. Open Windows Terminal
+
+Once you have installed Windows Terminal, you can open it from the Start menu or by searching for it in the search bar. You can also pin it to the taskbar or the Start menu for easy access.
+
+### 2. Add your custom font to Windows Terminal
+
+We got a lot of cool fonts to use in the terminal, but I recommend using Cascadia Code, it's a monospaced font that includes programming ligatures and is designed to enhance the look and feel of the Windows Terminal. You can download it from the [official GitHub repository](https://github.com/microsoft/cascadia-code). (Also if you will use Cascia Code I recommend to use the PL version, it's the one with the ligatures).
+
+To add the font to Windows Terminal (Assuming that you already installed it) justo go to the settings tab in Windows Terminal (Press `Ctrl + ,`) and then add the font to the profiles section in Additional options.
+
+Cascadia Code is not for everyone, you can use any font you want, just make sure it's monospaced. I will give you a list of different fonts that you can use in the terminal.
+
+- [JetBrains Mono (A beautiful and simple font)](https://www.jetbrains.com/lp/mono/)
+- [Source Code Pro (A very popular font)](https://adobe-fonts.github.io/source-code-pro/)
+- [Fira Code (A very popular font with ligatures)](https://fonts.google.com/specimen/Fira+Code)
+- [Hack (A very popular font)](https://sourcefoundry.org/hack/)
+- [Inconsolata (A very popular font)](https://fonts.google.com/specimen/Inconsolata)
+- [Monoid (A very popular font)](https://larsenwork.com/monoid/)
+- [Ubuntu Mono (A very popular font)](https://fonts.google.com/specimen/Ubuntu+Mono)
+- [DejaVu Sans Mono (A very popular font)](https://dejavu-fonts.github.io/)
+
+### 3. Add Custom Color Schemes
+
+You can add custom color schemes to Windows Terminal by editing the schemes.json file, which is also located in the same folder as the settings.json file. You can add color schemes for the background, text, cursor, and other elements of the terminal.
+
+If you don't know where is the %LOCALAPPDATA% folder or the settings.json file, you can find it in the Windows Terminal settings, just press `Ctrl + ,` and then click on the "Open JSON file" button (It's the first button from the left bottom).
+
+When the file is opened, you can start customizing your terminal, you can change the color scheme, the font, the cursor shape, the background image, the key bindings, and many other things. I will give you a custom file with my settings, you can use it as a base for your own settings. (And is a super mega cool Cyberpunk theme).
+
+```json
+ "schemes":
+    [
+        {
+            "background": "#1A1A2E",
+            "black": "#0D0D0D",
+            "blue": "#4E00FF",
+            "brightBlack": "#808080",
+            "brightBlue": "#0066FF",
+            "brightCyan": "#00FFFF",
+            "brightGreen": "#00FF66",
+            "brightPurple": "#FF00FF",
+            "brightRed": "#FF3300",
+            "brightWhite": "#FFFFFF",
+            "brightYellow": "#FFFF00",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#00CCCC",
+            "foreground": "#EAEAEA",
+            "green": "#00FF00",
+            "name": "VibrantCyberpunkScheme",
+            "purple": "#FF00FF",
+            "red": "#FF0055",
+            "selectionBackground": "#333333",
+            "white": "#EAEAEA",
+            "yellow": "#FFFF66"
+        }
+    ],
+```
+
+Also, don't forget to add the color scheme to the profiles section in the settings.json file.
+
+```json
+ "profiles":
+    {
+        "defaults": {
+            "colorScheme": "VibrantCyberpunkScheme"
+        },
+        "list":
+        [
+            {
+                "adjustIndistinguishableColors": "always",
+                "colorScheme": "VibrantCyberpunkScheme",
+                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                "cursorShape": "underscore",
+                "elevate": false,
+                "font":
+                {
+                    "face": "Cascadia Code PL",
+                    "size": 14,
+                    "weight": "normal"
+                },
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "hidden": false,
+                "intenseTextStyle": "all",
+                "name": "Vibrant Cyberpunk PowerShell",
+                "opacity": 85,
+                "tabTitle": "Cyberpunk Shell",
+                "useAcrylic": true
+            }
+        ]
+    },
+```
