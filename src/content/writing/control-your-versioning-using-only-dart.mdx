@@ -1,0 +1,192 @@
+---
+title: "Control your versioning using only Dart"
+description: "Learn how to control your versioning using only Dart."
+---
+
+If you're a Flutter or Dart developer, you might have heard about the `pubspec.yaml` file. This file is used to define the metadata of your Dart package, including its dependencies, version, and other information. And may you have also change the version of your package manually, but did you know that you can control your versioning using only Dart (And one package of course)?
+
+## What is Semantic Versioning?
+
+Semantic Versioning (SemVer) is a versioning system that defines how to version your software. It consists of three numbers separated by dots: `MAJOR.MINOR.PATCH`. And each number has a specific meaning, you are free to increment them as you wish, but it's recommended to follow the rules to avoid breaking changes. Here is a brief explanation of each number.
+
+To understand every versioning take a look of this function:
+
+```dart
+int transformStringToNumber({required String string}) {
+  return int.parse(string);
+}
+```
+
+### Major Version (The first number in the version) [Ver. {major}.0.0]
+
+You will increment the major version when you make incompatible changes in your package. This means that the users of your package will need to update their code to use the new version.
+
+As you see in the previous code, you can see that the code receive a `String` and return an `int`. If you change the return type to `double`, you will need to increment the major version.
+
+```dart
+// This is a breaking change because the return type was changed from int to double and will throw an error in the code that uses this function.
+double transformStringToNumber({required String string}) {
+  return double.parse(string);
+}
+```
+
+### Minor Version (The second number in the version) [Ver. 0.{minor}.0]
+
+You will increment the minor version when you add new features to your package. This means that the users of your package can update their code to use the new version without any breaking changes.
+
+Let's say that you want to add a new parameter to the function, you can do it without incrementing the major version.
+
+```dart
+// This is a non-breaking change because you are adding a new parameter to the function.
+int transformStringToNumber({required String string, int radix = 10}) {
+  return int.parse(string, radix: radix);
+}
+```
+
+### Patch Version (The third number in the version) [Ver. 0.0.{patch}]
+
+You will increment the patch version when you make bug fixes in your package. This means that the users of your package can update their code to use the new version without any breaking changes.
+
+```dart
+// This is a non-breaking change because you are fixing a bug in the function.
+// We now use int.tryParse instead of int.parse to avoid throwing an error when the string is not a number.
+int transformStringToNumber({required String string, int radix = 10}) {
+  return int.tryParse(string, radix: radix) ?? 0;
+}
+```
+
+## How to control your versioning using only Dart?
+
+Well, you now understand the basics of Semantic Versioning, but how can you control your versioning using only Dart? Well, just take a look to the `pubspec.yaml` file of your package, you will see a `version` field.
+
+```yaml
+version: 0.4.13
+```
+
+### Create a new `version_tracker.yml` file
+
+Create a new file called `version_tracker.yml` in the root of your package. This file will be used to store the current version of your package.
+
+```yaml
+version:
+  file: pubspec.yaml
+  key: version
+  format: semver
+  build_number: true
+  build_number_key: build_number
+  build_number_format: "{build_number}"
+```
+
+### Create a new file called `update_version.dart`
+
+Create a new file called `update_version.dart` in the root of your package. This file will be used to update the version of your package.
+
+```dart
+// We add the args because we will pass the semantic version as an argument.
+void main(List<String> args) async {
+}
+```
+
+Also, we will need to add some dependencies:
+
+```
+import 'dart:io';
+import 'package:yaml/yaml.dart';
+```
+
+And in the same file, we will create a new function and this function will be responsible for updating the version of your package.
+
+```dart
+
+// The type can be major, minor or patch.
+// This function will increment the version of your package.
+Future<void> incrementVersion(String type) async {
+    // Load the pubspec.yaml file.
+  final pubspecFile = File('pubspec.yaml');
+  final pubspecContent = await pubspecFile.readAsString();
+  final pubspec = loadYaml(pubspecContent);
+
+    // Get the current version of your package.
+  final version = pubspec['version'] as String;
+    // Split the version into parts.
+  final versionParts = version.split('+');
+  final semver = versionParts[0].split('.');
+  // Get the current build number of your package.
+  final buildNumber = int.parse(versionParts[1]);
+
+  int major = int.parse(semver[0]);
+  int minor = int.parse(semver[1]);
+  int patch = int.parse(semver[2]);
+
+    // Increment the version based on the type.
+  switch (type) {
+    case 'major':
+      major += 1;
+      minor = 0;
+      patch = 0;
+      break;
+    case 'minor':
+      minor += 1;
+      patch = 0;
+      break;
+    case 'patch':
+      patch += 1;
+      break;
+  }
+
+    // Increment the build number.
+  final newVersion = '$major.$minor.$patch+${buildNumber + 1}';
+  // Update the version in the pubspec.yaml file.
+  final newPubspecContent = pubspecContent.replaceFirst(
+    RegExp(r'version: .+'),
+    'version: $newVersion',
+  );
+
+    // Write the new version to the pubspec.yaml file.
+  await pubspecFile.writeAsString(newPubspecContent);
+  // Print the new version. (Optional)
+  print('Version updated to $newVersion');
+}
+```
+
+And now, just add this code to the `main` function. To process the arguments and call the `incrementVersion` function.
+
+```dart
+void main(List<String> args) async {
+  if (args.isNotEmpty) {
+    switch (args[0]) {
+      case 'major':
+        await incrementVersion('major');
+        break;
+      case 'minor':
+        await incrementVersion('minor');
+        break;
+      case 'patch':
+        await incrementVersion('patch');
+        break;
+      default:
+        print('Invalid argument. Use "major", "minor", or "patch".');
+    }
+  } else {
+    print('No argument provided. Use "major", "minor", or "patch".');
+  }
+}
+```
+
+### Try the code!
+
+And that's it! You can now try the code by running the following command in your terminal.
+
+```bash
+dart update_version.dart major
+```
+
+```bash
+dart update_version.dart minor
+```
+
+```bash
+dart update_version.dart patch
+```
+
+And that's it! You can now control your versioning using only Dart. You can also use this code in your CI/CD pipeline to automatically increment the version of your package.
