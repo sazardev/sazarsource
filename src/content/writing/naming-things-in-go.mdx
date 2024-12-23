@@ -1,0 +1,38 @@
+---
+title: "Naming things in Go lang"
+description: "How to declare meaningful names in Go lang"
+pubDate: "23 Dec 2024"
+---
+
+In every programming langauge it's very _important_ to know how to name a varibale, function or a type. But, in Go lang, you have to be super careful of how you name things. Why? Because Go has a philosophy of `idiomatic` code. This means that the code should be written in a way that is natural for Go developers to read and write. So let's see how to name things in Go lang.
+
+Also, another important thing is that the visibility of a name outside a package is determined by wether its first character is upper case.
+
+# Packages
+
+Why we start with packages? Well, when you are writing a new code or file code. The first thing you add is a package! So it's important to know how to name a package. The name of the package should be short, concise and should be in lowercase.
+
+Imagine that you are writing a utility package. You can name it `utils`. So the package name should be `utils`. But why not `Utilities`? Because it's not idiomatic in Go lang, and why `Utilities` is not idiomatic? Because it's too long and not concise.
+
+```go
+package utils // Good 👌
+package Utilities // Bad ❌
+```
+
+## Outside package
+
+Also, you need to be clear of the visibility of the package. If you want to export a package, you should start the package name with an uppercase letter. If you want to keep it private, you should start the package name with a lowercase letter.
+
+```go
+package utils // Private
+package Utils // Public
+```
+
+## A deeper package
+
+If you have a deeper package, as an example, you have a package called `utils` and inside it, you have a package called `string`. You should name the package `string` and not `strings`. Why? Because `again` this is not idiomatic in Go lang.
+
+```go
+package string // Good 👌
+package strings // Bad ❌
+```
