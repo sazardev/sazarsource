@@ -1,0 +1,57 @@
+---
+title: "What does even mean panic in Go?"
+description: "Let's talk about panic in Go. What is it? How to use it? When to use it? And what are the best practices?"
+pubDate: "23 Dec 2024"
+---
+
+In Go lang, we don't have `try` or `catch` blocks like in other languages. Instead, we have `panic` and `recover`. And it's a very good thing to use in your programs.
+
+## What is panic?
+
+`panic` is when something goes wrong in your program and you want to stop the execution of the program. It's like throwing an exception in other languages, but in Go, it's called `panic`. Why? Because it's a panic situation!!!
+
+Okay, let's be serious. For Go lang, isn't `idiomatic` to use in every line a `try` and `catch` block, because the creator of Go, Rob Pike, believes that it's better to handle the error where it happens! And not every code should have a `try` and `catch` block, because this is a very specific situation, not a general one.
+
+## How to use panic?
+
+You can use `panic` in your code like this:
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    triggerPanic()
+}
+
+func triggerPanic() {
+    panic("Something went wrong!")
+}
+```
+
+In this example, the `triggerPanic` function will panic and stop the execution of the program.
+
+> But, what if I want to recover from the panic?
+
+## How to recover from panic?
+
+In Go lang we have also `recover` function that can be used to recover from a panic. But, you should use it wisely, because it's not a good practice to recover from every panic. You should recover only from the panics that you know how to handle.
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    defer func() {
+        if r := recover(); r != nil {
+            fmt.Println("Recovered from panic:", r)
+        }
+    }()
+
+    triggerPanic()
+}
+```
+
+> The main diference between `try`/`catch` and `panic`/`recover` is that `panic`/`recover` are more general solution, because the panic get a propagaed up the stack, until it's recovered. And the `try`/`catch` is more specific, because you can catch only the exceptions that you want.
