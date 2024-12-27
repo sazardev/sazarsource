@@ -1,12 +1,12 @@
 ---
-import { TaleItem } from "@components/cards";
+import { TalesItem } from "@components/cards";
 import { Header } from "@components/misc";
 import { BaseHead } from "@components/seo";
 import { SITE_DESCRIPTION, SITE_TITLE } from "@data/index";
 import { getCollection } from "astro:content";
 import RootLayout from "@layouts/root-layout.astro";
 
-const writings = (await getCollection("writing")).sort(
+const writings = (await getCollection("tales")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---
@@ -27,7 +27,7 @@ const writings = (await getCollection("writing")).sort(
 
       {
         writings.map((writing) => (
-          <TaleItem
+          <TalesItem
             title={writing.data.title}
             date={writing.data.pubDate}
             slug={writing.slug}
