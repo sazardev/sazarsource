@@ -66,4 +66,4 @@ const ship = defineCollection({
   }),
 });
 
-export const collections = { writing, thought, ship, whoami };
+export const collections = { writing, thought, ship, whoami, tales };
