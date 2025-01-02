@@ -25,6 +25,10 @@ export const menuItems: MenuItem[] = [
     url: "/tales",
   },
   {
+    label: "books",
+    url: "/books",
+  },
+  {
     label: "ships",
     url: "/ships",
   },
