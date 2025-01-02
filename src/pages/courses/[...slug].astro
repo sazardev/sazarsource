@@ -1,0 +1,20 @@
+---
+import { ScrollProgress } from "@components/misc";
+import { type CollectionEntry, getCollection } from "astro:content";
+import CoursesLayout from "@layouts/courses-layout.astro";
+
+const posts = await getCollection("courses");
+type Props = CollectionEntry<"courses">;
+
+const { slug } = Astro.params;
+const post = posts.find((page) => page.slug === slug);
+
+if (!post) return Astro.redirect("/404");
+
+const { Content } = await post.render();
+---
+
+<CoursesLayout {...post.data}>
+  <Content />
+  <ScrollProgress />
+</CoursesLayout>
