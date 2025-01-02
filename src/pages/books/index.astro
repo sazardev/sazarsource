@@ -6,7 +6,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "@data/index";
 import { getCollection } from "astro:content";
 import RootLayout from "@layouts/root-layout.astro";
 
-const writings = (await getCollection("tales")).sort(
+const writings = (await getCollection("books")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---
@@ -23,7 +23,7 @@ const writings = (await getCollection("tales")).sort(
   <RootLayout>
     <div id="Header+title" class="flex flex-col w-full gap-6 max-w-xl">
       <Header />
-      <h1 class="w-full text-7xl font-medium tracking-tight">tales</h1>
+      <h1 class="w-full text-7xl font-medium tracking-tight">books</h1>
 
       {
         writings.map((writing) => (
