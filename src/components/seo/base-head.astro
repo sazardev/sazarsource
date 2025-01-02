@@ -1,7 +1,6 @@
 ---
 import "src/styles/global.css";
 
-// all pages through the use of the <BaseHead /> component.
 interface Props {
   title: string;
   description: string;
@@ -11,7 +10,7 @@ interface Props {
 const { title, description, image = "/images/ogimage.png" } = Astro.props;
 ---
 
-<!-- umami analytics -->{
+{
   import.meta.env.PROD && (
     <script
       async
@@ -22,7 +21,6 @@ const { title, description, image = "/images/ogimage.png" } = Astro.props;
   )
 }
 
-<!-- clarity analytics -->
 {
   import.meta.env.PROD && (
     <script
