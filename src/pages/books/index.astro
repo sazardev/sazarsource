@@ -1,5 +1,5 @@
 ---
-import { BooksItem, TalesItem } from "@components/cards";
+import { BooksItem } from "@components/cards";
 import { Header } from "@components/misc";
 import { BaseHead } from "@components/seo";
 import { SITE_DESCRIPTION, SITE_TITLE } from "@data/index";
@@ -21,16 +21,18 @@ const books = (await getCollection("books")).sort(
     />
   </head>
   <RootLayout>
-    <div id="Header+title" class="flex flex-col w-full gap-6 max-w-xl">
+    <div id="navbar+title" class="flex flex-col w-full gap-6 max-w-xl">
       <Header />
-      <h1 class="w-full text-7xl font-medium tracking-tight">books</h1>
+      <h1 class="w-full text-7xl font-medium tracking-tight mb-6">thoughts</h1>
 
       {
-        books.map((writing) => (
+        books.map((book, i) => (
           <BooksItem
-            title={writing.data.title}
-            date={writing.data.pubDate}
-            slug={writing.slug}
+            category={book.data.category}
+            content={book.data.description}
+            pubDate={book.data.pubDate}
+            slug={book.slug}
+            index={i}
           />
         ))
       }
