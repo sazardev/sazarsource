@@ -1,0 +1,20 @@
+---
+import { ScrollProgress } from "@components/misc";
+import { type CollectionEntry, getCollection } from "astro:content";
+import BooksLayout from "@layouts/books-layout.astro";
+
+const posts = await getCollection("books");
+type Props = CollectionEntry<"books">;
+
+const { slug } = Astro.params;
+const post = posts.find((page) => page.slug === slug);
+
+if (!post) return Astro.redirect("/404");
+
+const { Content } = await post.render();
+---
+
+<BooksLayout {...post.data}>
+  <Content />
+  <ScrollProgress />
+</BooksLayout>
