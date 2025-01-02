@@ -8,6 +8,7 @@ export async function GET(context) {
     getCollection("thought"),
     getCollection("ship"),
     getCollection("tale"),
+    getCollection("books"),
   ]);
 
   return rss({
@@ -31,6 +32,10 @@ export async function GET(context) {
       ...tales.map((tale) => ({
         ...tale.data,
         link: `/tales/${tale.slug}/`,
+      })),
+      ...books.map((book) => ({
+        ...book.data,
+        link: `/books/${book.slug}/`,
       })),
     ],
   });
