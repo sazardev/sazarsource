@@ -1,0 +1,100 @@
+---
+title: "From Java to Golang in My Job"
+description: "A story about how I switched from Java to Golang in my job"
+pubDate: 18 Mar 2025
+---
+
+Okay, let me introduce the problem of having Java. Someone will say that the problem it's java itself, and... I can't say no to that. But, let's be honest, Java is a great language, it's strong and predictable, may I can say that the problem was Java Spring Boot + Scrum Methodology + Microservices Architecture + Docker ... And a lot more. But, let's focus on the Java + Spring Boot.
+
+As a team we're working on a new departament called `Projects`, and this departament has the responsability to work on new... `Projects` using new technologies as `React` + `Java Spring Boot`. May this not sound to new technologies but in the other departament they're using `WebDev` from `PC Soft`... And I even know what the hell are that pay to win software.
+
+Now you got the context as a `Modern Team` working in this company. So, what's the problem with Java? The big problem is... Full integration with other applications in the company! May this not sound to dangerous or scary. But in the other departament they're using `WebDev` from `PC Soft`... And they don't had a REST API only SOAP API. And we need to integrate with them using JSON and XML... But also they can't use a `JSON` format!
+
+Certainly `Java Spring Boot` had a lot of libraries to work with `XML` and `JSON` but the problem is that we need efficiency and speed, an go to this path it's to slow for the clients and quality. So, we need to find a solution to this problem, and... We found a temporal option called: Native queries in `Java Spring Boot` using `JPA` and `Hibernate`.
+
+This solution was very simple and fast, but the problem was that we need to write a lot of code to make it work, and the code was very hard to maintain and understand. As we need integration, we make a frankenstein of code that was very hard to understand. You can se something like:
+
+```java
+public List<Project> getProjects() {
+    String query = "SELECT * FROM projects";
+    Query nativeQuery = entityManager.createNativeQuery(query, Project.class);
+    return nativeQuery.getResultList();
+}
+```
+
+Simple and functional but as you can see one function, fastly can become a monster of code. This is another example of a query that need a pagination and interfaces in a only function and query (Because we want to make it more simple):
+
+```java
+public List<Project> getProjects(int page, int size, String sort, String order) {
+    String query = "SELECT * FROM projects";
+    query += " ORDER BY " + sort + " " + order;
+    query += " LIMIT " + size + " OFFSET " + page * size;
+    Query nativeQuery = entityManager.createNativeQuery(query, Project.class);
+    return nativeQuery.getResultList();
+}
+```
+
+Minimal, functional, and made the job, but the problem was that it wasn't fast as we want. Doing some metrics we got that a query that should take 1 second to execute, was taking 5 seconds, why? Because we're using functions that are not optimized for the database also the pool of connections was very slow and the database was very slow because they got one server for all the applications in the company.
+
+This was a fail, so I suggested to use `threads` to make the queries in parallel, but the problem was that we need to make a lot of code to make it work! (My partners hate this idea...) Now the code may look like this:
+
+```java
+public List<Project> getProjects(int page, int size, String sort, String order) {
+    List<Future<List<Project>>> futures = new ArrayList<>();
+    for (int i = 0; i < 10; i++) {
+        futures.add(executorService.submit(() -> {
+            String query = "SELECT * FROM projects";
+            query += " ORDER BY " + sort + " " + order;
+            query += " LIMIT " + size + " OFFSET " + page * size;
+            Query nativeQuery = entityManager.createNativeQuery(query, Project.class);
+            return nativeQuery.getResultList();
+        }));
+    }
+
+    List<Project> projects = new ArrayList<>();
+    for (Future<List<Project>> future : futures) {
+        try {
+            projects.addAll(future.get());
+        } catch (InterruptedException | ExecutionException e) {
+            e.printStackTrace();
+        }
+    }
+
+    return projects;
+}
+```
+
+Using this we got another problem! The server CPU was at 80% and the memory was at 90% (To be honest, this was only when we need to do bulk operations, but we need to do it every day). So, we need to find another solution, and we found it! `Golang`.
+
+Golang is a language that is very fast and efficient, and it's very easy to make parallel queries and make it work. So, we decided to make a new service in Golang that will make the queries and return the data to the Java Spring Boot application. This was a great idea, but the problem was that we need to make a lot of code to make it work, but the code was very simple and easy to understand and maintain.
+
+This is an example of a query in Golang that will make the same as the Java Spring Boot query:
+
+```go
+func GetProjects(page int, size int, sort string, order string) []Project {
+    query := "SELECT * FROM projects"
+    query += " ORDER BY " + sort + " " + order
+    query += " LIMIT " + size + " OFFSET " + page * size
+    rows, err := db.Query(query)
+    if err != nil {
+        log.Fatal(err)
+    }
+    defer rows.Close()
+
+    projects := []Project{}
+    for rows.Next() {
+        project := Project{}
+        err := rows.Scan(&project.ID, &project.Name, &project.Description)
+        if err != nil {
+            log.Fatal(err)
+        }
+        projects = append(projects, project)
+    }
+
+    return projects
+}
+```
+
+Looks pretty the same, but the difference is that the Golang code is very fast and efficient, the bulk operations only take 1 second, and the server CPU is at 20% and the memory is at 30%. This was a great success, and we're very happy with the results.
+
+So, the conclusion is that Java is a great language, but sometimes you need to use other languages to make the job done. Golang is a great language that is very fast and efficient, and it's very easy to make parallel queries and make it work. So, if you have a problem with Java, try Golang, you will not regret it!
