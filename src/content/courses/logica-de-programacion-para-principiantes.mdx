@@ -3488,3 +3488,2456 @@ Los magos algoritmos usan un lenguaje especial para describir qué tan rápido c
 - **O(2^n)**: Tiempo exponencial - como algunos problemas muy difíciles
 
 ¡No necesitas entender las matemáticas detrás de esto ahora! Pero es bueno saber que los magos algoritmos tienen su propio lenguaje para hablar de la eficiencia de sus hechizos.
+
+# Profundizando en la notación Big O: El lenguaje secreto de los hechizos eficientes
+
+> "La notación Big O es como medir la velocidad de los hechizos: ¿tu magia tarda un segundo o un siglo en funcionar?"
+
+## ¿Qué es realmente la notación Big O?
+
+Imagina que eres un chef mágico y tienes diferentes recetas para hacer pasteles. La notación Big O te ayuda a responder: "Si tengo que hacer pasteles para más personas, ¿cuánto más tiempo me llevará?"
+
+**En palabras sencillas:** Big O mide cómo aumenta el tiempo (o espacio) que necesita un algoritmo cuando los datos de entrada crecen.
+
+¡Es como medir el "factor de cansancio" de tus hechizos mágicos!
+
+## El laboratorio del tiempo: ¿Cómo se calcula?
+
+El Mago Cronosmágico era famoso por su capacidad para medir exactamente cuánto tardaría un hechizo. Veamos cómo lo hacía:
+
+### Paso 1: Cuenta las operaciones básicas
+
+Primero, identifica las operaciones que se repiten en tu algoritmo:
+
+- Asignaciones (cuando guardas un valor)
+- Comparaciones (cuando comparas valores)
+- Operaciones matemáticas (sumas, restas, etc.)
+- Accesos a la memoria (cuando lees o escribes datos)
+
+### Paso 2: Encuentra cómo crecen con el tamaño de la entrada
+
+¿Qué pasa cuando tu lista de ingredientes mágicos tiene 10, 100 o 1000 elementos?
+
+### Paso 3: Quédate con el término que crece más rápido
+
+Big O se preocupa por lo que pasa en el "peor caso" cuando los datos son muy grandes.
+
+### Paso 4: Elimina las constantes y los términos menos significativos
+
+Si tu función es `3n² + 2n + 1`, simplificamos a O(n²) porque cuando n es grande, el término n² domina sobre los demás.
+
+## Las categorías mágicas de eficiencia (¡con ejemplos humanos!)
+
+### O(1) - Tiempo constante: ¡El hechizo instantáneo!
+
+**¿Qué significa?** No importa cuántos datos tengas, tu algoritmo siempre tarda lo mismo.
+
+**Ejemplo humano:** Encender una luz. No importa si tienes que iluminar una habitación pequeña o un estadio entero, el acto de presionar el interruptor siempre toma el mismo tiempo.
+
+**Ejemplo de código:**
+
+```
+función saberSiLaLuzEstáEncendida(interruptor):
+    DEVOLVER interruptor.estado  // Solo una operación, ¡siempre!
+```
+
+**Historia mágica:** El Hechizo Luminos del Mago Constante siempre tarda exactamente 1 segundo en crear luz, sin importar si ilumina una pequeña caja o un castillo entero.
+
+### O(log n) - Tiempo logarítmico: ¡El hechizo sabio!
+
+**¿Qué significa?** Cuando los datos se duplican, tu algoritmo solo necesita un paso más.
+
+**Ejemplo humano:** Buscar una palabra en el diccionario. No revisas página por página - abres por la mitad, decides si debes ir a la primera o segunda mitad, y repites. Con un diccionario de 1000 páginas, ¡solo necesitas unos 10 pasos máximo!
+
+**Cómo calcularlo:** Cuando en cada paso divides el problema por la mitad (o por cualquier factor constante).
+
+**Ejemplo de código:**
+
+```
+función buscarPalabraEnDiccionario(diccionario, palabra):
+    inicio = 0
+    fin = diccionario.longitud - 1
+
+    MIENTRAS (inicio <= fin):
+        medio = (inicio + fin) / 2
+
+        SI (diccionario[medio] == palabra) ENTONCES
+            DEVOLVER "¡Encontrada en la página " + medio + "!"
+        SINO SI (diccionario[medio] < palabra) ENTONCES
+            inicio = medio + 1
+        SINO
+            fin = medio - 1
+
+    DEVOLVER "Palabra no encontrada"
+```
+
+**Historia mágica:** La biblioteca mágica tiene 1,000,000 de libros, pero el Bibliotecario Logarítmico puede encontrar cualquier libro en solo 20 pasos usando su varita buscadora que divide las secciones por la mitad cada vez.
+
+### O(n) - Tiempo lineal: ¡El hechizo simple!
+
+**¿Qué significa?** El tiempo crece en proporción directa a la cantidad de datos.
+
+**Ejemplo humano:** Leer un libro. Si un libro tiene el doble de páginas, tardarás aproximadamente el doble en leerlo.
+
+**Cómo calcularlo:** Cuando tienes un solo bucle que recorre todos los elementos.
+
+**Ejemplo de código:**
+
+```
+función contarEstudiantesPresentes(listaEstudiantes):
+    presentes = 0
+
+    PARA CADA estudiante EN listaEstudiantes:
+        SI (estudiante.estáPresente) ENTONCES
+            presentes = presentes + 1
+
+    DEVOLVER presentes
+```
+
+**Historia mágica:** La Hechicera Lineal tiene un hechizo para regar flores. Cada flor recibe una gota de agua mágica. Si hay 10 flores, realiza 10 movimientos; si hay 100 flores, realiza 100 movimientos.
+
+### O(n log n) - Tiempo lineal-logarítmico: ¡El hechizo eficiente y poderoso!
+
+**¿Qué significa?** Es como combinar un proceso lineal con uno logarítmico.
+
+**Ejemplo humano:** Ordenar cartas de una baraja usando el método "dividir y conquistar". Divides las cartas en grupos (componente logarítmico), y luego las recorres para combinarlas (componente lineal).
+
+**Cómo calcularlo:** Aparece en algoritmos que dividen el problema y luego procesan cada división, como Mergesort o Quicksort.
+
+**Historia mágica:** El Torneo de Magos tiene n participantes. Cada mago debe enfrentarse a aproximadamente log n duelos (las rondas del torneo), y hay n magos en total, así que la duración completa del torneo es O(n log n).
+
+### O(n²) - Tiempo cuadrático: ¡El hechizo pesado!
+
+**¿Qué significa?** Si duplicas los datos, el tiempo se multiplica por cuatro.
+
+**Ejemplo humano:** Comprobar si hay duplicados en un grupo de personas presentando cada persona a todas las demás. Con 10 personas, necesitas hasta 100 presentaciones; con 100 personas, ¡necesitas 10,000!
+
+**Cómo calcularlo:** Típicamente aparece cuando tienes bucles anidados (un bucle dentro de otro).
+
+**Ejemplo de código:**
+
+```
+función encontrarParesPosibles(estudiantes):
+    PARA i DESDE 0 HASTA estudiantes.longitud - 1:
+        PARA j DESDE 0 HASTA estudiantes.longitud - 1:
+            SI (i != j) ENTONCES
+                decir estudiantes[i] + " podría formar equipo con " + estudiantes[j]
+```
+
+**Historia mágica:** En la Villa Cuadrática, cuando llega un nuevo habitante, debe visitar la casa de cada uno de los habitantes actuales. El primer habitante no visita a nadie, el segundo hace 1 visita, el tercero hace 2, y así sucesivamente. ¡El habitante número 100 tiene que hacer 99 visitas!
+
+### O(2^n) - Tiempo exponencial: ¡El hechizo interminable!
+
+**¿Qué significa?** El tiempo crece astronómicamente rápido. Cada elemento adicional duplica (o más) el tiempo necesario.
+
+**Ejemplo humano:** Intentar adivinar una contraseña probando todas las combinaciones posibles. Si la contraseña tiene 10 caracteres, hay 2^10 = 1,024 posibilidades; con 20 caracteres, ¡hay más de un millón!
+
+**Cómo calcularlo:** Aparece en algoritmos que generan todas las combinaciones o subconjuntos posibles.
+
+**Ejemplo de código:**
+
+```
+función generarTodasLasCombinaciones(elementos, n):
+    SI (n == 0) ENTONCES
+        DEVOLVER [[]]
+
+    resultado = []
+    combinacionesPrevias = generarTodasLasCombinaciones(elementos, n-1)
+
+    PARA CADA combinación EN combinacionesPrevias:
+        PARA CADA elemento EN elementos:
+            nuevaCombinación = combinación + [elemento]
+            resultado.push(nuevaCombinación)
+
+    DEVOLVER resultado
+```
+
+**Historia mágica:** El Hechicero Exponencial quería invitar amigos a cenar, pero no podía decidir qué grupos formar. Decidió probar todas las combinaciones posibles. Con 10 amigos, tuvo que evaluar 1,024 diferentes grupos. Cuando intentó hacerlo con 30 amigos, ¡aún no ha terminado de calcular las combinaciones y han pasado tres siglos!
+
+## Comparando hechizos: Una carrera mágica
+
+La Académia de Magia Algorítmica organizó una competencia para encontrar un nombre en una gran lista de magos:
+
+1. **Mago Lineal** usó búsqueda secuencial (O(n)):
+
+   - Con 10 nombres: 10 pasos máximo
+   - Con 1,000 nombres: 1,000 pasos máximo
+   - Con 1,000,000 nombres: 1,000,000 pasos máximo
+
+2. **Mago Logarítmico** usó búsqueda binaria (O(log n)):
+
+   - Con 10 nombres: ~4 pasos máximo
+   - Con 1,000 nombres: ~10 pasos máximo
+   - Con 1,000,000 nombres: ~20 pasos máximo
+
+3. **Mago Cuadrático** usó un método extraño (O(n²)):
+   - Con 10 nombres: 100 pasos
+   - Con 1,000 nombres: 1,000,000 pasos
+   - Con 1,000,000 nombres: ¡Todavía está buscando!
+
+## Cómo detectar la eficiencia de tu propio hechizo
+
+### Pistas para identificar la complejidad:
+
+1. **Bucle simple que recorre los datos una vez** → O(n)
+
+   ```
+   PARA CADA elemento EN lista:
+       hacer_algo()
+   ```
+
+2. **Bucles anidados del mismo tamaño** → O(n²)
+
+   ```
+   PARA i DESDE 0 HASTA n:
+       PARA j DESDE 0 HASTA n:
+           hacer_algo()
+   ```
+
+3. **División del problema por la mitad en cada paso** → O(log n)
+
+   ```
+   mientras el problema sea grande:
+       dividir el problema por la mitad
+   ```
+
+4. **Bucle cuyo índice se multiplica/divide** → O(log n)
+
+   ```
+   i = 1
+   MIENTRAS (i < n):
+       hacer_algo()
+       i = i * 2
+   ```
+
+5. **Recursión que genera múltiples llamadas** → Potencialmente O(2^n)
+   ```
+   función fibonacci(n):
+       SI n <= 1: DEVOLVER n
+       DEVOLVER fibonacci(n-1) + fibonacci(n-2)
+   ```
+
+## Ejercicios mágicos para practicar
+
+### Ejercicio 1: El armario mágico
+
+El Mago Ordenado tiene un armario con n túnicas. Cada mañana sigue este ritual:
+
+```
+función encontrarTúnicaFavorita(armario, color):
+    PARA CADA túnica EN armario:
+        SI (túnica.color == color) ENTONCES
+            DEVOLVER túnica
+    DEVOLVER "No encuentro mi túnica favorita :("
+```
+
+¿Cuál es la complejidad Big O de este ritual? ¿Por qué?
+
+<details>
+  <summary>Respuesta</summary>
+  La complejidad es O(n) porque en el peor caso, el mago debe revisar todas las
+  túnicas del armario.
+</details>
+
+### Ejercicio 2: La poción perfecta
+
+La Bruja Mezcladora tiene que probar todas las combinaciones posibles de n ingredientes para una poción:
+
+```
+función probarTodasLasCombinaciones(ingredientes):
+    SI (ingredientes.longitud == 0) ENTONCES
+        probarPociónActual()
+        DEVOLVER
+
+    // Probar con el primer ingrediente
+    primerIngrediente = ingredientes[0]
+    restantes = ingredientes.sinPrimero()
+
+    // Caso 1: Incluir el ingrediente
+    añadirAPoción(primerIngrediente)
+    probarTodasLasCombinaciones(restantes)
+    quitarDePoción(primerIngrediente)
+
+    // Caso 2: No incluir el ingrediente
+    probarTodasLasCombinaciones(restantes)
+```
+
+¿Cuál es la complejidad Big O de esta función? ¿Por qué?
+
+<details>
+  <summary>Respuesta</summary>
+  La complejidad es O(2^n) porque para cada ingrediente, la bruja tiene dos
+  opciones (incluirlo o no), lo que da lugar a 2^n combinaciones totales.
+</details>
+
+## Conclusión: Eligiendo el hechizo adecuado
+
+El Gran Arquimago siempre decía: "Un mago sabio no solo conoce muchos hechizos, sino que sabe cuál es el más eficiente para cada situación."
+
+La notación Big O es como el manual de eficiencia de tus hechizos algorítmicos:
+
+- Para listas pequeñas, casi cualquier algoritmo funcionará bien
+- Para listas medianas, evita algoritmos O(n²) si puedes
+- Para listas grandes, busca algoritmos O(n) o, mejor aún, O(log n)
+- Si encuentras un problema O(2^n), busca aproximaciones o soluciones parciales
+
+Recuerda: "Con gran poder algorítmico viene una gran responsabilidad... de elegir el algoritmo más eficiente para cada trabajo."
+
+> "No es magia, es algoritmia... ¡aunque a veces se parecen bastante!"
+
+# Modularización: El arte de dividir y conquistar
+
+> "La modularización es como construir con bloques LEGO: creas piezas pequeñas y especializadas que luego se unen para formar algo increíblemente complejo y maravilloso."
+
+## ¿Qué es la modularización?
+
+Imagina que te piden hornear un pastel gigante de tres pisos para una fiesta. ¿Intentarías hacerlo todo a la vez? Probablemente no. En su lugar, dividirías el trabajo: primero harías cada piso por separado, luego prepararías la crema, después decorarías cada nivel y finalmente los unirías.
+
+La modularización en programación es exactamente eso: dividir un programa grande y complejo en partes más pequeñas y manejables llamadas "módulos". Cada módulo se encarga de una tarea específica y puede funcionar de forma independiente. Cuando todos estos módulos trabajan juntos, ¡crean un programa completo y poderoso!
+
+## La historia del Gran Castillo Modular
+
+Había una vez un reino llamado Código Brillante, donde el rey necesitaba construir un castillo enorme. Llamó al Maestro Constructor Modular para esta importante tarea.
+
+Cuando el rey le mostró los planos gigantescos, el Maestro Constructor sonrió y dijo:
+"Su Majestad, no construiremos todo el castillo a la vez. Lo dividiremos en módulos: las torres, el puente levadizo, los muros, el gran salón..."
+
+"Pero, ¿cómo sabremos que todas las partes encajarán al final?" preguntó el rey, preocupado.
+
+"Simple," respondió el Maestro. "Cada equipo trabajará siguiendo estándares claros. Las torres sabrán exactamente cómo conectarse con los muros, el puente levadizo sabrá cómo unirse a la entrada principal."
+
+El rey, aún dudoso, aprobó el plan. Para su sorpresa, cuando surgió un problema con el diseño de una torre, solo ese equipo tuvo que hacer ajustes, mientras los demás continuaron su trabajo sin interrupciones. Y cuando el rey decidió añadir una mazmorra secreta, pudieron agregarla sin tener que rediseñar todo el castillo.
+
+Cuando terminaron, el castillo no solo era magnífico sino que fue construido en la mitad del tiempo esperado. El Maestro Constructor explicó: "Dividir y conquistar, Su Majestad. Ese es el secreto de la modularización."
+
+## Los poderes mágicos de la modularización
+
+La modularización nos da superpoderes cuando programamos:
+
+### 1. Simplificación: El poder de hacer lo complejo simple
+
+**Ejemplo humano:** ¿Has visto esos muebles que vienen con instrucciones paso a paso? Construir una estantería entera de una vez sería abrumador, pero siguiendo módulos (base, laterales, estantes, uno por uno) se vuelve manejable.
+
+```
+// Sin modularización (¡caos!)
+PROCEDIMIENTO hacerTodoElJuego:
+    iniciarPantalla()
+    cargarImágenes()
+    iniciarJugador(nombre, nivel)
+    crearEnemigos()
+    // ... ¡cientos de líneas más!
+
+// Con modularización (¡claridad!)
+PROCEDIMIENTO iniciarJuego:
+    iniciarPantalla()
+    cargarRecursos()
+    crearPersonajes()
+    iniciarNivel()
+```
+
+### 2. Reutilización: El poder de no repetir trabajo
+
+**Ejemplo humano:** Una vez que aprendes a hacer arroz perfectamente, puedes usar esa habilidad para muchos platos diferentes sin tener que reaprender cada vez.
+
+```
+// Procedimiento modular que podemos reutilizar
+PROCEDIMIENTO calcularDistancia(puntoA, puntoB):
+    difX = puntoB.x - puntoA.x
+    difY = puntoB.y - puntoA.y
+    distancia = RAÍZ_CUADRADA(difX² + difY²)
+    DEVOLVER distancia
+
+// Lo usamos en diferentes partes del programa
+distanciaAlEnemigo = calcularDistancia(jugador, enemigo)
+distanciaALaMeta = calcularDistancia(jugador, meta)
+```
+
+### 3. Mantenimiento: El poder de arreglar sin destruir
+
+**Ejemplo humano:** Si tu coche tiene un problema con la batería, el mecánico puede reemplazar solo la batería sin tocar el motor, las ruedas o el sistema de frenos.
+
+```
+// Si encontramos un error en esta procedimiento
+PROCEDIMIENTO calcularImpuestos(monto):
+    // Aquí hay un error en la fórmula de impuestos
+    impuesto = monto * 0.16  // Debería ser 0.18
+    DEVOLVER impuesto
+
+// Solo corregimos esta procedimiento específica sin tocar el resto del programa
+PROCEDIMIENTO calcularImpuestos(monto):
+    impuesto = monto * 0.18  // ¡Corregido!
+    DEVOLVER impuesto
+```
+
+### 4. Colaboración: El poder del trabajo en equipo
+
+**Ejemplo humano:** Una orquesta donde cada músico es responsable de dominar su instrumento. No necesitan saber tocar todos los instrumentos, solo necesitan saber cómo su parte encaja en la composición completa.
+
+```
+// Ana puede trabajar en el módulo de gráficos
+MÓDULO gráficos:
+    PROCEDIMIENTO dibujarPersonaje(): ...
+    PROCEDIMIENTO animarMovimiento(): ...
+FIN MÓDULO
+
+// Mientras tanto, Carlos trabaja en el módulo de sonido
+MÓDULO sonido:
+    PROCEDIMIENTO reproducirEfecto(): ...
+    PROCEDIMIENTO iniciarMúsicaFondo(): ...
+FIN MÓDULO
+```
+
+### 5. Pruebas: El poder de verificar cada pieza
+
+**Ejemplo humano:** Antes de lanzar un nuevo modelo de avión, los ingenieros prueban cada componente por separado (motores, alas, sistemas electrónicos) antes de probar el avión completo.
+
+```
+PROCEDIMIENTO probarMóduloCalculadora():
+    AFIRMAR_QUE(sumar(2, 2) = 4)
+    AFIRMAR_QUE(restar(5, 3) = 2)
+    AFIRMAR_QUE(multiplicar(3, 4) = 12)
+    AFIRMAR_QUE(dividir(10, 2) = 5)
+
+    MOSTRAR "¡Módulo de calculadora funciona correctamente!"
+```
+
+## La gran biblioteca de módulos mágicos
+
+En la Escuela de Magia del Código había una enorme biblioteca con tomos antiguos. La bibliotecaria, la Maga Modular, organizaba los libros en secciones especializadas:
+
+"Verás," le explicaba a los nuevos estudiantes, "cada sección es como un módulo. Tenemos la sección de Pociones, la sección de Transformaciones, la de Encantamientos..."
+
+Un día, un joven mago llamado Leo quiso crear un hechizo para hacer que las plantas crecieran y produjeran frutas instantáneamente.
+
+"No necesitas inventar todo desde cero," sonrió la Maga Modular. "Puedes usar el módulo de Crecimiento Acelerado del estante 3, combinarlo con el módulo de Nutrición del estante 7, y añadir el módulo de Floración del estante 12."
+
+Leo estaba asombrado. "¿Quiere decir que puedo crear un nuevo hechizo sólo combinando hechizos existentes?"
+
+"¡Exactamente!" exclamó la bibliotecaria. "Esa es la magia de la modularización. ¿Por qué reinventar la rueda cuando ya tenemos ruedas perfectamente funcionales que puedes usar? Tu trabajo es encontrar formas creativas de combinar esos módulos para crear algo nuevo y maravilloso."
+
+## Tipos de módulos en el mundo mágico de la programación
+
+Existen diferentes formas de crear módulos en programación, cada una con sus propias ventajas:
+
+### 1. Módulos de funciones: Los hechizos básicos
+
+Son colecciones de funciones relacionadas que realizan tareas específicas.
+
+```
+MÓDULO matemáticas:
+    PROCEDIMIENTO sumar(a, b): DEVOLVER a + b
+    PROCEDIMIENTO restar(a, b): DEVOLVER a - b
+    PROCEDIMIENTO multiplicar(a, b): DEVOLVER a * b
+    PROCEDIMIENTO dividir(a, b): DEVOLVER a / b
+FIN MÓDULO
+
+// Usar el módulo
+resultado = matemáticas.multiplicar(4, 5)  // resultado = 20
+```
+
+### 2. Módulos de clases: Las escuelas de magia
+
+Son como plantillas para crear objetos con características y comportamientos relacionados.
+
+```
+CLASE MóduloInventario:
+    CONSTRUCTOR():
+        this.items = []
+    FIN CONSTRUCTOR
+
+    PROCEDIMIENTO añadirItem(item):
+        AÑADIR item A this.items
+        MOSTRAR "Item añadido: " + item.nombre
+    FIN PROCEDIMIENTO
+
+    PROCEDIMIENTO eliminarItem(índice):
+        itemEliminado = QUITAR item EN POSICIÓN índice DE this.items
+        MOSTRAR "Item eliminado: " + itemEliminado.nombre
+    FIN PROCEDIMIENTO
+
+    PROCEDIMIENTO mostrarInventario():
+        MOSTRAR "Inventario actual:"
+        PARA CADA item EN this.items:
+            MOSTRAR "- " + item.nombre
+        FIN PARA
+    FIN PROCEDIMIENTO
+FIN CLASE
+
+// Crear y usar el módulo
+inventarioJugador = NUEVO MóduloInventario()
+inventarioJugador.añadirItem({nombre: "Poción curativa", poder: 50})
+inventarioJugador.añadirItem({nombre: "Espada mágica", poder: 100})
+inventarioJugador.mostrarInventario()
+```
+
+### 3. Módulos de archivo: Los pergaminos mágicos
+
+En lenguajes modernos, cada archivo puede ser un módulo que contiene código relacionado.
+
+```
+// archivo: módulo_jugador
+EXPORTAR PROCEDIMIENTO crearJugador(nombre, clase):
+    DEVOLVER {
+        nombre: nombre,
+        clase: clase,
+        nivel: 1,
+        experiencia: 0,
+        subirNivel: PROCEDIMIENTO():
+            this.nivel = this.nivel + 1
+            MOSTRAR this.nombre + " ha subido al nivel " + this.nivel + "!"
+        FIN PROCEDIMIENTO
+    }
+FIN PROCEDIMIENTO
+
+// En otro archivo:
+IMPORTAR crearJugador DESDE módulo_jugador
+
+miJugador = crearJugador("Gandalf", "Mago")
+```
+
+## La casa modular: Un ejemplo práctico
+
+Pensemos en una casa como un programa, y cada habitación y sistema de la casa como un módulo. Cada módulo tiene una función específica y se comunica con otros módulos según sea necesario.
+
+```
+MÓDULO electricidad:
+    estado = {
+        cocina: "apagado",
+        salón: "apagado",
+        dormitorio: "apagado"
+    }
+
+    PROCEDIMIENTO encender(habitación):
+        MOSTRAR "Luces encendidas en " + habitación
+        estado[habitación] = "encendido"
+    FIN PROCEDIMIENTO
+
+    PROCEDIMIENTO apagar(habitación):
+        MOSTRAR "Luces apagadas en " + habitación
+        estado[habitación] = "apagado"
+    FIN PROCEDIMIENTO
+FIN MÓDULO
+
+MÓDULO calefacción:
+    temperatura = 20
+
+    PROCEDIMIENTO aumentarTemperatura():
+        temperatura = temperatura + 1
+        MOSTRAR "Temperatura aumentada a " + temperatura + "°C"
+    FIN PROCEDIMIENTO
+
+    PROCEDIMIENTO disminuirTemperatura():
+        temperatura = temperatura - 1
+        MOSTRAR "Temperatura disminuida a " + temperatura + "°C"
+    FIN PROCEDIMIENTO
+FIN MÓDULO
+
+MÓDULO seguridad:
+    alarmaActivada = FALSO
+
+    PROCEDIMIENTO activarAlarma():
+        alarmaActivada = VERDADERO
+        MOSTRAR "¡Alarma activada!"
+    FIN PROCEDIMIENTO
+
+    PROCEDIMIENTO desactivarAlarma():
+        alarmaActivada = FALSO
+        MOSTRAR "Alarma desactivada"
+    FIN PROCEDIMIENTO
+
+    PROCEDIMIENTO detectarIntrusión():
+        SI (alarmaActivada) ENTONCES
+            MOSTRAR "¡INTRUSO DETECTADO! Llamando a la policía..."
+            electricidad.encender("todas las habitaciones")
+        FIN SI
+    FIN PROCEDIMIENTO
+FIN MÓDULO
+
+// Sistema central que coordina los módulos
+MÓDULO sistemaCasa:
+    PROCEDIMIENTO modoFueraDeCasa():
+        electricidad.apagar("todas las habitaciones")
+        calefacción.disminuirTemperatura()
+        seguridad.activarAlarma()
+        MOSTRAR "Casa en modo ausencia. ¡Que tengas un buen día!"
+    FIN PROCEDIMIENTO
+
+    PROCEDIMIENTO modoNoche():
+        electricidad.apagar("cocina")
+        electricidad.apagar("salón")
+        calefacción.disminuirTemperatura()
+        seguridad.activarAlarma()
+        MOSTRAR "Casa en modo noche. ¡Dulces sueños!"
+    FIN PROCEDIMIENTO
+FIN MÓDULO
+```
+
+Observa cómo cada módulo se encarga de una responsabilidad específica, pero pueden comunicarse entre sí cuando es necesario. El sistema central no necesita saber cómo funciona internamente cada módulo, solo necesita saber qué funciones puede llamar.
+
+## El restaurante modular: Una historia de éxito
+
+El Restaurante Código Delicioso solía ser un caos. El chef intentaba hacerlo todo: comprar ingredientes, preparar los platos, servir a los clientes, cobrar las cuentas y limpiar las mesas.
+
+Un día, el chef conoció a la Consultora Modular, quien le propuso reorganizar el restaurante:
+
+1. **Módulo de Inventario**: Un equipo dedicado a la gestión de ingredientes
+2. **Módulo de Cocina**: Chefs especializados en preparar diferentes tipos de platos
+3. **Módulo de Servicio**: Camareros enfocados en atender a los clientes
+4. **Módulo de Pagos**: Cajeros que gestionan las cuentas
+5. **Módulo de Limpieza**: Personal dedicado a mantener limpio el restaurante
+
+Cada equipo tenía interfaces claras para comunicarse con los otros:
+
+- Cuando el Módulo de Inventario recibía nuevos ingredientes, notificaba al Módulo de Cocina
+- Cuando el Módulo de Cocina terminaba un plato, avisaba al Módulo de Servicio
+- Cuando el cliente terminaba, el Módulo de Servicio informaba al Módulo de Pagos
+- Y después al Módulo de Limpieza
+
+El restaurante comenzó a funcionar como una orquesta bien afinada. La calidad mejoró, el servicio se volvió más rápido, y cuando un nuevo chef se unía al equipo, solo necesitaba aprender su parte específica, no todo el funcionamiento del restaurante.
+
+El chef se maravilló: "¡La modularización no solo mejoró mi restaurante, también mejoró mi vida!"
+
+## Diseñando buenos módulos: Las reglas de oro
+
+El Mago Modular tenía cinco reglas de oro para crear módulos perfectos:
+
+### 1. Regla de Responsabilidad Única
+
+> "Un módulo debe hacer una sola cosa, pero hacerla excepcionalmente bien"
+
+**Mal ejemplo:**
+
+```
+MÓDULO pájaroSuperpoderoso:
+    PROCEDIMIENTO volar(): ...
+    PROCEDIMIENTO nadar(): ...
+    PROCEDIMIENTO cavar(): ...
+    PROCEDIMIENTO programarComputadoras(): ...
+FIN MÓDULO
+```
+
+**Buen ejemplo:**
+
+```
+MÓDULO vuelo:
+    PROCEDIMIENTO despegar(): ...
+    PROCEDIMIENTO aterrizar(): ...
+    PROCEDIMIENTO cambiarDirección(): ...
+FIN MÓDULO
+```
+
+### 2. Regla de Alta Cohesión
+
+> "Los elementos dentro de un módulo deben estar estrechamente relacionados"
+
+**Mal ejemplo:**
+
+```
+MÓDULO random:
+    PROCEDIMIENTO calcularImpuestos(): ...
+    PROCEDIMIENTO dibujarCirculo(): ...
+    nombresDePerros = ["Rex", "Luna", "Max"]
+    recetaTarta = "Mezclar huevos y harina..."
+FIN MÓDULO
+```
+
+**Buen ejemplo:**
+
+```
+MÓDULO geometría:
+    PROCEDIMIENTO calcularÁreaCirculo(radio): ...
+    PROCEDIMIENTO calcularPerímetroCirculo(radio): ...
+    PROCEDIMIENTO dibujarCirculo(radio, posición): ...
+FIN MÓDULO
+```
+
+### 3. Regla de Bajo Acoplamiento
+
+> "Los módulos deben ser lo más independientes posible entre sí"
+
+**Mal ejemplo:**
+
+```
+MÓDULO jugador:
+    PROCEDIMIENTO atacar():
+        // Depende directamente de detalles internos de otro módulo
+        SI (móduloEnemigo.enemigo1.tipo = "dragón") ENTONCES
+            móduloEnemigo.enemigo1.salud = móduloEnemigo.enemigo1.salud - this.poder * 2
+        SINO
+            móduloEnemigo.enemigo1.salud = móduloEnemigo.enemigo1.salud - this.poder
+        FIN SI
+    FIN PROCEDIMIENTO
+FIN MÓDULO
+```
+
+**Buen ejemplo:**
+
+```
+MÓDULO jugador:
+    PROCEDIMIENTO atacar(enemigo):
+        // Solo interactúa a través de una interfaz clara
+        daño = this.calcularDaño(enemigo.tipo)
+        enemigo.recibirDaño(daño)
+    FIN PROCEDIMIENTO
+
+    PROCEDIMIENTO calcularDaño(tipoEnemigo): ...
+FIN MÓDULO
+
+MÓDULO enemigo:
+    PROCEDIMIENTO recibirDaño(cantidad):
+        this.salud = this.salud - cantidad
+    FIN PROCEDIMIENTO
+FIN MÓDULO
+```
+
+### 4. Regla de Interface Clara
+
+> "Cada módulo debe tener una 'puerta de entrada' bien definida"
+
+**Mal ejemplo:**
+
+```
+// Se pueden modificar los datos internos directamente
+móduloInventario.items[3].cantidad = 10
+```
+
+**Buen ejemplo:**
+
+```
+// Solo se puede interactuar a través de métodos específicos
+móduloInventario.actualizarCantidad(itemId, 10)
+```
+
+### 5. Regla de Encapsulación
+
+> "Los detalles internos de un módulo deben estar ocultos al mundo exterior"
+
+**Mal ejemplo:**
+
+```
+MÓDULO jugador:
+    salud = 100
+    poder = 50
+    // Cualquiera puede cambiar estas propiedades directamente
+FIN MÓDULO
+
+// En otra parte del código:
+jugador.salud = 9999  // ¡Hicimos trampa!
+```
+
+**Buen ejemplo:**
+
+```
+MÓDULO jugador:
+    // Variables privadas, no accesibles desde fuera
+    PRIVADO salud = 100
+    PRIVADO poder = 50
+
+    PROCEDIMIENTO recibirDaño(cantidad):
+        salud = salud - cantidad
+        SI (salud < 0) ENTONCES salud = 0
+    FIN PROCEDIMIENTO
+
+    PROCEDIMIENTO curar(cantidad):
+        salud = salud + cantidad
+        SI (salud > 100) ENTONCES salud = 100
+    FIN PROCEDIMIENTO
+
+    PROCEDIMIENTO obtenerEstado():
+        DEVOLVER { salud: salud, poder: poder }
+    FIN PROCEDIMIENTO
+FIN MÓDULO
+```
+
+## Los cuatro niveles de la modularización
+
+El Gran Mago Organizador enseñaba que la modularización tiene cuatro niveles, cada uno construyendo sobre el anterior:
+
+### Nivel 1: Modularización por funciones
+
+El nivel más básico. Dividir el código en funciones que realizan tareas específicas.
+
+```
+PROCEDIMIENTO calcularTotal(productos):
+    suma = 0
+    PARA i DESDE 0 HASTA productos.longitud - 1:
+        suma = suma + productos[i].precio * productos[i].cantidad
+    FIN PARA
+    DEVOLVER suma
+FIN PROCEDIMIENTO
+
+PROCEDIMIENTO aplicarDescuento(total, porcentaje):
+    DEVOLVER total * (1 - porcentaje / 100)
+FIN PROCEDIMIENTO
+
+PROCEDIMIENTO calcularImpuestos(subtotal):
+    DEVOLVER subtotal * 0.16  // 16% de impuestos
+FIN PROCEDIMIENTO
+
+// Usar las funciones juntas
+subtotal = calcularTotal(carrito)
+totalConDescuento = aplicarDescuento(subtotal, 10)
+total = totalConDescuento + calcularImpuestos(totalConDescuento)
+```
+
+### Nivel 2: Modularización por objetos
+
+Agrupar datos y funciones relacionadas en objetos.
+
+```
+OBJETO carritoCompras:
+    productos = []
+
+    PROCEDIMIENTO añadirProducto(producto):
+        AÑADIR producto A this.productos
+    FIN PROCEDIMIENTO
+
+    PROCEDIMIENTO calcularSubtotal():
+        suma = 0
+        PARA CADA p EN this.productos:
+            suma = suma + p.precio * p.cantidad
+        FIN PARA
+        DEVOLVER suma
+    FIN PROCEDIMIENTO
+
+    PROCEDIMIENTO aplicarDescuento(porcentaje):
+        DEVOLVER this.calcularSubtotal() * (1 - porcentaje / 100)
+    FIN PROCEDIMIENTO
+
+    PROCEDIMIENTO calcularImpuestos(monto):
+        DEVOLVER monto * 0.16
+    FIN PROCEDIMIENTO
+
+    PROCEDIMIENTO calcularTotal(porcentajeDescuento):
+        subtotal = this.calcularSubtotal()
+        montoConDescuento = this.aplicarDescuento(porcentajeDescuento)
+        impuestos = this.calcularImpuestos(montoConDescuento)
+        DEVOLVER montoConDescuento + impuestos
+    FIN PROCEDIMIENTO
+FIN OBJETO
+```
+
+### Nivel 3: Modularización por módulos/namespaces
+
+Agrupar objetos y funciones relacionadas en módulos que forman un espacio de nombres.
+
+```
+MÓDULO tienda:
+    MÓDULO inventario:
+        productos = []
+
+        PROCEDIMIENTO añadirProducto(p):
+            AÑADIR p A productos
+        FIN PROCEDIMIENTO
+
+        PROCEDIMIENTO buscarProducto(id):
+            // Lógica para buscar producto
+        FIN PROCEDIMIENTO
+    FIN MÓDULO
+
+    MÓDULO carrito:
+        items = []
+
+        PROCEDIMIENTO añadir(producto, cantidad):
+            // Lógica para añadir al carrito
+        FIN PROCEDIMIENTO
+
+        PROCEDIMIENTO quitar(productoId):
+            // Lógica para quitar del carrito
+        FIN PROCEDIMIENTO
+
+        PROCEDIMIENTO calcular():
+            // Lógica para calcular total
+        FIN PROCEDIMIENTO
+    FIN MÓDULO
+
+    MÓDULO pagos:
+        PROCEDIMIENTO procesarPago(método, monto):
+            // Lógica para procesar pago
+        FIN PROCEDIMIENTO
+
+        PROCEDIMIENTO generarFactura():
+            // Lógica para generar factura
+        FIN PROCEDIMIENTO
+    FIN MÓDULO
+FIN MÓDULO
+
+// Uso
+tienda.inventario.añadirProducto({id: 1, nombre: "Varita mágica"})
+tienda.carrito.añadir(1, 2)  // 2 varitas
+total = tienda.carrito.calcular()
+tienda.pagos.procesarPago("tarjeta", total)
+```
+
+### Nivel 4: Modularización por archivos y paquetes
+
+El nivel más avanzado. Dividir la aplicación en archivos separados que se importan entre sí según sea necesario.
+
+```
+// archivo: inventario
+CLASE Inventario:
+    CONSTRUCTOR():
+        this.productos = []
+    FIN CONSTRUCTOR
+
+    PROCEDIMIENTO añadirProducto(producto):
+        AÑADIR producto A this.productos
+    FIN PROCEDIMIENTO
+
+    // Más métodos...
+FIN CLASE
+EXPORTAR Inventario
+
+// archivo: carrito
+IMPORTAR Inventario DESDE './inventario'
+
+CLASE Carrito:
+    CONSTRUCTOR(inventario):
+        this.inventario = inventario
+        this.items = []
+    FIN CONSTRUCTOR
+
+    PROCEDIMIENTO añadir(productoId, cantidad):
+        producto = this.inventario.buscarProducto(productoId)
+        // Añadir al carrito...
+    FIN PROCEDIMIENTO
+
+    // Más métodos...
+FIN CLASE
+EXPORTAR Carrito
+
+// archivo: app
+IMPORTAR Inventario DESDE './inventario'
+IMPORTAR Carrito DESDE './carrito'
+
+inventario = NUEVO Inventario()
+carrito = NUEVO Carrito(inventario)
+```
+
+## El diario del joven aprendiz: Descubriendo la modularización
+
+_Día 1_: Hoy empecé mi gran proyecto: ¡un juego de aventuras! Lo programé todo en un solo archivo gigante. Me sentía como un genio mientras escribía cientos de líneas de código.
+
+_Día 5_: Mi juego tiene un error, pero no puedo encontrarlo. Hay tantas líneas de código que me pierdo cada vez que intento seguir lo que hace el programa.
+
+_Día 7_: He decidido dividir mi juego en módulos. Ahora tengo un módulo para el jugador, otro para los enemigos, otro para el mapa... ¡Se siente mucho más organizado!
+
+_Día 10_: Encontré el error fácilmente. ¡Estaba en el módulo de enemigos! Solo tuve que revisar ese módulo en lugar de todo el código.
+
+_Día 15_: Quiero añadir un nuevo tipo de jugador. Con mi código modularizado, solo necesito modificar el módulo del jugador. ¡El resto del juego funciona perfectamente!
+
+_Día 20_: Mi amiga quiere usar mi sistema de mapas para su propio juego. ¡Simplemente le di el módulo de mapas y funcionó en su proyecto sin problemas!
+
+_Día 30_: Mirando hacia atrás, no puedo creer que intentara hacer todo en un solo archivo gigante. La modularización ha hecho que mi código sea más fácil de entender, modificar y compartir. ¡Nunca volveré a programar de otra manera!
+
+## Los niveles de maestría en modularización
+
+El Maestro Modular enseñaba que hay cinco niveles de maestría en el arte de la modularización:
+
+### Nivel 1: Aprendiz
+
+Reconoces la importancia de dividir tu código en partes más pequeñas, pero a veces tus módulos son demasiado grandes o tienen responsabilidades confusas.
+
+### Nivel 2: Practicante
+
+Creas módulos con responsabilidades claras, pero a veces tus módulos dependen demasiado unos de otros, haciendo que los cambios en uno afecten a muchos otros.
+
+### Nivel 3: Artesano
+
+Tus módulos están bien diseñados con interfaces claras y bajo acoplamiento. Entiendes la importancia de la encapsulación y la cohesión.
+
+### Nivel 4: Experto
+
+No solo creas buenos módulos, sino que diseñas sistemas enteros con una arquitectura modular que facilita la expansión y el mantenimiento.
+
+### Nivel 5: Maestro
+
+Tu código es como una sinfonía perfectamente orquestada. Cada módulo juega su parte en el momento exacto, trabajando en armonía con los demás, y el sistema completo es robusto, flexible y elegante.
+
+## El arte de identificar módulos
+
+"¿Cómo sé qué debe ser un módulo?" preguntó un joven aprendiz.
+
+La Maestra Modular sonrió y dijo: "Busca grupos naturales de funcionalidad. Un módulo debe tener un propósito claro y específico. Pregúntate: si tuviera que explicar esta parte del programa en una sola frase, ¿cuál sería?"
+
+Hay varias técnicas para identificar buenos candidatos a módulos:
+
+### 1. Por funcionalidad
+
+Agrupa funciones que trabajan juntas para lograr un objetivo común.
+
+```
+MÓDULO autenticación:
+    PROCEDIMIENTO iniciarSesión(): ...
+    PROCEDIMIENTO cerrarSesión(): ...
+    PROCEDIMIENTO verificarPermisos(): ...
+FIN MÓDULO
+```
+
+### 2. Por entidad
+
+Crea módulos basados en las "cosas" o entidades de tu programa.
+
+```
+MÓDULO usuario:
+    PROCEDIMIENTO crear(): ...
+    PROCEDIMIENTO actualizar(): ...
+    PROCEDIMIENTO eliminar(): ...
+FIN MÓDULO
+
+MÓDULO producto:
+    PROCEDIMIENTO añadir(): ...
+    PROCEDIMIENTO modificarPrecio(): ...
+    PROCEDIMIENTO descatalogar(): ...
+FIN MÓDULO
+```
+
+### 3. Por capa
+
+Organiza tu código en capas según su nivel de abstracción.
+
+```
+MÓDULO interfazDeUsuario:
+    PROCEDIMIENTO mostrarPantallaPrincipal(): ...
+    PROCEDIMIENTO mostrarMensajeError(): ...
+FIN MÓDULO
+
+MÓDULO lógicaDeNegocio:
+    PROCEDIMIENTO calcularDescuento(): ...
+    PROCEDIMIENTO procesarPedido(): ...
+FIN MÓDULO
+
+MÓDULO accesoADatos:
+    PROCEDIMIENTO guardarEnBaseDeDatos(): ...
+    PROCEDIMIENTO cargarDesdeBD(): ...
+FIN MÓDULO
+```
+
+### 4. Por proceso
+
+Agrupa funcionalidades por pasos en un proceso.
+
+```
+MÓDULO procesoDePago:
+    PROCEDIMIENTO verificarExistencias(): ...
+    PROCEDIMIENTO procesarTarjeta(): ...
+    PROCEDIMIENTO generarFactura(): ...
+    PROCEDIMIENTO enviarConfirmación(): ...
+FIN MÓDULO
+```
+
+## La fábrica modular: Un caso de estudio
+
+La Fábrica de Juguetes Modular era famosa por su eficiencia. El secreto de su éxito era que habían dividido toda la operación en módulos perfectamente coordinados:
+
+1. **Módulo de Diseño**: Creaba los planos de nuevos juguetes.
+2. **Módulo de Producción**: Fabricaba las piezas.
+3. **Módulo de Ensamblaje**: Unía las piezas para formar juguetes completos.
+4. **Módulo de Control de Calidad**: Verificaba que los juguetes cumplieran los estándares.
+5. **Módulo de Empaque**: Preparaba los juguetes para su distribución.
+6. **Módulo de Distribución**: Enviaba los juguetes a las tiendas.
+
+Un día, el gerente decidió crear un nuevo tipo de juguete. Gracias a su estructura modular, solo necesitó actualizar el Módulo de Diseño con los nuevos planos y dar instrucciones específicas al Módulo de Producción sobre los nuevos materiales. El resto de los módulos siguieron funcionando normalmente con pequeños ajustes.
+
+Cuando surgió un problema de calidad, pudieron identificar rápidamente que estaba en el Módulo de Ensamblaje y resolverlo sin detener el resto de la producción.
+
+"Si nuestra fábrica no fuera modular," explicó el gerente a los visitantes, "cada cambio o problema afectaría a toda la operación. ¡Sería como tener que reconstruir toda la fábrica cada vez que queremos hacer un juguete nuevo!"
+
+## Ejercicios prácticos de modularización
+
+### Ejercicio 1: La ciudad modular
+
+Imagina que eres el alcalde de una ciudad y necesitas organizar los servicios municipales de forma modular. Dibuja un diagrama que muestre:
+
+1. Qué módulos (departamentos) crearías
+2. Qué responsabilidades tendría cada uno
+3. Cómo se comunicarían entre sí
+
+### Ejercicio 2: Reorganiza el caos
+
+Este es el diseño de un programa para administrar una biblioteca, pero todo está mezclado:
+
+```
+PROCEDIMIENTO prestarLibro(libro, usuario): ...
+PROCEDIMIENTO calcularMulta(díasDeRetraso): ...
+PROCEDIMIENTO añadirNuevoUsuario(nombre, dirección): ...
+PROCEDIMIENTO buscarLibroPorTítulo(título): ...
+PROCEDIMIENTO generarReporteDeUsuarios(): ...
+PROCEDIMIENTO actualizarCatálogo(nuevoLibro): ...
+PROCEDIMIENTO imprimirCarnet(usuario): ...
+PROCEDIMIENTO verificarDisponibilidad(libroId): ...
+PROCEDIMIENTO enviarRecordatorio(usuario): ...
+PROCEDIMIENTO registrarDevoluciónDeLibro(libro): ...
+```
+
+Reorganiza estas funciones en módulos lógicos. ¿Qué módulos crearías y qué funciones incluirías en cada uno?
+
+### Ejercicio 3: Detección de problemas modulares
+
+Identifica los problemas en este diseño modular:
+
+```
+MÓDULO usuario:
+    PROCEDIMIENTO crearUsuario(nombre, email): ...
+    PROCEDIMIENTO verificarEmail(email): ...
+    PROCEDIMIENTO enviarEmail(usuario, mensaje): ...
+FIN MÓDULO
+
+MÓDULO producto:
+    PROCEDIMIENTO crearProducto(nombre, precio): ...
+    PROCEDIMIENTO actualizarInventario(productoId, cantidad): ...
+    PROCEDIMIENTO calcularPrecioConIVA(precio): ...
+    PROCEDIMIENTO enviarEmailOferta(usuario, producto): ...
+FIN MÓDULO
+
+MÓDULO orden:
+    PROCEDIMIENTO crearOrden(usuario, productos): ...
+    PROCEDIMIENTO calcularTotal(productos): ...
+    PROCEDIMIENTO verificarInventarioSuficiente(productos): ...
+    PROCEDIMIENTO actualizarInventarioDespuésDeCompra(productos): ...
+FIN MÓDULO
+```
+
+¿Qué principios de buen diseño modular se están violando? ¿Cómo lo reorganizarías?
+
+## Proyecto final: El sistema modular del parque temático
+
+Vamos a diseñar un sistema modular completo para administrar un parque temático mágico:
+
+1. **Identifica los principales módulos** que necesitaría este sistema (por ejemplo, gestión de visitantes, atracciones, personal, finanzas, etc.)
+
+2. **Para cada módulo, define:**
+
+   - Sus responsabilidades principales
+   - Los datos que necesita manejar
+   - Las funciones que debería proporcionar
+   - Cómo se comunica con otros módulos
+
+3. **Dibuja un diagrama** mostrando cómo se conectan estos módulos entre sí
+
+4. **Escribe pseudocódigo** para al menos tres de estos módulos, mostrando sus interfaces y algunas de sus funciones internas
+
+## Modularización en sistemas grandes: El mundo real
+
+La modularización no es solo para pequeños programas. Los sistemas más complejos del mundo se basan en principios modulares:
+
+### 1. Los sistemas operativos
+
+Windows, macOS y Linux se componen de múltiples módulos: el kernel, los controladores de dispositivos, el sistema de archivos, la interfaz gráfica, etc.
+
+### 2. Los navegadores web
+
+Chrome, Firefox y Edge tienen módulos separados para interpretar HTML, ejecutar JavaScript, renderizar gráficos, gestionar pestañas, etc.
+
+### 3. Las aplicaciones móviles
+
+Las apps modernas suelen seguir arquitecturas modulares para facilitar la actualización de componentes individuales sin tener que reescribir toda la aplicación.
+
+### 4. Los videojuegos
+
+Los motores de juegos modernos tienen módulos para gráficos, física, inteligencia artificial, sonido y mucho más, permitiendo a los desarrolladores centrarse en la creación del juego en sí.
+
+## La evolución de la modularización: Microservicios
+
+En el mundo moderno de la programación, la modularización ha evolucionado hacia una arquitectura llamada "microservicios". En lugar de tener una única aplicación grande, se construyen muchos servicios pequeños e independientes que trabajan juntos.
+
+Imagina una tienda en línea tradicional con un sistema monolítico:
+
+```
+APLICACIÓN tiendaEnLínea:
+    MÓDULO usuarios: ...
+    MÓDULO productos: ...
+    MÓDULO carritos: ...
+    MÓDULO pagos: ...
+    MÓDULO envíos: ...
+FIN APLICACIÓN
+```
+
+La misma tienda en línea como conjunto de microservicios:
+
+```
+SERVICIO gestionUsuarios:
+    // Funcionalidades específicas de usuarios
+    // Se ejecuta en su propio servidor
+FIN SERVICIO
+
+SERVICIO catálogoProductos:
+    // Funcionalidades específicas de productos
+    // Se ejecuta en su propio servidor
+FIN SERVICIO
+
+SERVICIO carritoCompras:
+    // Funcionalidades específicas del carrito
+    // Se ejecuta en su propio servidor
+FIN SERVICIO
+
+SERVICIO procesamientoPagos:
+    // Funcionalidades específicas de pagos
+    // Se ejecuta en su propio servidor
+FIN SERVICIO
+
+SERVICIO gestionEnvíos:
+    // Funcionalidades específicas de envíos
+    // Se ejecuta en su propio servidor
+FIN SERVICIO
+```
+
+Cada servicio es completamente independiente y se comunica con los demás a través de interfaces bien definidas. Si un servicio falla, los demás pueden seguir funcionando. Y si un servicio necesita más recursos, se puede escalar solo ese servicio sin afectar al resto.
+
+## Los desafíos de la modularización
+
+La modularización no está exenta de desafíos:
+
+### 1. Dividir demasiado
+
+Si creas módulos que son demasiado pequeños, terminarás con un "polvo de módulos" - tantas piezas pequeñas que es difícil ver cómo encajan todas.
+
+### 2. No dividir lo suficiente
+
+Si tus módulos son demasiado grandes, pierdes muchos de los beneficios de la modularización, como la facilidad de mantenimiento y la capacidad de reutilización.
+
+### 3. Dependencias circulares
+
+Cuando el módulo A depende del módulo B, y el módulo B depende del módulo A, creas un círculo vicioso que puede causar problemas de estabilidad y mantenimiento.
+
+### 4. Interfaces mal diseñadas
+
+Si las interfaces entre módulos no están bien diseñadas, los cambios en un módulo pueden provocar efectos cascada en todo el sistema.
+
+### 5. Sobre-generalización
+
+A veces, en un esfuerzo por hacer módulos reutilizables, los hacemos demasiado genéricos y complejos, lo que puede dificultar su uso y comprensión.
+
+## Palabras finales del Maestro Modular
+
+Al final del curso, el Maestro Modular miró a sus estudiantes con una sonrisa:
+
+"La modularización es más que una técnica de programación; es una forma de pensar. Es la habilidad de ver los patrones en el caos, de identificar las piezas que forman el todo.
+
+Cuando domines la modularización, no solo escribirás mejor código, sino que también comprenderás mejor el mundo que te rodea. Verás cómo los sistemas complejos se componen de componentes más simples, cómo las grandes organizaciones están formadas por departamentos especializados, cómo las grandes historias se construyen a partir de pequeños capítulos.
+
+Y recuerda siempre: un buen módulo es como un buen ciudadano. Hace bien su trabajo, coopera con los demás cuando es necesario, no interfiere donde no debe, y está dispuesto a ayudar cuando se le pide."
+
+## Lo que hemos aprendido
+
+La modularización es una herramienta poderosa que nos permite:
+
+- Simplificar problemas complejos dividiéndolos en partes más manejables
+- Crear código más fácil de mantener, probar y actualizar
+- Facilitar la colaboración entre programadores
+- Reutilizar componentes en diferentes proyectos
+- Organizar nuestro pensamiento de manera más clara y estructurada
+
+Recuerda los principios clave:
+
+- Alta cohesión (cada módulo hace una cosa bien)
+- Bajo acoplamiento (los módulos deben ser independientes)
+- Interfaces claras (los módulos se comunican de manera definida)
+- Encapsulación (ocultar los detalles internos)
+
+> "Divide y vencerás: así como los grandes castillos se construyen piedra a piedra, los grandes programas se construyen módulo a módulo."
+
+En nuestra próxima lección, exploraremos cómo unir todos estos conceptos que hemos aprendido para crear programas completos y funcionales. ¡Prepárate para aplicar tus nuevos superpoderes modulares!
+
+# Algoritmos Avanzados: Magia oscurantemente poderosa
+
+> "Cuando los hechizos comunes no tienen efecto, es hora de recurrir a la magia oscura."
+
+## El Llamado de la Alta Hechicería Algorítmica
+
+Bienvenido, valiente aprendiz, al sanctum de los algoritmos avanzados. Hasta ahora, has dominado los hechizos básicos: las condiciones, los bucles, las estructuras de datos simples. Pero existen desafíos en el mundo de la programación que requieren poderes mucho más formidables.
+
+El Gran Archimago Algorítmico solía decir: "Cuando tu algoritmo tarda horas en ordenar mil elementos, no necesitas más paciencia... ¡necesitas magia más poderosa!"
+
+En esta sección, descubriremos los secretos de los algoritmos avanzados: poderosos hechizos que pueden transformar tareas imposibles en juegos de niños. Prepárate para adentrarte en los misterios de MergeSort, QuickSort, algoritmos voraces, programación dinámica y más. Estos no son simples trucos, son auténtica magia oscura del más alto nivel.
+
+## La Academia de Hechizos Avanzados
+
+En una torre oculta en el Bosque de los Algoritmos, existe una academia donde solo los estudiantes más prometedores son admitidos. Aquí, los Maestros de la Alta Magia Algorítmica entrenan a la siguiente generación. Nosotros hemos recibido un permiso especial para asistir a sus clases.
+
+El primer día, el Director se dirige a los nuevos estudiantes:
+
+"Los algoritmos que aprenderán aquí no son para los débiles de corazón ni para los escasos de memoria RAM. Son poderosos, eficientes, a veces complejos... pero una vez dominados, resolverán problemas que antes parecían imposibles. Y recuerden: con gran poder algorítmico viene una gran responsabilidad de documentar su código."
+
+## MergeSort: El Hechizo de la División y Conquista
+
+### La Leyenda del Ordenador de Mundos
+
+Cuenta la leyenda que hace mucho tiempo, el universo era un caos total. Los elementos estaban desordenados: estrellas donde debían estar planetas, galaxias mezcladas con asteroides, ¡un desastre cósmico!
+
+El Gran Ordenador de Mundos decidió resolver este problema usando el poderoso hechizo "MergeSort". Su filosofía era simple pero brillante: "¿Por qué ordenar un universo entero de una vez? Dividiré el caos en partes más pequeñas hasta que sean fáciles de ordenar, y luego las uniré en perfecto orden."
+
+### ¿Cómo funciona MergeSort?
+
+MergeSort es uno de los algoritmos de ordenación más elegantes y eficientes. Su poder proviene del principio "divide y vencerás":
+
+1. **Dividir**: Parte la lista en mitades, una y otra vez, hasta que cada parte tenga un solo elemento (un elemento solo ya está "ordenado").
+2. **Conquistar**: Combina (merge) las mitades ordenadas para crear listas más grandes también ordenadas.
+3. **Repetir**: Continúa combinando hasta tener toda la lista ordenada.
+
+### La Historia del Maestro MergeSort y sus Aprendices
+
+El Maestro MergeSort era famoso por su método de enseñanza. Un día, llegó a clase con una caja llena de cartas, cada una con un número escrito.
+
+"Hoy aprenderán a ordenar usando la magia de la división y la conquista," anunció. "Necesito ocho voluntarios."
+
+Ocho estudiantes se acercaron, y el Maestro le dio una carta a cada uno: 8, 3, 2, 7, 1, 5, 9, 6.
+
+"Ahora," dijo el Maestro, "los dividiré en grupos cada vez más pequeños. Primero, en dos grupos de cuatro."
+
+Grupo 1: [8, 3, 2, 7]
+Grupo 2: [1, 5, 9, 6]
+
+"Ahora, cada grupo se divide en dos."
+
+Grupo 1A: [8, 3]
+Grupo 1B: [2, 7]
+Grupo 2A: [1, 5]
+Grupo 2B: [9, 6]
+
+"Y una vez más."
+
+[8] [3] [2] [7] [1] [5] [9] [6]
+
+"Perfecto," sonrió el Maestro. "Un elemento solo ya está ordenado. Ahora, empecemos a combinar. Cuando combinemos, compararemos los elementos y los colocaremos en orden."
+
+Los estudiantes comenzaron a reunirse:
+
+[3, 8] [2, 7] [1, 5] [6, 9]
+
+El Maestro explicó: "Observen cómo cada par de estudiantes compara sus números y se colocan en orden ascendente."
+
+Luego continuaron:
+
+[2, 3, 7, 8] [1, 5, 6, 9]
+
+Y finalmente:
+
+[1, 2, 3, 5, 6, 7, 8, 9]
+
+"¡Voilà!" exclamó el Maestro. "Hemos ordenado ocho elementos con elegancia y eficiencia. Este es el poder de MergeSort."
+
+### Paso a paso: MergeSort en acción
+
+Veamos MergeSort en detalle con un ejemplo paso a paso. Ordenaremos la lista [38, 27, 43, 3, 9, 82, 10]:
+
+**Paso 1: Dividir la lista hasta obtener elementos individuales**
+
+```
+[38, 27, 43, 3, 9, 82, 10]
+         /        \
+[38, 27, 43, 3]    [9, 82, 10]
+    /    \           /    \
+[38, 27]  [43, 3]  [9]  [82, 10]
+  /  \     /  \         /  \
+[38] [27] [43] [3]    [82] [10]
+```
+
+**Paso 2: Comenzar a combinar en orden**
+
+```
+[27, 38]  [3, 43]  [9]  [10, 82]
+```
+
+Para combinar [38] y [27]:
+
+- Comparamos: 27 < 38
+- Resultado: [27, 38]
+
+Para combinar [43] y [3]:
+
+- Comparamos: 3 < 43
+- Resultado: [3, 43]
+
+Para combinar [82] y [10]:
+
+- Comparamos: 10 < 82
+- Resultado: [10, 82]
+
+**Paso 3: Combinar las listas más grandes**
+
+```
+[3, 27, 38, 43]   [9, 10, 82]
+```
+
+Para combinar [27, 38] y [3, 43]:
+
+- Comparamos: 3 < 27, colocamos 3
+- Comparamos: 27 < 43, colocamos 27
+- Comparamos: 38 < 43, colocamos 38
+- Queda 43, lo colocamos
+- Resultado: [3, 27, 38, 43]
+
+Para combinar [9] y [10, 82]:
+
+- Comparamos: 9 < 10, colocamos 9
+- Quedan 10 y 82, los colocamos
+- Resultado: [9, 10, 82]
+
+**Paso 4: Combinación final**
+
+```
+[3, 9, 10, 27, 38, 43, 82]
+```
+
+Para combinar [3, 27, 38, 43] y [9, 10, 82]:
+
+- Comparamos: 3 < 9, colocamos 3
+- Comparamos: 9 < 27, colocamos 9
+- Comparamos: 10 < 27, colocamos 10
+- Comparamos: 27 < 82, colocamos 27
+- Comparamos: 38 < 82, colocamos 38
+- Comparamos: 43 < 82, colocamos 43
+- Queda 82, lo colocamos
+- Resultado final: [3, 9, 10, 27, 38, 43, 82]
+
+¡Y nuestra lista está ordenada!
+
+### El Pseudocódigo del Hechizo MergeSort
+
+```
+PROCEDIMIENTO mergeSort(lista):
+    // Caso base: Una lista con 0 o 1 elementos ya está ordenada
+    SI longitud(lista) <= 1 ENTONCES
+        DEVOLVER lista
+
+    // Paso de dividir
+    medio = longitud(lista) / 2
+    izquierda = lista desde 0 hasta medio-1
+    derecha = lista desde medio hasta fin
+
+    // Ordenamos recursivamente las dos mitades
+    izquierda = mergeSort(izquierda)
+    derecha = mergeSort(derecha)
+
+    // Combinamos las mitades ordenadas
+    DEVOLVER merge(izquierda, derecha)
+
+PROCEDIMIENTO merge(izquierda, derecha):
+    resultado = lista vacía
+    indiceIzq = 0
+    indiceDer = 0
+
+    // Mientras tengamos elementos en ambas listas
+    MIENTRAS indiceIzq < longitud(izquierda) Y indiceDer < longitud(derecha):
+        SI izquierda[indiceIzq] <= derecha[indiceDer] ENTONCES
+            añadir izquierda[indiceIzq] a resultado
+            indiceIzq = indiceIzq + 1
+        SINO
+            añadir derecha[indiceDer] a resultado
+            indiceDer = indiceDer + 1
+
+    // Si quedan elementos en la izquierda, los añadimos
+    MIENTRAS indiceIzq < longitud(izquierda):
+        añadir izquierda[indiceIzq] a resultado
+        indiceIzq = indiceIzq + 1
+
+    // Si quedan elementos en la derecha, los añadimos
+    MIENTRAS indiceDer < longitud(derecha):
+        añadir derecha[indiceDer] a resultado
+        indiceDer = indiceDer + 1
+
+    DEVOLVER resultado
+```
+
+### La Eficiencia de MergeSort: ¿Por qué es tan poderoso?
+
+El Archimago Analítico se acercó a la clase con una tabla mágica flotante:
+
+"MergeSort tiene una eficiencia de O(n log n) tanto en el caso promedio como en el peor caso. ¿Qué significa esto? Que incluso con listas enormes, mantiene su velocidad de forma predecible."
+
+"Pero," continuó, "MergeSort también requiere espacio adicional O(n) para las listas temporales durante la combinación. Es como necesitar más pergaminos para anotar los resultados intermedios."
+
+**Comparativa visual:**
+
+- Ordenamiento de burbuja (O(n²)): Si tengo 100 elementos, podría necesitar hasta 10,000 operaciones 😱
+- MergeSort (O(n log n)): Con 100 elementos, solo necesitaría alrededor de 700 operaciones 😎
+
+### Ejercicio Práctico: La Fiesta de Altura
+
+El Rey Algorítmico está organizando una fiesta y quiere que los invitados se coloquen en orden de altura para la foto real. Ayúdale usando MergeSort:
+
+Invitados (alturas en cm): [175, 163, 189, 172, 157, 188, 171]
+
+Solución paso a paso:
+
+**División:**
+
+```
+[175, 163, 189, 172, 157, 188, 171]
+                /        \
+    [175, 163, 189, 172]  [157, 188, 171]
+       /       \             /      \
+  [175, 163]  [189, 172]  [157]  [188, 171]
+    /   \       /   \              /   \
+[175] [163] [189] [172]        [188] [171]
+```
+
+**Combinación:**
+
+```
+[163, 175]  [172, 189]  [157]  [171, 188]
+
+[163, 172, 175, 189]    [157, 171, 188]
+
+[157, 163, 171, 172, 175, 188, 189]
+```
+
+Y así, los invitados están perfectamente ordenados para la foto real.
+
+## QuickSort: El Hechizo Impetuoso
+
+### La Historia del Mago Impaciente
+
+En el extremo opuesto del Bosque de los Algoritmos, vivía un mago conocido por su impaciencia y su brillantez: el Maestro Quick. Mientras que el Maestro MergeSort era metódico y predecible, Quick prefería un enfoque más dinámico y a veces impredecible.
+
+"¿Por qué dividir todo sistemáticamente?" preguntaba siempre Quick. "Es mejor elegir un elemento como referencia y organizar todo a su alrededor. Más rápido, más elegante... aunque a veces, un poco caótico."
+
+### ¿Cómo funciona QuickSort?
+
+QuickSort también sigue la filosofía de "divide y vencerás", pero con un enfoque distinto:
+
+1. **Elegir un pivote**: Selecciona un elemento de la lista como pivote.
+2. **Particionar**: Reordena la lista para que todos los elementos menores que el pivote estén a su izquierda, y todos los mayores a su derecha.
+3. **Recursión**: Aplica QuickSort a las dos sublistas (elementos menores y elementos mayores).
+
+### La Gran Competencia de Ordenamiento
+
+Un día, los dos maestros, MergeSort y Quick, decidieron organizar una competencia para ver quién podía ordenar una lista de números más rápido.
+
+El Archimago Observador actuaría como juez y explicaría cada técnica a los espectadores.
+
+El desafío: ordenar la lista [5, 3, 8, 4, 2, 1, 9, 7, 6].
+
+**Maestro Quick va primero:**
+
+"Primero, elijo el 5 como pivote," dice Quick. "Ahora, dividiré la lista entre números menores y mayores que 5."
+
+```
+Pivote: 5
+Menores: [3, 4, 2, 1]
+Mayores: [8, 9, 7, 6]
+```
+
+"Ahora aplico el mismo proceso a cada subgrupo."
+
+Para [3, 4, 2, 1]:
+
+```
+Pivote: 3
+Menores: [2, 1]
+Mayores: [4]
+
+Para [2, 1]:
+    Pivote: 2
+    Menores: [1]
+    Mayores: []
+    Resultado: [1, 2]
+
+Para [4]:
+    Ya está ordenado
+    Resultado: [4]
+
+Combinando: [1, 2, 3, 4]
+```
+
+Para [8, 9, 7, 6]:
+
+```
+Pivote: 8
+Menores: [7, 6]
+Mayores: [9]
+
+Para [7, 6]:
+    Pivote: 7
+    Menores: [6]
+    Mayores: []
+    Resultado: [6, 7]
+
+Para [9]:
+    Ya está ordenado
+    Resultado: [9]
+
+Combinando: [6, 7, 8, 9]
+```
+
+"Y mi resultado final es:" dice Quick con una reverencia:
+
+```
+[1, 2, 3, 4, 5, 6, 7, 8, 9]
+```
+
+Los espectadores aplauden impresionados por la velocidad del Maestro Quick. Pero el Archimago Observador nota algo:
+
+"Impresionante, Maestro Quick. Sin embargo, debo señalar que tu método, aunque generalmente rápido, puede ser menos eficiente si el pivote elegido no divide bien la lista. Por ejemplo, si el pivote es siempre el elemento más pequeño o más grande, tu hechizo podría volverse tan lento como un hechizo de ordenación de burbuja."
+
+Quick sonríe con confianza: "Un buen mago sabe elegir sus pivotes sabiamente."
+
+### Paso a paso: QuickSort explicado
+
+Vamos a ordenar la lista [43, 21, 76, 38, 12, 56, 29] usando QuickSort:
+
+**Paso 1: Elegir el pivote y particionar**
+
+Elegimos 43 como pivote (el primer elemento).
+
+- Creamos lista para menores: [21, 38, 12, 29]
+- Creamos lista para mayores: [76, 56]
+- Resultado de esta etapa: menores + pivote + mayores = [21, 38, 12, 29, 43, 76, 56]
+
+**Paso 2: Aplicar QuickSort recursivamente a las sublistas**
+
+Para la sublista de menores [21, 38, 12, 29]:
+
+- Pivote: 21
+- Menores: [12]
+- Mayores: [38, 29]
+- Recursivamente:
+  - [12] ya está ordenado
+  - [38, 29]: Pivote 38, Menores [29], Mayores [], resultado [29, 38]
+- Resultado: [12, 21, 29, 38]
+
+Para la sublista de mayores [76, 56]:
+
+- Pivote: 76
+- Menores: [56]
+- Mayores: []
+- Recursivamente: [56] ya está ordenado
+- Resultado: [56, 76]
+
+**Paso 3: Combinar todos los resultados**
+
+Resultado final: [12, 21, 29, 38, 43, 56, 76]
+
+### El Pseudocódigo del Hechizo QuickSort
+
+```
+PROCEDIMIENTO quickSort(lista):
+    // Caso base: listas de 0 o 1 elementos ya están ordenadas
+    SI longitud(lista) <= 1 ENTONCES
+        DEVOLVER lista
+
+    // Elegir un pivote (aquí usamos el primer elemento)
+    pivote = lista[0]
+
+    // Crear listas para elementos menores y mayores
+    menores = []
+    mayores = []
+
+    // Particionar la lista
+    PARA i DESDE 1 HASTA longitud(lista) - 1:
+        SI lista[i] <= pivote ENTONCES
+            añadir lista[i] a menores
+        SINO
+            añadir lista[i] a mayores
+
+    // Ordenar recursivamente y combinar
+    DEVOLVER concatenar(quickSort(menores), [pivote], quickSort(mayores))
+```
+
+**Nota: Hay muchas variantes de QuickSort, incluyendo las que hacen la partición "in-place" (sin crear nuevas listas). Esta es una versión simplificada para entender el concepto fundamental.**
+
+### La Eficiencia de QuickSort: Velocidad con Un Toque de Suerte
+
+"QuickSort es fascinante," explica el Archimago Analítico. "En el caso promedio, tiene una eficiencia de O(n log n), igual que MergeSort. Pero hay diferencias importantes:"
+
+1. **Caso mejor**: O(n log n)
+2. **Caso promedio**: O(n log n)
+3. **Caso peor**: O(n²) - cuando la partición es desbalanceada, como cuando la lista ya está ordenada y se elige el primer elemento como pivote.
+
+"A pesar de su caso peor," continúa, "QuickSort suele ser más rápido en la práctica que MergeSort porque:
+
+- No necesita espacio adicional (puede hacerse 'in-place')
+- Tiene mejor localidad de referencia (accede a elementos cercanos en memoria)
+- Y en promedio, hace menos comparaciones"
+
+### Ejercicio: El Torneo de los Elementos
+
+El Maestro de los Elementos quiere organizar un torneo donde cada elemento (Agua, Fuego, Tierra, Aire, etc.) competirá según su poder mágico. Usa QuickSort para ordenar esta lista de poderes:
+
+Elementos (y su poder): [("Agua", 78), ("Fuego", 92), ("Tierra", 45), ("Aire", 63), ("Rayo", 89), ("Hielo", 57), ("Metal", 81)]
+
+Solución paso a paso:
+
+**Primer nivel de recursión:**
+
+- Pivote: ("Agua", 78)
+- Menores: [("Tierra", 45), ("Aire", 63), ("Hielo", 57)]
+- Mayores: [("Fuego", 92), ("Rayo", 89), ("Metal", 81)]
+
+**Para menores [("Tierra", 45), ("Aire", 63), ("Hielo", 57)]:**
+
+- Pivote: ("Tierra", 45)
+- Menores: []
+- Mayores: [("Aire", 63), ("Hielo", 57)]
+  - Para [("Aire", 63), ("Hielo", 57)]:
+    - Pivote: ("Aire", 63)
+    - Menores: [("Hielo", 57)]
+    - Mayores: []
+    - Resultado: [("Hielo", 57), ("Aire", 63)]
+- Resultado menores: [("Tierra", 45), ("Hielo", 57), ("Aire", 63)]
+
+**Para mayores [("Fuego", 92), ("Rayo", 89), ("Metal", 81)]:**
+
+- Pivote: ("Fuego", 92)
+- Menores: [("Rayo", 89), ("Metal", 81)]
+  - Para [("Rayo", 89), ("Metal", 81)]:
+    - Pivote: ("Rayo", 89)
+    - Menores: [("Metal", 81)]
+    - Mayores: []
+    - Resultado: [("Metal", 81), ("Rayo", 89)]
+- Mayores: []
+- Resultado mayores: [("Metal", 81), ("Rayo", 89), ("Fuego", 92)]
+
+**Combinando todo:**
+[("Tierra", 45), ("Hielo", 57), ("Aire", 63), ("Agua", 78), ("Metal", 81), ("Rayo", 89), ("Fuego", 92)]
+
+Los elementos están ordenados de menor a mayor poder mágico.
+
+## La Gran Batalla: MergeSort vs. QuickSort
+
+### El Duelo de los Algoritmos
+
+El día de la Gran Competencia Algorítmica había llegado. Los dos grandes maestros, MergeSort y QuickSort, se enfrentarían en un duelo definitivo.
+
+El Archimago Algorítmico anunció las reglas:
+"Cada maestro deberá ordenar diversas listas de números. Evaluaremos velocidad, uso de memoria y adaptabilidad."
+
+#### Ronda 1: Lista pequeña aleatoria [5, 2, 9, 1, 7, 3, 8, 6, 4]
+
+- **QuickSort**: Rápido y eficiente, casi no usa memoria extra.
+- **MergeSort**: Un poco más lento, usa memoria adicional.
+- **Ganador Ronda 1**: QuickSort
+
+#### Ronda 2: Lista grande de 10,000 números aleatorios
+
+- **QuickSort**: Mantiene buen rendimiento.
+- **MergeSort**: Sólido y predecible.
+- **Ganador Ronda 2**: Empate
+
+#### Ronda 3: Lista casi ordenada [1, 2, 3, 5, 4, 6, 7, 8, 9]
+
+- **QuickSort**: (Con elección simple de pivote) Se vuelve ineficiente.
+- **MergeSort**: Mantiene su rendimiento constante.
+- **Ganador Ronda 3**: MergeSort
+
+#### Ronda 4: Lista ya ordenada [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+- **QuickSort**: (Con mala elección de pivote) Cae en su caso peor O(n²).
+- **MergeSort**: Sigue con O(n log n) sin importar qué.
+- **Ganador Ronda 4**: MergeSort
+
+El Archimago anunció el veredicto final:
+"Ambos algoritmos son poderosos, pero tienen diferentes fortalezas:
+
+- **QuickSort** es generalmente más rápido en la práctica y usa menos memoria.
+- **MergeSort** es más consistente y predecible en su rendimiento.
+
+La sabiduría del verdadero Maestro Algorítmico está en saber cuándo usar cada uno."
+
+### Tabla comparativa:
+
+| Algoritmo | Mejor caso | Caso promedio | Peor caso  | Memoria extra | Estabilidad |
+| --------- | ---------- | ------------- | ---------- | ------------- | ----------- |
+| QuickSort | O(n log n) | O(n log n)    | O(n²)      | O(log n)\*    | No estable  |
+| MergeSort | O(n log n) | O(n log n)    | O(n log n) | O(n)          | Estable     |
+
+\*QuickSort necesita espacio O(log n) para la pila de recursión, pero algunas implementaciones pueden requerir más memoria.
+
+## HeapSort: El Hechizo de la Pirámide Mágica
+
+### La Historia del Jardín Piramidal
+
+En el centro del Valle de los Algoritmos se encontraba el Jardín de las Pirámides, cuidado por la Hechicera Heap. Sus jardines estaban organizados en forma de pirámides perfectas, donde cada planta padre era más grande que sus plantas hijas.
+
+"La clave de un buen ordenamiento," explicaba Heap a sus estudiantes, "es mantener una estructura perfectamente balanceada donde siempre puedas encontrar el elemento más grande o más pequeño en un instante."
+
+### ¿Cómo funciona HeapSort?
+
+HeapSort combina las ideas de ordenamiento por selección con una estructura de datos llamada "montículo" (heap):
+
+1. **Construir el montículo**: Convertir la lista en un montículo máximo (donde los padres son mayores que sus hijos).
+2. **Extraer ordenadamente**: Intercambiar el elemento raíz (el mayor) con el último, reducir el tamaño del montículo en 1, y restaurar la propiedad del montículo.
+3. **Repetir**: Seguir extrayendo hasta que el montículo esté vacío.
+
+### La Demostración de la Hechicera Heap
+
+La Hechicera Heap reunió a sus estudiantes en el jardín piramidal para una demostración.
+
+"Hoy ordenaremos la lista [4, 10, 3, 5, 1] usando la magia del montículo," anunció. "Primero, construiremos un montículo máximo."
+
+Paso 1: Convertir la lista en un montículo máximo:
+
+```
+Lista inicial: [4, 10, 3, 5, 1]
+
+Después de heapify:
+      10
+     /  \
+    5    3
+   / \
+  4   1
+```
+
+"Ahora," continuó, "extraeremos el elemento más grande (la raíz) y lo pondremos al final de nuestra lista ordenada. Luego, restauraremos la propiedad del montículo."
+
+Paso 2: Extraer el elemento más grande (10):
+
+```
+Intercambiar 10 con 1: [4, 1, 3, 5, 10]
+
+Restaurar montículo para [4, 1, 3, 5]:
+      5
+     / \
+    4   3
+   /
+  1
+
+Lista actual: [5, 4, 3, 1, 10]
+```
+
+Paso 3: Extraer el elemento más grande (5):
+
+```
+Intercambiar 5 con 1: [1, 4, 3, 5, 10]
+
+Restaurar montículo para [1, 4, 3]:
+      4
+     / \
+    1   3
+
+Lista actual: [4, 1, 3, 5, 10]
+```
+
+Paso 4: Extraer el elemento más grande (4):
+
+```
+Intercambiar 4 con 3: [3, 1, 4, 5, 10]
+
+Restaurar montículo para [3, 1]:
+      3
+     /
+    1
+
+Lista actual: [3, 1, 4, 5, 10]
+```
+
+Paso 5: Extraer el elemento más grande (3):
+
+```
+Intercambiar 3 con 1: [1, 3, 4, 5, 10]
+
+Montículo de un solo elemento: [1]
+
+Lista final: [1, 3, 4, 5, 10]
+```
+
+"¡Y así," concluyó la Hechicera con un floreo de su varita, "hemos ordenado nuestra lista usando la magia del montículo!"
+
+### El Pseudocódigo del Hechizo HeapSort
+
+```
+PROCEDIMIENTO heapSort(lista):
+    n = longitud(lista)
+
+    // Construir montículo máximo
+    PARA i DESDE (n / 2) - 1 HASTA 0 CON PASO -1:
+        heapify(lista, n, i)
+
+    // Extraer elementos uno por uno
+    PARA i DESDE n - 1 HASTA 0 CON PASO -1:
+        // Mover la raíz actual al final
+        intercambiar lista[0] y lista[i]
+
+        // Llamar a heapify para reducir el montículo
+        heapify(lista, i, 0)
+
+PROCEDIMIENTO heapify(lista, n, i):
+    // Inicializar el mayor como raíz
+    mayor = i
+    izquierda = 2 * i + 1
+    derecha = 2 * i + 2
+
+    // Ver si el hijo izquierdo es mayor que la raíz
+    SI izquierda < n Y lista[izquierda] > lista[mayor] ENTONCES
+        mayor = izquierda
+
+    // Ver si el hijo derecho es mayor que el mayor hasta ahora
+    SI derecha < n Y lista[derecha] > lista[mayor] ENTONCES
+        mayor = derecha
+
+    // Si el mayor no es la raíz
+    SI mayor != i ENTONCES
+        intercambiar lista[i] y lista[mayor]
+
+        // Aplicar heapify recursivamente al subárbol afectado
+        heapify(lista, n, mayor)
+```
+
+### La Eficiencia del HeapSort: Estable como una Pirámide
+
+El Archimago Analítico observó la demostración con aprobación:
+
+"HeapSort tiene una eficiencia de O(n log n) en todos los casos: mejor, promedio y peor. Es tan predecible como MergeSort, pero con la ventaja de que se puede implementar 'in-place', usando memoria constante O(1) como QuickSort."
+
+"Sin embargo," añadió, "aunque HeapSort es teóricamente óptimo, en la práctica suele ser un poco más lento que QuickSort bien implementado debido a constantes ocultas y patrones de acceso a memoria menos eficientes."
+
+### Ejercicio: El Torneo del Bosque Encantado
+
+En el Bosque Encantado se celebra un torneo anual donde los árboles compiten por ser el más alto. Este año, los jueces han medido las siguientes alturas (en metros): [25, 18, 32, 27, 15, 20, 30]. Utiliza HeapSort para ordenarlos de menor a mayor.
+
+Solución paso a paso:
+
+Para ordenar de menor a mayor con HeapSort, podemos usar un montículo mínimo (donde los padres son menores que los hijos) en lugar de un montículo máximo:
+
+1. Construir el montículo mínimo:
+
+   ```
+   Lista inicial: [25, 18, 32, 27, 15, 20, 30]
+
+   Después de heapify:
+         15
+        /  \
+       18   20
+      / \   /
+     27 25 32 30
+   ```
+
+2. Extraer ordenadamente:
+   - Extraer 15: [30, 18, 20, 27, 25, 32, 15]
+   - Restaurar montículo: [18, 25, 20, 27, 30, 32, 15]
+   - Extraer 18: [32, 25, 20, 27, 30, 18, 15]
+   - Restaurar montículo: [20, 25, 32, 27, 30, 18, 15]
+   - Extraer 20: [30, 25, 32, 27, 20, 18, 15]
+   - Restaurar montículo: [25, 27, 32, 30, 20, 18, 15]
+   - Extraer 25: [30, 27, 32, 25, 20, 18, 15]
+   - Restaurar montículo: [27, 30, 32, 25, 20, 18, 15]
+   - Extraer 27: [32, 30, 27, 25, 20, 18, 15]
+   - Restaurar montículo: [30, 32, 27, 25, 20, 18, 15]
+   - Extraer 30: [32, 30, 27, 25, 20, 18, 15]
+   - Lista final: [15, 18, 20, 25, 27, 30, 32]
+
+Los árboles están ordenados de menor a mayor altura.
+
+## Los Algoritmos Voraces: El Hechizo de la Ambición
+
+### El Cuento del Mago Greedy
+
+En una colina con vistas al Valle de los Algoritmos vivía el Mago Greedy. A diferencia de sus colegas que planificaban cuidadosamente cada paso, Greedy creía en la filosofía de "toma lo mejor ahora mismo y sigue adelante".
+
+"¿Por qué complicarse pensando en todas las posibilidades?" decía siempre. "Elige la mejor opción disponible en cada momento y el camino se construirá solo."
+
+### ¿Qué son los Algoritmos Voraces (Greedy)?
+
+Los algoritmos voraces son aquellos que siguen una heurística simple: en cada paso, toman la decisión que parece óptima en ese momento, sin preocuparse por las consecuencias futuras. Es como escalar una montaña siempre subiendo en la dirección más empinada, con la esperanza de llegar a la cima.
+
+Estos algoritmos:
+
+- Toman decisiones paso a paso
+- Nunca reconsideran decisiones previas
+- Eligen la opción localmente óptima en cada etapa
+
+### El Problema del Cambio de Monedas
+
+Un día, un mercader visitó al Mago Greedy con un problema:
+
+"Gran Mago, necesito dar cambio de 63 monedas a mis clientes. Tengo monedas de 25, 10, 5 y 1. ¿Cómo puedo dar cambio usando la menor cantidad de monedas posible?"
+
+"¡Ah!" exclamó Greedy. "Eso es simple. Siempre usa la moneda de mayor valor que puedas. Observa:"
+
+1. 63 ÷ 25 = 2 monedas de 25 (quedan 13)
+2. 13 ÷ 10 = 1 moneda de 10 (quedan 3)
+3. 3 ÷ 5 = 0 monedas de 5 (quedan 3)
+4. 3 ÷ 1 = 3 monedas de 1 (quedan 0)
+
+"¡Con un total de 6 monedas resolvemos el problema!" declaró orgulloso.
+
+"¿Funciona siempre?" preguntó el mercader.
+
+"Con este conjunto particular de monedas, sí," explicó Greedy. "Pero no con todos. Por ejemplo, si tuvieras monedas de 25, 10 y 1, y quisieras dar cambio de 30, mi método daría 1 de 25 y 5 de 1 (total 6 monedas), cuando lo óptimo sería usar 3 monedas de 10."
+
+### Pseudocódigo del Algoritmo del Cambio
+
+```
+PROCEDIMIENTO darCambioVoraz(cantidad, monedas):
+    // Asumimos que monedas está ordenado de mayor a menor
+    resultado = []
+
+    PARA CADA valor EN monedas:
+        MIENTRAS cantidad >= valor:
+            añadir valor a resultado
+            cantidad = cantidad - valor
+
+    DEVOLVER resultado
+```
+
+### El Problema de la Mochila Fraccional
+
+En otra ocasión, un aventurero acudió al Mago Greedy:
+
+"Maestro, me dirijo a una expedición y solo puedo llevar 10 kilos en mi mochila. Tengo varios objetos con diferentes valores y pesos. ¿Cómo maximizo el valor de lo que llevo?"
+
+Objetos disponibles:
+
+- Mapa mágico: 3kg, valor 18
+- Poción curativa: 4kg, valor 20
+- Piedra de luz: 2kg, valor 14
+- Amuleto protector: 5kg, valor 24
+
+Greedy pensó un momento: "Primero, calcula el valor por kilo de cada objeto:
+
+- Mapa: 18÷3 = 6 por kilo
+- Poción: 20÷4 = 5 por kilo
+- Piedra: 14÷2 = 7 por kilo
+- Amuleto: 24÷5 = 4.8 por kilo
+
+Ahora, toma los objetos en orden de mayor valor por kilo hasta que tu mochila esté llena:"
+
+1. Piedra de luz: 2kg (quedan 8kg en la mochila)
+2. Mapa mágico: 3kg (quedan 5kg)
+3. Poción curativa: 4kg (queda 1kg)
+4. Amuleto protector: solo puedes llevar 1kg/5kg = 20% del amuleto (valor: 24 × 0.2 = 4.8)
+
+"En total, llevarás objetos por valor de 14 + 18 + 20 + 4.8 = 56.8."
+
+### Pseudocódigo del Problema de la Mochila Fraccional
+
+```
+PROCEDIMIENTO mochilaFraccional(objetos, capacidad):
+    // Calcular relación valor/peso para cada objeto
+    PARA CADA objeto EN objetos:
+        objeto.valorPorPeso = objeto.valor / objeto.peso
+
+    // Ordenar objetos por valor/peso de mayor a menor
+    ordenar(objetos, según valorPorPeso, descendente)
+
+    valorTotal = 0
+    pesoActual = 0
+
+    PARA CADA objeto EN objetos:
+        SI pesoActual + objeto.peso <= capacidad ENTONCES
+            // Tomar el objeto completo
+            añadir objeto a la mochila
+            valorTotal = valorTotal + objeto.valor
+            pesoActual = pesoActual + objeto.peso
+        SINO
+            // Tomar fracción del objeto
+            espacioRestante = capacidad - pesoActual
+            fracción = espacioRestante / objeto.peso
+            valorTotal = valorTotal + (objeto.valor * fracción)
+            pesoActual = capacidad
+            salir del bucle
+
+    DEVOLVER valorTotal
+```
+
+### La Eficiencia de los Algoritmos Voraces
+
+"Los algoritmos voraces," explicaba el Archimago Analítico, "suelen ser muy eficientes en términos de tiempo de ejecución. Por ejemplo, el algoritmo del cambio y el de la mochila fraccional son O(n log n), donde n es el número de monedas u objetos, debido principalmente al ordenamiento."
+
+"Sin embargo," continuaba, "su gran limitación es que no garantizan la solución óptima para todos los problemas. Funcionan bien cuando la elección localmente óptima lleva a la solución globalmente óptima, lo que se conoce como 'propiedad voraz'."
+
+### Ejercicio: La Biblioteca Mágica
+
+El bibliotecario de la Academia de Magia tiene un problema. Solo tiene 120 minutos para leer, y quiere maximizar la cantidad de conocimiento mágico que puede adquirir. Tiene varios libros disponibles:
+
+- Encantamientos Avanzados: 30 minutos, 60 puntos de conocimiento
+- Pociones Raras: 45 minutos, 75 puntos
+- Transformaciones Básicas: 20 minutos, 30 puntos
+- Historia de la Magia: 60 minutos, 90 puntos
+- Criaturas Mágicas: 35 minutos, 50 puntos
+
+¿Qué libros debería leer para maximizar su conocimiento mágico?
+
+Solución paso a paso:
+
+1. Calculamos los puntos de conocimiento por minuto para cada libro:
+
+   - Encantamientos: 60/30 = 2 puntos/min
+   - Pociones: 75/45 = 1.67 puntos/min
+   - Transformaciones: 30/20 = 1.5 puntos/min
+   - Historia: 90/60 = 1.5 puntos/min
+   - Criaturas: 50/35 = 1.43 puntos/min
+
+2. Ordenamos por puntos/minuto de mayor a menor:
+
+   1. Encantamientos Avanzados: 2 puntos/min
+   2. Pociones Raras: 1.67 puntos/min
+   3. Transformaciones Básicas: 1.5 puntos/min
+   4. Historia de la Magia: 1.5 puntos/min
+   5. Criaturas Mágicas: 1.43 puntos/min
+
+3. Seleccionamos siguiendo el orden hasta agotar el tiempo:
+
+   - Encantamientos Avanzados: 30 min, 60 puntos (quedan 90 min)
+   - Pociones Raras: 45 min, 75 puntos (quedan 45 min)
+   - Transformaciones Básicas: 20 min, 30 puntos (quedan 25 min)
+   - No podemos leer Historia ni Criaturas completos (necesitan 60 y 35 min respectivamente)
+
+4. Total: Encantamientos + Pociones + Transformaciones = 60 + 75 + 30 = 165 puntos de conocimiento
+
+El bibliotecario debería leer Encantamientos Avanzados, Pociones Raras y Transformaciones Básicas.
+
+## La Programación Dinámica: El Hechizo de la Memoria
+
+### La Historia de la Sabia Dinámica
+
+En lo más profundo del Bosque de los Algoritmos, en una cueva iluminada por cristales mágicos, vivía la Sabia Dinámica. A diferencia de los otros maestros, ella era conocida por su excelente memoria y su capacidad para aprender de experiencias pasadas.
+
+"¿Por qué resolver el mismo problema dos veces?" era su lema favorito. "La verdadera sabiduría está en recordar las soluciones que ya has encontrado."
+
+### ¿Qué es la Programación Dinámica?
+
+La programación dinámica es una técnica para resolver problemas complejos dividiéndolos en subproblemas más simples. Pero a diferencia de "divide y vencerás", la programación dinámica:
+
+1. Almacena las soluciones de los subproblemas (memoización)
+2. Reutiliza estas soluciones para evitar cálculos repetidos
+3. Construye la solución óptima combinando soluciones de subproblemas
+
+Es especialmente útil cuando un problema tiene:
+
+- Subestructura óptima: la solución óptima contiene dentro de sí soluciones óptimas a subproblemas
+- Subproblemas superpuestos: los mismos subproblemas aparecen repetidamente
+
+### El Problema de Fibonacci: Una demostración con cartas mágicas
+
+La Sabia Dinámica mostró a sus estudiantes una baraja de cartas numeradas.
+
+"La secuencia de Fibonacci," explicó, "comienza con 0 y 1. Después, cada número es la suma de los dos anteriores. Así: 0, 1, 1, 2, 3, 5, 8, 13..."
+
+"¿Cómo calcularían F(6)?" preguntó.
+
+Un estudiante entusiasta respondió: "¡Usaría recursión! F(6) = F(5) + F(4), y seguiría descomponiendo."
+
+```
+F(6) = F(5) + F(4)
+     = [F(4) + F(3)] + [F(3) + F(2)]
+     = ...
+```
+
+La Sabia sonrió. "Ese enfoque funciona, pero observen algo: estamos calculando F(4) una vez, F(3) dos veces, F(2) tres veces... ¡hay mucha repetición!"
+
+Entonces sacó una pequeña libreta. "Con programación dinámica, anotamos cada resultado la primera vez que lo calculamos, y luego simplemente lo consultamos:"
+
+```
+memo = [0, 1, ...]  // Inicializamos con los casos base
+
+Para calcular F(6):
+  ¿Tenemos F(6) en memo? No -> Necesitamos F(5) y F(4)
+
+  ¿Tenemos F(5) en memo? No -> Necesitamos F(4) y F(3)
+
+  ¿Tenemos F(4) en memo? No -> Necesitamos F(3) y F(2)
+
+  ¿Tenemos F(3) en memo? No -> Necesitamos F(2) y F(1)
+
+  ¿Tenemos F(2) en memo? No -> Necesitamos F(1) y F(0)
+
+  ¿Tenemos F(1) en memo? Sí -> F(1) = 1
+  ¿Tenemos F(0) en memo? Sí -> F(0) = 0
+
+  F(2) = F(1) + F(0) = 1 + 0 = 1, guardar en memo
+
+  F(3) = F(2) + F(1) = 1 + 1 = 2, guardar en memo
+
+  F(4) = F(3) + F(2) = 2 + 1 = 3, guardar en memo
+
+  F(5) = F(4) + F(3) = 3 + 2 = 5, guardar en memo
+
+  F(6) = F(5) + F(4) = 5 + 3 = 8, guardar en memo
+```
+
+"Como ven," concluyó, "cada número de Fibonacci se calcula exactamente una vez. Esta es la esencia de la programación dinámica: recordar para no repetir."
+
+### Pseudocódigo de Fibonacci con Programación Dinámica
+
+```
+// Enfoque "top-down" (memoización)
+PROCEDIMIENTO fibonacciMemo(n, memo):
+    SI n está en memo ENTONCES
+        DEVOLVER memo[n]
+
+    SI n <= 1 ENTONCES
+        resultado = n
+    SINO
+        resultado = fibonacciMemo(n-1, memo) + fibonacciMemo(n-2, memo)
+
+    memo[n] = resultado
+    DEVOLVER resultado
+
+// Enfoque "bottom-up" (tabulación)
+PROCEDIMIENTO fibonacciTabla(n):
+    tabla = nuevo Array(n+1)
+    tabla[0] = 0
+    tabla[1] = 1
+
+    PARA i DESDE 2 HASTA n:
+        tabla[i] = tabla[i-1] + tabla[i-2]
+
+    DEVOLVER tabla[n]
+```
+
+### El Problema de la Mochila (versión 0-1)
+
+Otro día, el mismo aventurero volvió a visitar a la Sabia Dinámica.
+
+"Tu colega, el Mago Greedy, me ayudó con mi mochila permitiéndome llevar fracciones de objetos. Pero en realidad no puedo dividir mis objetos. ¿Cómo puedo maximizar el valor llevando objetos completos?"
+
+La Sabia asintió. "Este es el famoso problema de la mochila 0-1, donde cada objeto se toma completamente (1) o no se toma (0). La voracidad no funciona aquí, necesitamos programación dinámica."
+
+Objetos:
+
+- Mapa mágico: 3kg, valor 18
+- Poción curativa: 4kg, valor 20
+- Piedra de luz: 2kg, valor 14
+- Amuleto protector: 5kg, valor 24
+
+Capacidad de la mochila: 10kg
+
+La Sabia dibujó una tabla en el suelo con su varita:
+
+```
+       0kg  1kg  2kg  3kg  4kg  5kg  6kg  7kg  8kg  9kg  10kg
+Nada    0    0    0    0    0    0    0    0    0    0    0
+Mapa    0    0    0   18   18   18   18   18   18   18   18
+Poción  0    0    0   18   20   20   20   38   38   38   38
+Piedra  0    0   14   18   20   32   34   38   52   54   58
+Amuleto 0    0   14   18   20   32   34   38   52   54   58
+```
+
+Explicando: "Para cada celda, decidimos si incluir o no el objeto actual. Tomamos el máximo entre:
+
+1. No incluirlo (valor de la misma columna en la fila anterior)
+2. Incluirlo (valor del objeto + valor de la celda [fila anterior, columna - peso del objeto])"
+
+"La respuesta está en la esquina inferior derecha: 58 de valor."
+
+"Los objetos a incluir son: Mapa (18), Poción (20) y Piedra (14), con un peso total de 9kg y un valor de 52."
+
+### Pseudocódigo del Problema de la Mochila 0-1
+
+```
+PROCEDIMIENTO mochila01(pesos, valores, capacidad):
+    n = longitud(pesos)
+    tabla = nueva Matriz(n+1, capacidad+1)
+
+    // Inicializar la primera fila en 0
+    PARA j DESDE 0 HASTA capacidad:
+        tabla[0][j] = 0
+
+    // Rellenar la tabla
+    PARA i DESDE 1 HASTA n:
+        PARA j DESDE 0 HASTA capacidad:
+            SI pesos[i-1] <= j ENTONCES
+                // Máximo entre incluir o no incluir el objeto
+                tabla[i][j] = MÁXIMO(tabla[i-1][j],
+                                     valores[i-1] + tabla[i-1][j-pesos[i-1]])
+            SINO
+                // No se puede incluir el objeto (excede la capacidad)
+                tabla[i][j] = tabla[i-1][j]
+
+    DEVOLVER tabla[n][capacidad]
+```
+
+### Ejercicio: Las Escaleras Mágicas
+
+En la Torre de la Academia hay una escalera mágica con n escalones. Un estudiante puede subir 1 o 2 escalones a la vez. ¿De cuántas maneras diferentes puede subir la escalera?
+
+Por ejemplo, si hay 3 escalones:
+
+1. 1 + 1 + 1
+2. 1 + 2
+3. 2 + 1
+
+Hay 3 maneras diferentes.
+
+¿Y si hay 5 escalones? Resuélvelo usando programación dinámica.
+
+Solución paso a paso:
+
+Este problema tiene una estructura óptima clara: el número de maneras de subir n escalones es la suma del número de maneras de subir n-1 escalones (y luego dar 1 paso) y el número de maneras de subir n-2 escalones (y luego dar 2 pasos).
+
+Usemos un enfoque "bottom-up":
+
+```
+función contarManeras(n):
+    Si n <= 2: devolver n  // casos base
+
+    maneras = nuevo array de tamaño n+1
+    maneras[1] = 1  // 1 manera de subir 1 escalón
+    maneras[2] = 2  // 2 maneras de subir 2 escalones
+
+    Para i desde 3 hasta n:
+        maneras[i] = maneras[i-1] + maneras[i-2]
+
+    devolver maneras[n]
+```
+
+Para n = 5:
+
+maneras[1] = 1
+maneras[2] = 2
+maneras[3] = maneras[2] + maneras[1] = 2 + 1 = 3
+maneras[4] = maneras[3] + maneras[2] = 3 + 2 = 5
+maneras[5] = maneras[4] + maneras[3] = 5 + 3 = 8
+
+Hay 8 maneras diferentes de subir 5 escalones dando pasos de 1 o 2 escalones a la vez.
+
+## La Gran Reunión de Algoritmos
+
+El Consejo Supremo de Algoritmos se reunía una vez al año para compartir conocimientos y debatir las mejores estrategias para resolver problemas. Este año, los Maestros MergeSort, QuickSort, Heap, Greedy y Dinámica se encontraban sentados alrededor de una mesa redonda.
+
+El Gran Archimago, presidente del Consejo, habló primero:
+
+"Estimados colegas, cada uno de ustedes posee grandes poderes. Hoy quiero que discutamos: ¿Cuándo es mejor usar cada algoritmo? ¿Cómo elegimos el hechizo correcto para cada problema?"
+
+### La Tabla de los Algoritmos
+
+Después de una larga y apasionada discusión, crearon esta tabla de sabiduría:
+
+| Algoritmo             | Cuando usarlo                                                                              | Cuando evitarlo                                                               |
+| --------------------- | ------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------- |
+| MergeSort             | Cuando necesitas estabilidad en el ordenamiento, o cuando trabajas con listas enlazadas    | Cuando el espacio en memoria es muy limitado                                  |
+| QuickSort             | Para ordenamientos generales en arrays, especialmente en memoria                           | Cuando necesitas garantizar O(n log n) en el peor caso                        |
+| HeapSort              | Cuando necesitas un ordenamiento garantizado O(n log n) sin espacio extra                  | Cuando necesitas un ordenamiento estable                                      |
+| Voraz (Greedy)        | Problemas de optimización donde la elección local óptima lleva a la solución global óptima | Problemas donde las decisiones pasadas afectan las futuras de manera compleja |
+| Programación dinámica | Problemas con subestructura óptima y subproblemas superpuestos                             | Problemas sin subproblemas claramente definidos o sin superposición           |
+
+### El Conjuro de la Elección Sabia
+
+"Recuerden," concluyó el Gran Archimago, "no existe un algoritmo perfecto para todo. La verdadera maestría no está en conocer muchos algoritmos, sino en saber cuál es el adecuado para cada problema."
+
+"La próxima vez que enfrenten un desafío algorítmico, háganse estas preguntas:
+
+1. ¿Cuál es la naturaleza del problema? (ordenamiento, optimización, conteo...)
+2. ¿Cuáles son las restricciones? (tiempo, espacio, precisión...)
+3. ¿Cómo se relacionan los subproblemas entre sí?
+4. ¿Qué garantías necesito? (peor caso, promedio, mejor caso...)
+
+Las respuestas los guiarán hacia el algoritmo correcto."
+
+## Ejercicio Final: El Torneo Mágico
+
+Ha llegado el momento del Gran Torneo Mágico, donde los aprendices deben demostrar su dominio de los algoritmos avanzados. Aquí están los desafíos:
+
+### Desafío 1: El Tesoro Ordenado
+
+El Guardián del Tesoro tiene una serie de cofres con diferentes cantidades de oro: [45, 23, 78, 12, 56, 89, 34, 67, 43]. Para abrir la cámara del tesoro, debes ordenar estos valores usando el algoritmo más apropiado considerando que:
+
+1. El espacio es limitado (prefieres soluciones in-place)
+2. La velocidad promedio es crucial
+3. No te importan los casos peores ocasionales
+
+¿Qué algoritmo usarías y por qué?
+
+<details>
+<summary>Ver respuesta</summary>
+
+**Algoritmo recomendado**: QuickSort
+
+**Justificación**:
+
+1. QuickSort puede implementarse de forma in-place, satisfaciendo la restricción de espacio
+2. Tiene excelente rendimiento promedio O(n log n)
+3. Aunque su peor caso es O(n²), esto ocurre en escenarios específicos que podemos mitigar con una buena selección de pivote
+
+</details>
+
+### Desafío 2: El Problema de la Mochila del Aprendiz
+
+Como aprendiz, viajas a la Montaña de la Sabiduría llevando una mochila con capacidad para 15 unidades de peso. Tienes estos pergaminos mágicos, cada uno con un peso y valor de conocimiento:
+
+- Pergamino A: peso 2, valor 12
+- Pergamino B: peso 5, valor 32
+- Pergamino C: peso 7, valor 40
+- Pergamino D: peso 3, valor 17
+- Pergamino E: peso 9, valor 46
+
+No puedes rasgar los pergaminos (debes llevarlos completos o dejarlos). ¿Qué pergaminos llevarías para maximizar el conocimiento que adquirirás?
+
+Solución paso a paso:
+
+Este es un problema de la mochila 0-1, ideal para programación dinámica:
+
+1. Creamos una tabla donde las filas son los pergaminos (más una fila base) y las columnas son los pesos de 0 a 15:
+
+```
+      0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15
+Base  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+A     0  0 12 12 12 12 12 12 12 12 12 12 12 12 12 12
+B     0  0 12 12 12 32 32 44 44 44 44 44 44 44 44 44
+C     0  0 12 12 12 32 32 40 44 52 52 72 72 72 84 84
+D     0  0 12 17 17 32 32 40 49 52 57 72 72 77 84 89
+E     0  0 12 17 17 32 32 40 49 52 57 72 72 77 86 89
+```
+
+2. La respuesta está en la celda inferior derecha: 89 valor máximo
+
+3. Para reconstruir la solución, rastreamos hacia atrás:
+   - Incluidos: B (32), C (40), D (17)
+   - Peso total: 5 + 7 + 3 = 15
+   - Valor total: 32 + 40 + 17 = 89
+
+### Desafío 3: Las Torres de Ordeno
+
+En el laboratorio de hechicería hay 7 torres mágicas con distintas alturas: [30, 10, 50, 20, 35, 40, 15]. Para activar el laboratorio, debes ordenarlas de menor a mayor utilizando HeapSort.
+
+Muestra los estados del montículo después de:
+
+1. La construcción inicial del montículo máximo
+2. Después de extraer el primer elemento
+3. El resultado final ordenado
+
+Solución paso a paso:
+
+1. Construcción inicial del montículo máximo:
+
+   Inicialmente: [30, 10, 50, 20, 35, 40, 15]
+
+   Después de heapify:
+
+   ```
+         50
+        /  \
+       35   40
+      / \   / \
+     20 30 10 15
+   ```
+
+   Estado del array: [50, 35, 40, 20, 30, 10, 15]
+
+2. Después de extraer el primer elemento:
+
+   Intercambio 50 y 15: [15, 35, 40, 20, 30, 10, 50]
+
+   Restaurar heap (sin incluir 50):
+
+   ```
+         40
+        /  \
+       35   10
+      / \   /
+     20 30 15
+   ```
+
+   Estado del array: [40, 35, 10, 20, 30, 15, 50]
+
+3. Resultado final ordenado:
+   Aplicando HeapSort completamente: [10, 15, 20, 30, 35, 40, 50]
+
+## Lo que hemos aprendido
+
+- **MergeSort**: Un algoritmo de ordenamiento estable y eficiente, ideal para listas enlazadas y grandes conjuntos de datos.
+- **QuickSort**: Un algoritmo de ordenamiento rápido y eficiente, pero con un peor caso potencial. Ideal para arrays y conjuntos de datos pequeños a medianos.
+- **HeapSort**: Un algoritmo de ordenamiento in-place y eficiente, pero no estable. Ideal para conjuntos de datos grandes donde el espacio es limitado.
+- **Algoritmos Voraces**: Útiles para problemas de optimización donde la elección local óptima lleva a la solución global óptima. No siempre garantizan la solución óptima
+- **Programación Dinámica**: Ideal para problemas con subestructura óptima y subproblemas superpuestos. Permite resolver problemas complejos de manera eficiente al almacenar soluciones previas.
+- **La importancia de elegir el algoritmo adecuado**: No todos los algoritmos son adecuados para todos los problemas. La elección del algoritmo correcto depende de las restricciones y características del problema en cuestión.
+- **La magia de la memoria**: La programación dinámica nos enseña a recordar soluciones previas para evitar cálculos repetidos, lo que mejora la eficiencia de nuestros algoritmos.
+- **La sabiduría de la elección**: La verdadera maestría en algoritmos no radica solo en conocer muchos, sino en saber cuál es el adecuado para cada situación. La práctica y la experiencia son clave para desarrollar esta habilidad.
+
+Recuerda:
+
+- Los algoritmos son herramientas poderosas, pero su efectividad depende de cómo y cuándo los uses.
+- La práctica constante y la resolución de problemas te ayudarán a dominar estos conceptos y a convertirte en un verdadero maestro de los algoritmos.
+- No dudes en experimentar con diferentes algoritmos y enfoques para resolver problemas. La creatividad y la curiosidad son esenciales en el mundo de la programación y la informática.
