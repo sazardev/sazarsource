@@ -1,0 +1,298 @@
+---
+title: "I made a project in Golang with no packages or libraries (also not ORM's)"
+description: "Let's talk about the good, the bad and the ugly of zero dependency Golang projects."
+category: "go"
+ship_count: 1
+pubDate: "Apr 11 2025"
+updatedDate: "Apr 11 2025"
+---
+
+# The problem
+
+Okay, may you are asking yourself, why you do a project in Golang with no packages or libraries? First, the project requires an highly optimized database, high concurrency and a lot of performance, a lot of files and a lot of data. So, I thought, why not do it in Golang?
+
+The project it is about to make a conciliation with a different types of invoices reading `XML` in two differents ways. First, it is using an API (easy) the second it's in a dynamic database location (hard). The two ways give me only `XML` files, so I need to parse them and make a conciliation with the data. Also, when I get the conciliated invoices, that concilitation needs to be saved in a database. So, I need to make a lot of queries and a lot of data manipulation, and the hardest part is to make all this in a high performance way, when the data is conciliated the user will be able to sort and filter in the data.
+
+# The solution
+
+That is the problem. Using `Go` was the best decission for this project, but why no packages? Not easy answer here, but I need to have a FULL control of the database, the querys, indexes, tables, and all the data. Even I need to control the database configuration. `GORM` do not let me to customize every aspect of a table or column.
+
+Then another problem is a high concurrency with the two ways of getting data in different sources (And compress the `XML` because it is a HUGE amount of data) and then parse it. So, I need to make a lot of goroutines and channels to make the data flow.
+
+Every pieces are on the table. Next lets see the structure project!
+
+```markdown
+|-- src
+| |-- config
+| |-- controller
+| |-- database
+| |-- handlers
+| |-- interfaces
+| |-- middleware
+| |-- models
+| |-- routes
+| |-- services
+| |-- utils
+```
+
+Very simple, but very effective. I have a `config` folder to store all the configuration of the project, like the database connection, the API keys, etc. The `controller` folder as a bussiness logic headers, the `database` folder as the database connection and the queries, the `handlers` folder as the HTTP handlers, the `interfaces` folder as the interfaces declared for the petitions in others APIs, the `middleware` folder for CORS and , the `models` folder as the models for the database, the `routes` folder as the routes of the project, the `services` folder as the services of the project and finally the `utils` folder as a utility functions.
+
+# How the data is managed
+
+Now, lets talk about my database configuration, but please, keep in mind, that this configuration only works in MY situation, and this is the best only in this case, may not be useful in another cases. And visualize that every table has indexes.
+
+### `listen_addresses = '*'`
+
+Configures which IP addresses PostgreSQL listens on. Setting this to `'*'` allows connections from any IP address, making the database accessible from any network interface. Useful for servers that need to accept connections from multiple clients on different networks.
+
+### `shared_buffers = 256MB`
+
+Determines the amount of memory dedicated to PostgreSQL for caching data. This is one of the most important parameters for performance, as it caches frequently accessed tables and indexes in RAM. 256MB is a moderate value that balances memory usage with improved query performance. For high-performance systems, this could be set to 25% of total system memory.
+
+### `work_mem = 16MB`
+
+Specifies the memory allocated for sort operations and hash tables. Each query operation can use this amount of memory, so 16MB provides a reasonable balance. Setting this too high could lead to memory pressure if many queries run concurrently, while setting it too low forces PostgreSQL to use disk-based sorting.
+
+### `maintenance_work_mem = 128MB`
+
+Defines memory dedicated to maintenance operations like VACUUM, CREATE INDEX, or ALTER TABLE. Higher values (like 128MB) accelerate these operations, especially on larger tables. This memory is only used during maintenance tasks, so it can safely be set higher than `work_mem`.
+
+### `wal_buffers = 16MB`
+
+Controls the size of the buffer for Write-Ahead Log (WAL) data before writing to disk. 16MB is sufficient for most workloads and helps reduce I/O pressure by batching WAL writes.
+
+### `synchronous_commit = off`
+
+Disables waiting for WAL writes to be confirmed as written to disk before reporting success to clients. This dramatically improves performance by allowing the server to continue processing transactions immediately, at the cost of a small risk of data loss in case of system failure (typically just a few recent transactions).
+
+### `checkpoint_timeout = 15min`
+
+Sets the maximum time between automatic WAL checkpoints. A longer interval (15 minutes) reduces I/O load by spacing out checkpoint operations but may increase recovery time after a crash.
+
+### `max_wal_size = 1GB`
+
+Defines the maximum size of WAL files before triggering a checkpoint. 1GB allows for efficient handling of large transaction volumes before forcing a disk write.
+
+### `min_wal_size = 80MB`
+
+Sets the minimum size to shrink the WAL to during checkpoint operations. Keeping at least 80MB prevents excessive recycling of WAL files, which would cause unnecessary I/O.
+
+### `random_page_cost = 1.1`
+
+An estimate of the cost of fetching a non-sequential disk page. The low value of 1.1 (close to 1.0) indicates the system is using SSDs or has excellent disk caching. This guides the query planner to prefer index scans over sequential scans.
+
+### `effective_cache_size = 512MB`
+
+Tells the query planner how much memory is available for disk caching by the OS and PostgreSQL. 512MB indicates a moderate amount of system memory available for caching, influencing the planner to favor index scans.
+
+### `max_connections = 100`
+
+Limits the number of simultaneous client connections. 100 connections is suitable for applications with moderate concurrency requirements while preventing resource exhaustion.
+
+### `max_worker_processes = 4`
+
+Sets the maximum number of background worker processes the system can support. 4 workers allows parallel operations while preventing CPU oversubscription on smaller systems.
+
+### `max_parallel_workers_per_gather = 2`
+
+Defines how many worker processes a single Gather operation can launch. Setting this to 2 enables moderate parallelism for individual queries.
+
+### `max_parallel_workers = 4`
+
+Limits the total number of parallel workers that can be active at once. Matching this with `max_worker_processes` ensures all worker slots can be used for parallelism if needed.
+
+### `log_min_duration_statement = 200`
+
+Logs any query that runs longer than 200 milliseconds. This helps identify slow-performing queries that might need optimization, while not logging faster queries that would create excessive log volume.
+
+## Table declarations
+
+Obviusly I will not put here every table created and every column (Also the names are changed) but this is a general idea.
+
+```sql
+CREATE TABLE IF NOT EXISTS reconciliation (
+    id SERIAL PRIMARY KEY,
+    requester_id VARCHAR(13) NOT NULL,
+    request_uuid VARCHAR(36) NOT NULL UNIQUE,
+    company_id VARCHAR(13) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE INDEX IF NOT EXISTS idx_reconciliation_request_uuid ON reconciliation(request_uuid);
+CREATE INDEX IF NOT EXISTS idx_reconciliation_requester_id ON reconciliation(requester_id);
+CREATE INDEX IF NOT EXISTS idx_reconciliation_company_id ON reconciliation(company_id);
+
+CREATE TABLE IF NOT EXISTS reconciliation_invoice (
+    id SERIAL PRIMARY KEY,
+    -- Imagine 30 columns declarations...
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (reconciliation_id) REFERENCES reconciliation(id) ON DELETE CASCADE
+);
+
+CREATE INDEX IF NOT EXISTS idx_reconciliation_invoice_reconciliation_id ON reconciliation_invoice(reconciliation_id);
+CREATE INDEX IF NOT EXISTS idx_reconciliation_invoice_source_uuid ON reconciliation_invoice(source_system_uuid);
+CREATE INDEX IF NOT EXISTS idx_reconciliation_invoice_erp_uuid ON reconciliation_invoice(erp_system_uuid);
+CREATE INDEX IF NOT EXISTS idx_reconciliation_invoice_reconciled ON reconciliation_invoice(reconciled);
+
+CREATE TABLE IF NOT EXISTS reconciliation_stats (
+    reconciliation_id INTEGER PRIMARY KEY REFERENCES reconciliation(id) ON DELETE CASCADE,
+    -- ... A lot of more stats props
+    document_type_stats JSONB NOT NULL,
+    total_distribution JSONB NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE INDEX IF NOT EXISTS idx_reconciliation_stats_reconciliation_id
+ON reconciliation_stats(reconciliation_id);
+```
+
+### Index Explanations
+
+The schema includes several strategic indexes to optimize query performance:
+
+1. **Primary Key Indexes**: Each table has a primary key that automatically creates an index for fast record retrieval by ID.
+
+2. **Foreign Key Indexes**:
+
+   - `idx_reconciliation_invoice_reconciliation_id` enables efficient joins between reconciliation and invoice tables
+   - `idx_reconciliation_stats_reconciliation_id` optimizes queries joining stats to their parent reconciliation
+
+3. **Lookup Indexes**:
+
+   - `idx_reconciliation_request_uuid` for fast lookups by unique request identifier
+   - `idx_reconciliation_requester_id` and `idx_reconciliation_company_id` optimize filtering by company or requester
+
+4. **Business Logic Indexes**:
+   - `idx_reconciliation_invoice_source_uuid` and `idx_reconciliation_invoice_erp_uuid` improve performance when matching documents between systems
+   - `idx_reconciliation_invoice_reconciled` optimizes filtering by reconciliation status, which is likely a common query pattern
+
+These indexes significantly improve performance for the typical query patterns in a reconciliation system, where you often need to filter by company, requester, or match status, while potentially handling large volumes of invoice data.
+
+# How I handle the XML
+
+The KEY of why use `Go` it was by how EASY is to use `XML` in `Go` (I am really in love and save HOURS). Maybe you never see an `XML`, this is a fake example of an `XML` invoice:
+
+```xml
+<Invoice xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDatatypes-2"
+...
+</cac:OrderReference>
+<cac:AccountingSupplierParty>
+...
+</cac:AccountingSupplierParty>
+<cac:AccountingCustomerParty>
+...
+</cac:AccountingCustomerParty>
+<cac:Delivery>
+...
+</cac:Delivery>
+<cac:PaymentMeans>
+...
+</cac:PaymentMeans>
+<cac:PaymentTerms>
+...
+</cac:PaymentTerms>
+<cac:AllowanceCharge>
+...
+</cac:AllowanceCharge>
+<cac:TaxTotal>
+<cbc:TaxAmount currencyID="GBP">17.50</cbc:TaxAmount>
+<cbc:TaxEvidenceIndicator>true</cbc:TaxEvidenceIndicator>
+<cac:TaxSubtotal>
+<cbc:TaxableAmount currencyID="GBP">100.00</cbc:TaxableAmount>
+<cbc:TaxAmount currencyID="GBP">17.50</cbc:TaxAmount>
+<cac:TaxCategory>
+<cbc:ID>A</cbc:ID>
+<cac:TaxScheme>
+<cbc:ID>UK VAT</cbc:ID>
+<cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
+</cac:TaxScheme>
+</cac:TaxCategory>
+</cac:TaxSubtotal>
+</cac:TaxTotal>
+<cac:LegalMonetaryTotal>
+...
+</cac:LegalMonetaryTotal>
+<cac:InvoiceLine>
+...
+</cac:InvoiceLine>
+</Invoice>
+```
+
+In another language may can be PAINFUL to extract this data and more when the data have a child in a child in a child...
+
+This is an interface example in `Go`:
+
+```go
+type Invoice struct {
+    ID              string `xml:"ID"`
+    IssueDate       string `xml:"IssueDate"`
+    SupplierParty   Party  `xml:"AccountingSupplierParty"`
+    CustomerParty   Party  `xml:"AccountingCustomerParty"`
+    TaxTotal        struct {
+        TaxAmount         string      `xml:"TaxAmount"`
+        EvidenceIndicator bool        `xml:"TaxEvidenceIndicator"`
+        // Handling deeply nested elements
+        Subtotals         []struct {
+            TaxableAmount string `xml:"TaxableAmount"`
+            TaxAmount     string `xml:"TaxAmount"`
+            // Even deeper nesting
+            Category      struct {
+                ID        string `xml:"ID"`
+                Scheme    struct {
+                    ID        string `xml:"ID"`
+                    TypeCode  string `xml:"TaxTypeCode"`
+                } `xml:"TaxScheme"`
+            } `xml:"TaxCategory"`
+        } `xml:"TaxSubtotal"`
+    } `xml:"TaxTotal"`
+}
+
+type Party struct {
+    Name    string `xml:"Party>PartyName>Name"`
+    TaxID   string `xml:"Party>PartyTaxScheme>CompanyID"`
+    // Other fields omitted...
+}
+```
+
+Very easy, right? With an interface we got everything ready to work extracting data and save from our APIs!
+
+# Concurrency
+
+Another aspect of why go for `Go` is the concurrency. Why this project needs concurrency? Okay, lets see a diagram of how the data flow:
+
+<img
+  src="https://raw.githubusercontent.com/CerberusProgrammer/sazarsource/main/image-1.png"
+  alt="Data Flow Diagram 1"
+  width="800"
+/>
+
+Imagine, if I process every package one by one, I will be waiting a lot of time to process all the data. So, its the perfect time to use goroutines and channels.
+
+<img
+  src="https://raw.githubusercontent.com/CerberusProgrammer/sazarsource/main/image-2.png"
+  alt="Data Flow Diagram 2"
+  width="800"
+/>
+
+# Conclusion
+
+After completing this project with pure Go and no external dependencies, I can confidently say this approach was the right choice for this specific use case. The standard library proved to be remarkably capable, handling everything from complex XML parsing to high-throughput database operations.
+
+The key advantages I gained were:
+
+1. **Complete control over performance optimization** - By writing raw SQL queries and fine-tuning PostgreSQL configuration, I achieved performance levels that would be difficult with an ORM's abstractions.
+
+2. **No dependency management headaches** - Zero external packages meant no version conflicts, security vulnerabilities from third-party code, or unexpected breaking changes.
+
+3. **Smaller binary size and reduced overhead** - The resulting application was lean and efficient, with no unused code from large libraries.
+
+4. **Deep understanding of the system** - Building everything from scratch forced me to understand each component thoroughly, making debugging and optimization much easier.
+
+5. **Perfect fit for Go's strengths** - This approach leveraged Go's strongest features: concurrency with goroutines/channels, efficient XML handling, and a powerful standard library.
+
+That said, this isn't the right approach for every project. The development time was longer than it would have been with established libraries and frameworks. For simpler applications or rapid prototyping, the convenience of packages like GORM or Echo would likely outweigh the benefits of going dependency-free.
+
+However, for systems with strict performance requirements handling large volumes of data with complex processing needs, the control offered by this bare-bones approach proved invaluable. The reconciliation system now processes millions of invoices efficiently, with predictable performance characteristics and complete visibility into every aspect of its operation.
+
+In the end, the most important lesson was knowing when to embrace libraries and when to rely on Go's powerful standard library - a decision that should always be driven by the specific requirements of your project rather than dogmatic principles about dependencies.
