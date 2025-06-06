@@ -787,4 +787,162 @@ La Cumbre de Seguridad Global de Ginebra reúne a líderes mundiales para coordi
 Durante la operación, Vega detecta señales de otro equipo Espectro operando con objetivos aparentemente contradictorios. Evidencia sugiere que Célula Beta ha desplegado Escuadrón Omega para eliminar delegado que planea filtrar información sobre Proyecto Quimera. Vega debe decidir entre cumplir su misión original o intervenir.
 
 **Revelación Crítica**
-Documentos interceptados revelan que información obtenida será utilizada para chantaje político y manipulación de líderes mundiales, no para seguridad nacional como se había indicado en briefing. Además, Vega descubre que su padre asistió a una cumbre
+Documentos interceptados revelan que información obtenida será utilizada para chantaje político y manipulación de líderes mundiales, no para seguridad nacional como se había indicado en briefing. Además, Vega descubre que su padre asistió a una cumbre similar diez años antes, donde se presentó el primer prototipo del Proyecto Quimera. Los registros encriptados indican que el Coronel Javier Vega inicialmente apoyó el proyecto, pero posteriormente intentó filtrar información sobre sus verdaderas aplicaciones cuando descubrió que sería utilizado para control poblacional masivo. Su "suicidio" ocurrió exactamente tres días después de contactar con un periodista de investigación. Entre los documentos, Vega encuentra una lista de "activos neurológicamente compatibles" compilada años antes de su reclutamiento, donde figura como candidato prioritario debido a su "herencia genética optimizada" - sugiriendo que su propia existencia podría haber sido parte de un programa de selección generacional.
+
+### Operación "Fauces Negras"
+
+**Contexto Estratégico**
+En la megaciudad de Yakarta, científico neurológico Dr. Liang Wei ha sido secuestrado durante masivas protestas antigubernamentales. Oficialmente, se trata de un experto en tratamiento de TEPT capturado por insurgentes. La realidad: Wei es el creador del algoritmo fundamental que permite la implantación de pensamientos mediante Proyecto Quimera, y su "secuestro" podría ser una deserción asistida por facción disidente dentro de la Unión Euroasiática.
+
+**Objetivos Primarios**
+
+- Localizar y extraer al Dr. Wei antes que otras agencias
+- Recuperar datos de investigación clasificados en su posesión
+- Determinar si deserción es voluntaria o forzada
+- Eliminar cualquier evidencia de operación Espectro en territorio neutral
+
+**Complicaciones Tácticas**
+
+- Entorno urbano densamente poblado (38 millones de habitantes)
+- Presencia simultánea de múltiples equipos de extracción competidores
+- Restricciones extremas de combate para evitar incidente diplomático
+- Inestabilidad política que podría escalar a conflicto regional
+
+**Desarrollo Dramático**
+La operación se complica cuando Vega descubre que el Dr. Wei está cooperando voluntariamente con una facción del Colectivo Nexus para desarrollar contramedidas contra manipulación neural. Además, el equipo Espectro detecta la presencia de otro operador con implante neural avanzado rastreando al científico - un agente de Célula Omega bajo control directo del General Herrera que tiene órdenes de eliminar a Wei. El Escuadrón Sombra queda atrapado en fuego cruzado entre fuerzas corporativas y leales al gobierno durante un golpe de estado que estalla durante la operación.
+
+**Revelación Crítica**
+Wei revela a Vega que la compatibilidad con interfaces neurales no es un rasgo aleatorio sino resultado de exposición prenatal controlada a compuestos neuroplásticos específicos. El programa "Prometeo Prenatal" modificó embriones de familias militares seleccionadas durante dos generaciones. El propio Vega fue parte de esta experimentación no consentida, explicando su compatibilidad excepcional. Wei proporciona evidencia que conecta a Weyland y Herrera como arquitectos del programa, con la complicidad reluctante del padre de Vega, quien intentó desmantelarlo antes de su muerte.
+
+### Operación "Marea Roja"
+
+**Contexto Estratégico**
+Inteligencia identifica carguero "Estrella Roja" en ruta desde Puerto Vladivostok hacia instalación marina privada en Mar del Sur de China. Embarcación transporta componentes críticos para versión avanzada de Proyecto Quimera con capacidad de manipulación cognitiva masiva a escala continental. Operación autorizada bajo máxima prioridad con protocolo "Umbral Omega" activado.
+
+**Objetivos Primarios**
+
+- Interceptar embarcación en aguas internacionales
+- Asegurar cargamento de tecnología neural prohibida
+- Capturar científicos clave para interrogación
+- Implementar escenario de negación plausible que evite escalada con Unión Euroasiática
+
+**Complicaciones Tácticas**
+
+- Operación marítima en condiciones meteorológicas extremas
+- Embarcación protegida por contratistas militares de élite con experiencia Spetsnaz
+- Presencia de civiles que desconocen naturaleza del cargamento
+- Defensas anti-abordaje avanzadas incluyendo sistemas automatizados letales
+
+**Desarrollo Dramático**
+Durante el asalto, el equipo Espectro descubre que el verdadero propósito de la misión no es interceptar tecnología hostil, sino robar avances competidores para implementación en programa occidental. La operación se complica cuando submarino de ataque no identificado torpedea el carguero durante el asalto, aparentemente para evitar que la tecnología caiga en manos de cualquier facción. Vega debe decidir entre completar la misión original, salvar civiles atrapados en compartimentos inundados, o perseguir evidencia que conecta el cargamento con investigaciones de su padre.
+
+**Revelación Crítica**
+Entre los científicos rescatados está el Dr. Nikolai Petrov, antiguo colega del padre de Vega en proyecto conjunto OTAN-Rusia cancelado en 2015. Petrov revela que ambos desarrollaron originalmente la tecnología neural como sistema terapéutico para veteranos con trauma, pero el proyecto fue militarizado secretamente. Los documentos rescatados contienen pruebas de que el mismo "accidente" que supuestamente mató a los sujetos de prueba iniciales fue deliberadamente provocado para encubrir éxitos tempranos y permitir desarrollo militar clasificado. El padre de Vega descubrió esto y recopiló evidencia antes de su muerte. La ubicación de esta evidencia está codificada en un patrón neural que solo Vega, con su configuración cerebral específica, puede interpretar.
+
+## ARCOS NARRATIVOS CENTRALES
+
+### Arco Personal: "Legado de Sangre"
+
+**Fase 1: Dudas y Descubrimientos**
+Vega comienza investigando circunstancias del suicidio de su padre mientras ejecuta misiones estándar para Espectro. Descubre inconsistencias en informes oficiales y establece contacto encubierto con antiguos asociados del Coronel Javier Vega.
+
+**Fase 2: Revelaciones Traumáticas**
+Evidencia emergente sugiere que su padre fue asesinado tras descubrir propósito real del Proyecto Quimera. Simultáneamente, Vega encuentra indicios de que su propio reclutamiento fue planificado décadas antes de su nacimiento como parte de programa eugenésico militar encubierto.
+
+**Fase 3: Crisis de Identidad**
+Confrontado con posibilidad de que su existencia misma fue diseñada como herramienta militar, Vega experimenta crisis psicológica agravada por efectos de la Interfaz Neural. Desarrolla plan para infiltrarse más profundamente en estructura de poder mientras aparenta lealtad absoluta.
+
+**Fase 4: Redención Compleja**
+Tras descubrir archivo completo ocultado por su padre, Vega debe elegir entre venganza personal contra arquitectos de la conspiración o implementación del plan contingencia diseñado por su padre para exponer selectivamente aspectos del programa sin desencadenar caos global.
+
+### Arco Político: "La Sombra del Poder"
+
+**Fase 1: Privatización Progresiva**
+Exploración de cómo corporaciones militares privadas gradualmente asumen funciones tradicionalmente estatales, utilizando crisis manufacturadas para justificar expansión de poderes y eliminación de supervisión democrática.
+
+**Fase 2: Conflicto Interagencial**
+Tensiones entre facciones militares tradicionales, servicios de inteligencia, y corporaciones contratistas por control de Proyecto Quimera y tecnologías derivadas. Manipulación cruzada donde cada grupo utiliza crisis para fortalecer su posición.
+
+**Fase 3: Colapso de Confianza Institucional**
+Aceleración de desintegración social cuando públicos descubren manipulación generalizada, resultando en protestas masivas, represión militarizada y emergencia de movimientos de resistencia tecnológica con métodos cada vez más radicales.
+
+**Fase 4: Nuevo Paradigma Emergente**
+Culminación donde orden post-nacional corporativo emerge de caos, presentándose como solución a inestabilidad que ellos mismos orquestaron, implementando sistemas de control social basados en tecnología neural con aceptación parcial de población traumatizada.
+
+### Arco Tecnológico: "Evolución Dirigida"
+
+**Fase 1: Integración Inicial**
+Exploración de primeras etapas de fusión humano-máquina a través de experiencias de Vega y otros operadores Espectro, destacando beneficios tácticos junto con primeros signos de efectos secundarios neurológicos y psicológicos.
+
+**Fase 2: Adaptación y Dependencia**
+Profundización en cómo interfaces neurales reconfiguran fundamentalmente percepción, cognición y sentido de identidad de usuarios. Desarrollo de dependencia psicológica y fisiológica a conexión que paralela adicción con síntomas de abstinencia severos.
+
+**Fase 3: Transformación Consciente**
+Emergencia de nueva forma de consciencia cuando operadores con mayor tiempo conectados comienzan a desarrollar capacidades y percepciones radicalmente diferentes, cuestionando definiciones tradicionales de humanidad y planteando dilemas sobre evolución dirigida.
+
+**Fase 4: Divergencia Posthumana**
+Culminación donde sociedad enfrenta bifurcación evolutiva entre humanos aumentados tecnológicamente y población convencional, con Vega atrapado entre ambos mundos y forzado a decidir futuro de tecnología con implicaciones civilizacionales.
+
+## ESTRUCTURA NARRATIVA Y PROGRESIÓN
+
+### Acto I: Reclutamiento e Inmersión
+
+**Prólogo: El Incidente de Bahrein**
+Secuencia de apertura que establece perfil moral de Vega mientras muestra operación fallida que resultó en su caída profesional. Introduce temas centrales de conflicto entre obediencia y ética personal.
+
+**Capítulo 1-3: Activación**
+Ataque del Colectivo Nexus, activación del Protocolo Espectro, y reclutamiento de Vega. Presentación de La Colmena y primeros contactos con tecnología neural. Establecimiento de relaciones iniciales con equipo y superiores.
+
+**Capítulos 4-7: Transformación**
+Proceso de implantación neural y entrenamiento intensivo. Primeras misiones que establecen capacidades del equipo mientras introducen gradualmente inconsistencias en narrativa oficial. Vega comienza investigación personal sobre su padre.
+
+**Punto de Giro:** Descubrimiento durante Operación Eclipse Silencioso de que su padre estuvo involucrado en orígenes de tecnología neural y posiblemente asesinado por descubrir sus aplicaciones reales.
+
+### Acto II: Descubrimiento y Conspiración
+
+**Capítulos 8-12: Doble Vida**
+Vega equilibra misiones oficiales con investigación encubierta. Establece red de contactos incluyendo periodista Ana Torres y comienza recuperar fragmentos de investigación de su padre. Primeras señales de fractura entre facciones dentro de estructura Espectro.
+
+**Capítulos 13-16: Profundizando**
+Operación Fauces Negras revela verdad sobre orígenes de programa y compatibilidad neural de Vega. Relaciones se complican cuando identifica potenciales aliados y enemigos dentro del sistema. Síntomas de disociación neural comienzan a manifestarse.
+
+**Capítulos 17-20: Conspiraciones Entrelazadas**
+Revelación gradual de múltiples agendas cruzadas: corporaciones buscando privatización completa, militares intentando retener control, transumanistas con visión evolutiva radical, y resistencia fragmentada con métodos cuestionables. Vega descubre conexión entre crisis globales y programa de control social planificado.
+
+**Punto de Giro:** Durante Operación Marea Roja, Vega confirma que su padre fue asesinado y recupera clave para acceder a evidencia oculta que podría exponer toda la conspiración.
+
+### Acto III: Crisis y Resolución
+
+**Capítulos 21-24: Traición y Colapso**
+Vega es traicionado por aliado cercano, evidencia es comprometida, y debe huir mientras es cazado por antiguos compañeros. Crisis de identidad cuando efectos de interfaz neural se intensifican. Simultáneamente, colapso social se acelera con implementación de Proyecto Quimera a escala masiva.
+
+**Capítulos 25-27: Resistencia Final**
+Formación de alianza improbable entre facción militar tradicional liderada por Márquez, elementos genuinos de Colectivo Nexus, y equipo fragmentado de Vega. Preparación para operación final contra instalación central de Proyecto Quimera durante cumbre global que implementará control neural permanente.
+
+**Capítulos 28-30: Operación "Horizonte Quebrado"**
+Asalto final a instalación central donde tecnologías de control masivo están siendo activadas. Confrontación con General Herrera y Alexander Weyland. Revelación final sobre naturaleza completa de conspiración intergeneracional y papel de padre de Vega como creador arrepentido.
+
+**Epílogo: Nuevo Amanecer Ambiguo**
+Resolución que evita tanto victoria completa como derrota total. Vega logra exponer aspectos críticos de conspiración pero no puede prevenir transformación social fundamental. Establecimiento de nuevo equilibrio frágil entre facciones. Vega, permanentemente alterado por tecnología neural, asume rol de vigilante para prevenir abusos de sistema que no puede desmantelar completamente.
+
+## TEMAS FILOSÓFICOS Y REFLEXIONES PROFUNDAS
+
+### Determinismo Tecnológico vs. Agencia Humana
+
+La narrativa explora tensión entre desarrollo tecnológico aparentemente inevitable y capacidad humana para dirigir conscientemente evolución de civilización. ¿Somos arquitectos de nuestras herramientas o eventualmente nos convertimos en instrumentos de nuestras propias creaciones?
+
+### Identidad y Conciencia Expandida
+
+Interfaz Neural plantea preguntas fundamentales sobre naturaleza de identidad personal cuando pensamientos pueden ser compartidos, implantados o manipulados. ¿Dónde termina el individuo y comienza la red colectiva? ¿La consciencia expandida tecnológicamente representa evolución o dilución de humanidad?
+
+### Ética de Control Social Benevolente
+
+Proyecto Quimera se justifica como herramienta para prevenir autodestrucción humana mediante control sutil de impulsos destructivos. ¿Es éticamente defendible sacrificar autonomía individual para garantizar supervivencia colectiva? ¿Quién decide qué pensamientos o comportamientos deben ser suprimidos o promovidos?
+
+### Responsabilidad Intergeneracional
+
+El legado del padre de Vega y programa de modificación genética plantean cuestiones sobre responsabilidad hacia generaciones futuras. ¿Tenemos derecho a diseñar descendientes para propósitos específicos? ¿Cómo balanceamos innovación necesaria con precaución ética?
+
+### Militarización del Conocimiento Científico
+
+La transformación de tecnología terapéutica en sistema de control y arma refleja ciclo histórico donde avances científicos son inevitablemente militarizados. ¿Existe manera de desarrollar tecnologías transformadoras sin que sean convertidas en instrumentos de dominación?
